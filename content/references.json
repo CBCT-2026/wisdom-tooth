@@ -18,5 +18,17 @@
   "rood": {
     "text": "Rood JP, Shehab BA. The radiological prediction of inferior alveolar nerve injury during third molar surgery. Br J Oral Maxillofac Surg. 1990;28(1):20-25.",
     "doi": "10.1016/0266-4356(90)90005-6"
+  },
+  "juodzbalys1": {
+    "text": "Juodzbalys G, Wang HL, Sabalys G. Anatomy of mandibular vital structures. Part I: mandibular canal and inferior alveolar neurovascular bundle in relation with dental implantology. J Oral Maxillofac Res. 2010;1(1):e2.",
+    "doi": "10.5037/jomr.2010.1102"
+  },
+  "juodzbalys2": {
+    "text": "Juodzbalys G, Wang HL, Sabalys G. Anatomy of mandibular vital structures. Part II: mandibular incisive canal, mental foramen and associated neurovascular bundles in relation with dental implantology. J Oral Maxillofac Res. 2010;1(1):e3.",
+    "doi": "10.5037/jomr.2010.1103"
+  },
+  "renton": {
+    "text": "Renton T, Yilmaz Z. Profiling of patients presenting with posttraumatic neuropathy of the trigeminal nerve. J Orofac Pain. 2011;25(4):333-344. PMID 22247929.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22247929/"
   }
 }

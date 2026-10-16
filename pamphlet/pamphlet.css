@@ -1,8 +1,10 @@
 /* Print layout for the pamphlet. Same text as the webpage, without the 3D viewer. */
-.pamphlet { --bg: #fff; --text: #1c1f24; --muted: #5a616b; --line: #d9dde2; --accent: #1f5fa8; --card: #f4f7fb;
-  background: #fff; color: #1c1f24; font-size: 15px; }
+.pamphlet { --bg: #fff; --text: #231f20; --muted: #5a616b; --line: #d9dde2; --accent: #00674c; --card: #eef5f2; --ar: #00674c; --ar-text: #fff;
+  background: #fff; color: #231f20; font-size: 15px; }
 .pamphlet main { max-width: 760px; }
-.pamphlet .brand { color: var(--muted); font-size: 13px; margin: 8px 0 0; }
+.pamphlet .brand { margin: 8px 0 0; display: flex; justify-content: flex-end; }
+.pamphlet .logo { height: 48px; padding: 0; }
+.pamphlet h2 { color: var(--accent); }
 .model-shots { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .model-shots figure { margin: 0; background: var(--card); border-radius: 10px; overflow: hidden; }
 .model-shots img { width: 100%; display: block; }
