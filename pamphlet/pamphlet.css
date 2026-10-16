@@ -19,9 +19,10 @@
 .model-note { background: var(--card); border-left: 4px solid var(--accent); border-radius: 6px; padding: 6px 10px; margin: 8px 0; }
 .parts { border-top: 0; padding: 4px 0; }
 .parts > h2, .removal > h2 { margin-bottom: 4px; }
-.parts { columns: 3; column-gap: 6px; column-fill: balance; }
-.parts > h2 { column-span: all; }
-.part { background: var(--card); border-radius: 8px; padding: 6px 8px; margin-bottom: 6px; break-inside: avoid; display: inline-block; width: 100%; }
+.parts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.parts > h2 { grid-column: 1 / -1; }
+.parts .col { display: flex; flex-direction: column; gap: 6px; }
+.part { background: var(--card); border-radius: 8px; padding: 6px 8px; flex: 1 1 auto; break-inside: avoid; }
 .part h3 { font-size: 13px; margin: 0 0 2px; line-height: 1.25; }
 .part .num { display: inline-block; width: 18px; height: 18px; line-height: 18px; border-radius: 50%; text-align: center;
   background: var(--accent); color: #fff; font-size: 11px; margin-right: 5px; }
@@ -48,8 +49,8 @@
   .model-shots figcaption { font-size: 8pt; padding: 0.5mm 2mm 1mm; }
   .pamphlet .legend { font-size: 8pt; margin: 1mm 0; gap: 2px 14px; }
   .pamphlet .legend .dot { width: 9px; height: 9px; }
-  .parts { column-gap: 1.5mm; padding: 0 0 1mm; }
-  .part { margin-bottom: 1.5mm; }
+  .parts { gap: 1.5mm; padding: 0 0 1mm; }
+  .parts .col { gap: 1.5mm; }
   .part { padding: 1mm 2mm; break-inside: avoid; }
   .part h3 { font-size: 7.8pt; }
   .part .num { width: 12px; height: 12px; line-height: 12px; font-size: 7pt; }
