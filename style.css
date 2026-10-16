@@ -90,3 +90,8 @@ main ul, main ol, .info, .info li, .refs li { text-align: justify; hyphens: auto
 .important { background: #fff7e0; border: 2px solid #d9a400; border-radius: 12px; padding: 12px 14px; margin: 12px 0; }
 .important h2 { color: #6b4e00; }
 .important p { margin: 0; color: #231f20; }
+
+/* Caption for the current step of the animation. */
+.anim-step { position: absolute; left: 10px; right: 10px; top: 10px; margin: 0; padding: 6px 10px;
+  background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 8px;
+  font-size: 15px; font-weight: 600; text-align: left; pointer-events: none; }

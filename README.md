@@ -13,7 +13,7 @@ Webpage hosted augmented reality model demonstrating an impacted lower left thir
 ## 3D models
 
 - `models/wisdom-tooth.glb` / `.usdz`: main model (Android/web and iPhone AR).
-- The `.glb` files are Draco-compressed (gltf-transform 4.1.1). The decoder is served from `vendor/draco/` (from three.js r163, Apache 2.0).
+- The wisdom tooth is cut into a mesial and a distal piece by `tools/section_tooth.py` (trimesh), which also writes the `extraction` animation (back piece out, then front piece). The `.glb` files are Draco-compressed (gltf-transform 4.1.1). The decoder is served from `vendor/draco/` (from three.js r163, Apache 2.0).
 - `models/wisdom-tooth-below.*` (turned upside down, roots up) and `models/wisdom-tooth-cheek.*` (cheek side up): the same model turned, for the extra AR buttons.
 
 ## Image licences
