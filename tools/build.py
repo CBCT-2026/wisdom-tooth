@@ -10,8 +10,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 REFS = json.loads((ROOT / 'content/references.json').read_text())
 LABELS = {
-    'en': {'refs': 'Sources', 'credit': 'Picture: Rodriguez y Baena R, et al. J Clin Exp Dent. 2017, Figure 1. Licence: <a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a>. Not changed.'},
-    'ja': {'refs': '参考にした論文', 'credit': '写真：Rodriguez y Baena R, et al. J Clin Exp Dent. 2017, Figure 1. ライセンス：<a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a>。元の画像のまま使用。'},
+    'en': {'refs': 'Sources', 'credit': {
+        'rodriguez': 'Picture: Rodriguez y Baena R, et al. J Clin Exp Dent. 2017, Figure 1. Licence: <a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a>. Not changed.',
+        'marquez': 'Pictures: Marquez Rocco V, et al. Clin Case Rep. 2026, Figures 1, 2 (top row) and 3. Licence: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Cropped, put together, and letters a to c added.'}},
+    'ja': {'refs': '参考にした論文', 'credit': {
+        'rodriguez': '写真：Rodriguez y Baena R, et al. J Clin Exp Dent. 2017, Figure 1. ライセンス：<a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a>。元の画像のまま使用。',
+        'marquez': '画像：Marquez Rocco V, et al. Clin Case Rep. 2026, Figure 1, 2（上の列）, 3. ライセンス：<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。切り取って1つにまとめ、a〜cの文字を加えました。'}},
 }
 
 def link(ref):
@@ -29,7 +33,7 @@ def render(lang, img):
         n = order.index(key) + 1
         return f'<sup class="cite"><a href="#ref-{n}">{n}</a></sup>'
     text = re.sub(r'\[\[(\w+)\]\]', cite, text)
-    text = text.replace('</figcaption>', f'<span class="credit">{LABELS[lang]["credit"]}</span></figcaption>')
+    text = re.sub(r'\{\{credit:(\w+)\}\}', lambda m: f'<span class="credit">{LABELS[lang]["credit"][m.group(1)]}</span>', text)
     items = '\n'.join(
         f'    <li id="ref-{i}">{REFS[k]["text"]} {link(REFS[k])}</li>'
         for i, k in enumerate(order, 1))

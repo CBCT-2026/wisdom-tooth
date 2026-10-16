@@ -18,11 +18,11 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Why taking the tooth out can hurt the nerve | 77 | 7 | 1.7 | 102.61 |
 | What nerve damage feels like | 122 | 15 | 2.9 | 88.63 |
 | How often does it happen? | 51 | 7 | 1.4 | 97.91 |
-| Why a 3D scan can help | 186 | 19 | 1.2 | 103.83 |
-| Choices your dentist/surgeon might offer | 116 | 12 | 3.5 | 87.01 |
+| Why a 3D scan can help | 272 | 30 | 0.9 | 104.54 |
+| Choices your dentist/surgeon might offer | 115 | 12 | 3.5 | 87.11 |
 | Questions you could ask your dentist/surgeon | 46 | 6 | 1.6 | 97.5 |
 | Disclaimer | 33 | 4 | 4.2 | 79.97 |
-| **Overall** | **1219** | **134** | **2.1** | **96.08** |
+| **Overall** | **1304** | **145** | **2.1** | **96.18** |
 
 ## Pamphlet
 
@@ -36,9 +36,9 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Why taking the tooth out can hurt the nerve | 77 | 7 | 1.7 | 102.61 |
 | What nerve damage feels like | 122 | 15 | 2.9 | 88.63 |
 | How often does it happen? | 51 | 7 | 1.4 | 97.91 |
-| Why a 3D scan can help | 186 | 19 | 1.2 | 103.83 |
-| Choices your dentist/surgeon might offer | 116 | 12 | 3.5 | 87.01 |
+| Why a 3D scan can help | 272 | 30 | 0.9 | 104.54 |
+| Choices your dentist/surgeon might offer | 115 | 12 | 3.5 | 87.11 |
 | Questions you could ask your dentist/surgeon | 46 | 6 | 1.6 | 97.5 |
 | Disclaimer | 33 | 4 | 4.2 | 79.97 |
-| **Overall** | **867** | **98** | **2.0** | **96.38** |
+| **Overall** | **952** | **109** | **2.0** | **96.48** |
 
