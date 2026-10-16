@@ -19,6 +19,9 @@
   <h1>Impacted lower wisdom tooth and the nerve near it</h1>
   <p class="intro">Below is a 3D model of the left lower jaw. Some phones and tablets can also show it in <b>augmented reality (AR)</b>. AR uses the camera to show the model in the real room, as if it were there.</p>
 
+  <p class="hint">Drag to turn the model. Pinch to zoom. Tap a numbered dot to learn about that part. Tap <b>Hide labels</b> for a clear view. Tap <b>View in AR</b> to place the model on a nearby table or flat surface.</p>
+  <p class="hint arnote">AR works only on a device and browser that can use it. For example, Safari on an iPhone or iPad, or Chrome on many Android phones. If no AR button shows, AR cannot be used on that device or browser. On an iPhone, tap <b>Object</b> at the top of the AR screen to turn the model in any direction.</p>
+
   <!-- MODEL: models/wisdom-tooth.glb (keep it under 5 MB). -->
   <model-viewer id="mv"
     src="../models/wisdom-tooth.glb"
@@ -37,6 +40,10 @@
     <button class="hotspot" slot="hotspot-7" data-position="-0.0508m -0.0472m -0.0018m" data-normal="0.94 -0.08 0.34" data-visibility-attribute="visible" aria-label="7. Jaw bone (mandible)">7<span class="label">Jaw bone (mandible)</span><span class="note"><span>The jaw nerve, artery and vein run in a tube inside this bone.</span></span></button>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
+  <div class="ar-more" id="ar-more" role="group" aria-label="More AR views" hidden>
+    <button type="button" data-ar="wisdom-tooth-below">View in AR: from below (roots up)</button>
+    <button type="button" data-ar="wisdom-tooth-cheek">View in AR: cheek side up</button>
+  </div>
   <div class="info" id="info" aria-live="polite" hidden></div>
   <div class="controls" role="group" aria-label="Model controls">
     <button type="button" data-orbit="90deg 80deg auto" aria-pressed="true">Whole jaw</button>
@@ -44,12 +51,6 @@
     <button type="button" data-orbit="270deg 80deg auto" aria-pressed="false">Tongue side</button>
     <button type="button" id="labels" aria-pressed="false" data-on="Hide labels" data-off="Show labels">Hide labels</button>
     <button type="button" class="play" id="play">Show how the tooth comes out</button>
-  </div>
-  <p class="hint">Drag to turn the model. Pinch to zoom. Tap a numbered dot to learn about that part. Tap <b>Hide labels</b> for a clear view. Tap <b>View in AR</b> to place the model on a nearby table or flat surface.</p>
-  <p class="hint arnote">AR works only on a device and browser that can use it. For example, Safari on an iPhone or iPad, or Chrome on many Android phones. If no AR button shows, AR cannot be used on that device or browser. On an iPhone, tap <b>Object</b> at the top of the AR screen to turn the model in any direction.</p>
-  <div class="ar-more" id="ar-more" role="group" aria-label="More AR views" hidden>
-    <button type="button" data-ar="wisdom-tooth-below">View in AR: from below (roots up)</button>
-    <button type="button" data-ar="wisdom-tooth-cheek">View in AR: cheek side up</button>
   </div>
 
   <ul class="legend" aria-label="Colour key">
