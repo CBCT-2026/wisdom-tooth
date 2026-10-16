@@ -1,6 +1,7 @@
-zhu2021-fig1.png https://pub.mdpi-res.com/diagnostics/diagnostics-11-01664/article_deploy/html/images/diagnostics-11-01664-g001.png
-zhu2021-fig3.png https://pub.mdpi-res.com/diagnostics/diagnostics-11-01664/article_deploy/html/images/diagnostics-11-01664-g003.png
-rodriguez2017-fig1.jpg https://cdn.ncbi.nlm.nih.gov/pmc/blobs/63db/5303328/c75a67c67f19/jced-9-e259-g001.jpg
-kim2021-fig3.png https://pub.mdpi-res.com/applsci/applsci-11-00816/article_deploy/html/images/applsci-11-00816-g003.png
-kim2021-fig4.png https://pub.mdpi-res.com/applsci/applsci-11-00816/article_deploy/html/images/applsci-11-00816-g004.png
-kim2021-fig5.png https://pub.mdpi-res.com/applsci/applsci-11-00816/article_deploy/html/images/applsci-11-00816-g005.png
+kim2021.html https://www.mdpi.com/2076-3417/11/2/816/htm
+zhu2021.html https://www.mdpi.com/2075-4418/11/9/1664/htm
+marquez2026.html https://pmc.ncbi.nlm.nih.gov/articles/PMC13655660/
+ru2025.html https://pmc.ncbi.nlm.nih.gov/articles/PMC12224583/
+marquez2026-epmc.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13655660/fullTextXML
+ru2025-epmc.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12224583/fullTextXML
+zhu2021-epmc.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8465178/fullTextXML
