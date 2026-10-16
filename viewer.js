@@ -45,3 +45,22 @@ play.addEventListener('click', () => {
   };
   requestAnimationFrame(watch);
 });
+
+// Show a plain message in the viewer box if 3D cannot be shown, instead of an empty box.
+function showProblem(text) {
+  let box = mv.querySelector('.problem');
+  if (!box) {
+    box = document.createElement('div');
+    box.className = 'problem';
+    mv.appendChild(box);
+  }
+  box.textContent = text;
+}
+const msg = document.documentElement.lang === 'ja'
+  ? { gl: 'このブラウザでは3D表示（WebGL）が使えません。ブラウザの設定で「ハードウェアアクセラレーション」をオンにするか、別のブラウザで開いてください。',
+      load: '3Dモデルを読み込めませんでした。ページを再読み込みしてください。' }
+  : { gl: 'This browser cannot show 3D (WebGL is off). Turn on hardware acceleration in the browser settings, or open the page in another browser.',
+      load: 'The 3D model could not load. Please reload the page.' };
+const canvas = document.createElement('canvas');
+if (!(canvas.getContext('webgl2') || canvas.getContext('webgl'))) showProblem(msg.gl);
+mv.addEventListener('error', e => showProblem(msg.load + ' (' + (e.detail && e.detail.type || 'error') + ')'));
