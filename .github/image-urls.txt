@@ -1,7 +1,6 @@
-kim2021.html https://www.mdpi.com/2076-3417/11/2/816/htm
-zhu2021.html https://www.mdpi.com/2075-4418/11/9/1664/htm
-marquez2026.html https://pmc.ncbi.nlm.nih.gov/articles/PMC13655660/
-ru2025.html https://pmc.ncbi.nlm.nih.gov/articles/PMC12224583/
-marquez2026-epmc.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13655660/fullTextXML
-ru2025-epmc.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12224583/fullTextXML
-zhu2021-epmc.xml https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8465178/fullTextXML
+marquez2026-fig1.jpg https://cdn.ncbi.nlm.nih.gov/pmc/blobs/d347/13655660/029c2e517fe1/CCR3-14-e73673-g011.jpg
+marquez2026-fig2.jpg https://cdn.ncbi.nlm.nih.gov/pmc/blobs/d347/13655660/053ccf7c65ef/CCR3-14-e73673-g001.jpg
+marquez2026-fig3.jpg https://cdn.ncbi.nlm.nih.gov/pmc/blobs/d347/13655660/7429055a8bbb/CCR3-14-e73673-g006.jpg
+marquez2026-fig1.webp https://cdn.ncbi.nlm.nih.gov/pmc/blobs/d347/13655660/029c2e517fe1/CCR3-14-e73673-g011.webp
+marquez2026-fig2.webp https://cdn.ncbi.nlm.nih.gov/pmc/blobs/d347/13655660/053ccf7c65ef/CCR3-14-e73673-g001.webp
+marquez2026-fig3.webp https://cdn.ncbi.nlm.nih.gov/pmc/blobs/d347/13655660/7429055a8bbb/CCR3-14-e73673-g006.webp
