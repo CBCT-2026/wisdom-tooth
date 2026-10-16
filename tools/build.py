@@ -23,6 +23,12 @@ def link(ref):
         return f'<a href="https://doi.org/{ref["doi"]}">doi.org/{ref["doi"]}</a>'
     return f'<a href="{ref["url"]}">{ref["url"].split("://")[1].rstrip("/")}</a>'
 
+def short(text):
+    """List up to three authors, then et al."""
+    authors, rest = text.split('. ', 1)
+    names = authors.split(', ')
+    return (', '.join(names[:3]) + ', et al' if len(names) > 3 else authors) + '. ' + rest
+
 def render(lang, img):
     text = (ROOT / f'content/shared-{lang}.html').read_text().replace('{{img}}', img)
     order = []
@@ -33,9 +39,9 @@ def render(lang, img):
         n = order.index(key) + 1
         return f'<sup class="cite"><a href="#ref-{n}">{n}</a></sup>'
     text = re.sub(r'\[\[(\w+)\]\]', cite, text)
-    text = re.sub(r'\{\{credit:(\w+)\}\}', lambda m: f'<span class="credit">{LABELS[lang]["credit"][m.group(1)]}</span>', text)
+    text = re.sub(r'\{\{credit:(\w+)\}\}', lambda m: f' <span class="credit">{LABELS[lang]["credit"][m.group(1)]}</span>', text)
     items = '\n'.join(
-        f'    <li id="ref-{i}">{REFS[k]["text"]} {link(REFS[k])}</li>'
+        f'    <li id="ref-{i}">{short(REFS[k]["text"])} {link(REFS[k])}</li>'
         for i, k in enumerate(order, 1))
     refs = f'<section class="refs">\n  <h2>{LABELS[lang]["refs"]}</h2>\n  <ol>\n{items}\n  </ol>\n</section>'
     return text.strip() + '\n\n' + refs
@@ -67,7 +73,9 @@ for lang in ('en', 'ja'):
     inject(ROOT / f'{lang}/index.html', render(lang, '../images'))
     text = render(lang, '../../images')
     important = re.search(r'<section class="important">.*?</section>\n*', text, flags=re.S)
-    sheet = ROOT / f'pamphlet/{lang}/index.html'
-    inject(sheet, text.replace(important.group(0), ''))
-    block(sheet, 'IMPORTANT', important.group(0).strip())
-    block(sheet, 'KEY', key(lang))
+    # The information sheet and the card that goes with the 3D print get the same text and key.
+    for sheet, img in ((ROOT / f'pamphlet/{lang}/index.html', text),
+                       (ROOT / f'pamphlet/model/{lang}/index.html', render(lang, '../../../images'))):
+        inject(sheet, img.replace(important.group(0), ''))
+        block(sheet, 'IMPORTANT', important.group(0).strip())
+        block(sheet, 'KEY', key(lang))
