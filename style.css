@@ -76,4 +76,5 @@ model-viewer.labels-off .hotspot { display: none; }
   background: var(--ar); color: var(--ar-text); font: 600 15px/1.2 inherit; cursor: pointer; }
 /* Justified text, as asked. Hyphens help English lines not to stretch too much on phones. */
 main p, main li, figcaption { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
-.refs li, .controls, .ar-more { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+main ul, main ol, .info, .info li, .refs li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+.controls, .ar-more { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
