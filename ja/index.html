@@ -19,6 +19,9 @@
   <h1>うまっている下の親知らずと、そのそばを通る神経</h1>
   <p class="intro">下は、左の下あごの3Dモデルです。一部のスマートフォンやタブレットでは、<b>AR（拡張現実）</b>でも見られます。ARは、カメラにうつる実際の部屋の中に、モデルがあるように見せる機能です。</p>
 
+  <p class="hint">ドラッグで回転、ピンチで拡大・縮小できます。番号の点をタップすると、その部分の説明が出ます。<b>番号を消す</b>で、モデルを見やすくできます。<b>AR表示</b>をタップすると、近くの机の上や平らな場所にモデルを置けます。</p>
+  <p class="hint arnote">ARは、ARに対応した機器とブラウザでだけ使えます。たとえば、iPhone・iPadのSafariや、多くのAndroidスマートフォンのChromeです。ARのボタンが出ないときは、その機器やブラウザではARを使えません。iPhoneでは、AR画面の上の「オブジェクト」をタップすると、モデルをどの向きにも回せます。</p>
+
   <!-- MODEL: models/wisdom-tooth.glb（5 MB以下）。 -->
   <model-viewer id="mv"
     src="../models/wisdom-tooth.glb"
@@ -37,6 +40,10 @@
     <button class="hotspot" slot="hotspot-7" data-position="-0.0508m -0.0472m -0.0018m" data-normal="0.94 -0.08 0.34" data-visibility-attribute="visible" aria-label="7. 下あごの骨">7<span class="label">下あごの骨</span><span class="note"><span>神経、動脈、静脈が、この骨の中の管を通っています。</span></span></button>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
+  <div class="ar-more" id="ar-more" role="group" aria-label="ほかの向きのAR表示" hidden>
+    <button type="button" data-ar="wisdom-tooth-below">AR表示：下から見る（根を上に）</button>
+    <button type="button" data-ar="wisdom-tooth-cheek">AR表示：ほお側を上に</button>
+  </div>
   <div class="info" id="info" aria-live="polite" hidden></div>
   <div class="controls" role="group" aria-label="モデルの操作">
     <button type="button" data-orbit="90deg 80deg auto" aria-pressed="true">全体</button>
@@ -44,12 +51,6 @@
     <button type="button" data-orbit="270deg 80deg auto" aria-pressed="false">内側（舌側）</button>
     <button type="button" id="labels" aria-pressed="false" data-on="番号を消す" data-off="番号を表示">番号を消す</button>
     <button type="button" class="play" id="play">歯をぬくときの動きを見る</button>
-  </div>
-  <p class="hint">ドラッグで回転、ピンチで拡大・縮小できます。番号の点をタップすると、その部分の説明が出ます。<b>番号を消す</b>で、モデルを見やすくできます。<b>AR表示</b>をタップすると、近くの机の上や平らな場所にモデルを置けます。</p>
-  <p class="hint arnote">ARは、ARに対応した機器とブラウザでだけ使えます。たとえば、iPhone・iPadのSafariや、多くのAndroidスマートフォンのChromeです。ARのボタンが出ないときは、その機器やブラウザではARを使えません。iPhoneでは、AR画面の上の「オブジェクト」をタップすると、モデルをどの向きにも回せます。</p>
-  <div class="ar-more" id="ar-more" role="group" aria-label="ほかの向きのAR表示" hidden>
-    <button type="button" data-ar="wisdom-tooth-below">AR表示：下から見る（根を上に）</button>
-    <button type="button" data-ar="wisdom-tooth-cheek">AR表示：ほお側を上に</button>
   </div>
 
   <ul class="legend" aria-label="色の説明">
