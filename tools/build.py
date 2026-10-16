@@ -65,8 +65,10 @@ def key(lang):
     items = []
     for num, title, notes in re.findall(r'class="hotspot" slot="hotspot-(\d+)".*?<span class="label">(.*?)</span><span class="note">(.*?)</span></button>', page):
         lis = ''.join(f'<li>{n}</li>' for n in re.findall(r'<span>(.*?)</span>', notes))
-        items.append(f'    <div class="part"><h3><span class="num">{num}</span>{title}</h3><ul>{lis}</ul></div>')
-    return '\n'.join(items)
+        items.append(f'      <div class="part"><h3><span class="num">{num}</span>{title}</h3><ul>{lis}</ul></div>')
+    # Three columns (1-2, 3-5, 6-7); the boxes stretch so the columns end level.
+    cols = [items[:2], items[2:5], items[5:]]
+    return '\n'.join('    <div class="col">\n' + '\n'.join(c) + '\n    </div>' for c in cols)
 
 
 for lang in ('en', 'ja'):
