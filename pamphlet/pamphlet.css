@@ -39,7 +39,7 @@
   .pamphlet { font-size: 8.6pt; line-height: 1.32; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   html[lang="ja"] .pamphlet { line-height: 1.3; }
   .pamphlet main { max-width: none; padding: 0; column-count: 2; column-gap: 6mm; }
-  .sheet-head, .important, .model-shots, .model-note, .pamphlet .legend, .parts, .removal { column-span: all; }
+  .sheet-head, .important, .model-shots, .model-note, .pamphlet .legend, .parts { column-span: all; }
   .sheet-head { margin: 0 0 2mm; padding: 2mm 3mm 2mm 4mm; }
   .sheet-head h1 { font-size: 15pt; }
   .sheet-head .logo { height: 12mm; }
@@ -56,8 +56,10 @@
   .part .num { width: 12px; height: 12px; line-height: 12px; font-size: 7pt; }
   .part ul { font-size: 7.3pt; line-height: 1.28; }
   .removal { padding: 0 0 1mm; }
-  .removal img { height: 19mm; object-fit: cover; object-position: center 35%; }
-  .removal figcaption { font-size: 7.5pt; padding: 0.5mm 2mm 1mm; }
+  .removal { break-inside: avoid; }
+  .removal .steps { gap: 1.5mm; }
+  .removal img { height: 27mm; object-fit: cover; }
+  .removal figcaption { font-size: 7pt; line-height: 1.2; padding: 0.5mm 1.5mm 1mm; }
   .pamphlet section { padding: 1.5mm 0; }
   .pamphlet h2 { break-after: avoid; }
   .pamphlet li, .pamphlet .stats { break-inside: avoid; }
@@ -73,7 +75,7 @@
   .pamphlet .xray img { width: 36%; margin: 0 auto; }
   .pamphlet .xray figcaption { font-size: 7.6pt; line-height: 1.3; }
   .pamphlet .refs h2 { font-size: 9pt; }
-  .pamphlet .refs ol { font-size: 6.4pt; line-height: 1.25; }
+  .pamphlet .refs ol { font-size: 6.3pt; line-height: 1.2; }
   .pamphlet .refs li { margin-bottom: 1px; }
   .pamphlet .disclaimer { font-size: 7.5pt; padding-top: 1mm; margin: 0; }
   .pamphlet a { color: inherit; text-decoration: none; }
