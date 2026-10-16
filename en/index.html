@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wisdom Tooth and Nerve</title>
+<meta name="description" content="An interactive 3D model showing why removing an impacted lower wisdom tooth can injure the nerve beside it.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../style.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+<header class="bar">
+  <span class="brand">Nagoya University</span>
+  <a class="lang" href="../ja/" lang="ja" hreflang="ja">日本語</a>
+</header>
+
+<main>
+  <h1>Your lower wisdom tooth and the nerve beside it</h1>
+
+  <!-- MODEL: models/wisdom-tooth.glb (keep it under 5 MB). -->
+  <model-viewer id="mv"
+    src="../models/wisdom-tooth.glb"
+    alt="3D model of an impacted lower wisdom tooth whose roots wrap around the nerve and artery"
+    ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
+    camera-controls camera-orbit="90deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
+    shadow-intensity="1" exposure="1" loading="eager">
+    <button slot="ar-button" class="ar-btn">View in your space (AR)</button>
+    <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
+  </model-viewer>
+  <p class="hint">Drag to turn the model. Pinch to zoom. Tap <b>View in your space</b> to place it on the table in front of you.</p>
+
+  <ul class="legend" aria-label="Colour key">
+    <li><span class="dot" style="background:#d6cbbb"></span>Jaw bone and teeth</li>
+    <li><span class="dot" style="background:#c8303a"></span>Nerve and artery (in their canal)</li>
+  </ul>
+
+  <!-- SHARED TEXT: copy word for word into the pamphlet and the card beside the printed model. -->
+  <section>
+    <h2>What is the problem?</h2>
+    <p>Your lower wisdom tooth is impacted. It is stuck under the gum and bone and cannot come through properly.</p>
+  </section>
+
+  <section>
+    <h2>The nerve</h2>
+    <p>Inside the lower jaw runs the <b>inferior alveolar nerve</b>, with an artery beside it. The nerve gives feeling to your lower lip, chin, lower teeth and gum on that side.</p>
+    <p>In this case the <b>roots of the wisdom tooth wrap around the nerve and artery</b>.</p>
+  </section>
+
+  <section>
+    <h2>Why removing the tooth can injure the nerve</h2>
+    <p>To remove the tooth, its roots must be lifted out of the bone. Because they curve around the nerve, the nerve can be bruised, stretched or cut as the roots come out. The artery beside it can also bleed.</p>
+  </section>
+
+  <section>
+    <h2>What nerve injury feels like</h2>
+    <p>Numbness, tingling or a changed feeling, sometimes pain, in the lower lip, chin, teeth and gum on that side. It does not stop the lip or face from moving.</p>
+    <p><b>Temporary:</b> feeling comes back, usually over weeks to months.<br>
+    <b>Permanent:</b> feeling does not fully come back.</p>
+  </section>
+
+  <section class="risk">
+    <h2>How often does it happen?</h2>
+    <p>For wisdom teeth whose roots are close to the nerve, a review of 16 studies found:</p>
+    <div class="stats">
+      <div><strong>About 7 in 100</strong><span>had nerve injury after full removal</span></div>
+      <div><strong>About 1 in 100</strong><span>had permanent injury</span></div>
+    </div>
+    <p class="small">Source: Rico-Barroso L, et al. Med Oral Patol Oral Cir Bucal. 2026;31(1):e19-e30. <a href="https://doi.org/10.4317/medoral.27459">doi.org/10.4317/medoral.27459</a></p>
+  </section>
+
+  <section>
+    <h2>Options to discuss with your surgeon</h2>
+    <ul>
+      <li><b>Leave the tooth and check it regularly</b>, if it is not causing problems.</li>
+      <li><b>Coronectomy:</b> remove only the top of the tooth and leave the roots around the nerve. In the same review, nerve injury after coronectomy was about 1 in 200, but the roots sometimes move and occasionally need removing later.</li>
+      <li><b>Remove the whole tooth.</b></li>
+    </ul>
+    <p>A 3D X-ray (CBCT scan) helps your surgeon see exactly where the nerve is.</p>
+  </section>
+
+  <section>
+    <h2>Questions you can ask</h2>
+    <ul>
+      <li>How close are my roots to the nerve?</li>
+      <li>What is my own risk of nerve injury?</li>
+      <li>Is coronectomy an option for me?</li>
+      <li>What happens if I leave the tooth?</li>
+    </ul>
+  </section>
+
+  <p class="disclaimer">This page is for a Nagoya University research study and for general information. It is not advice about your own teeth. Please talk to your dentist or surgeon about your situation.</p>
+</main>
+
+<script>
+  // Hide the loading bar once the model has loaded.
+  const mv = document.getElementById('mv');
+  mv.addEventListener('progress', e => {
+    const bar = mv.querySelector('.progress');
+    bar.querySelector('.progress-fill').style.width = (e.detail.totalProgress * 100) + '%';
+    if (e.detail.totalProgress === 1) bar.classList.add('done');
+  });
+</script>
+</body>
+</html>
