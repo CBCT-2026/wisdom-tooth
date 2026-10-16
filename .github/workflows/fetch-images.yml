@@ -1,0 +1,24 @@
+name: Fetch source images
+on:
+  push:
+    branches: [fetch-images]
+    paths: ['.github/image-urls.txt']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p images/source
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            curl -fsSL -A "Mozilla/5.0" -o "images/source/$name" "$url" || echo "FAILED $name"
+          done < .github/image-urls.txt
+          ls -la images/source
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add images/source
+          git commit -m "Add downloaded source images" || true
+          git push

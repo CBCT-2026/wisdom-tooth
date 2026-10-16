@@ -1,0 +1,6 @@
+zhu2021-fig1.png https://pub.mdpi-res.com/diagnostics/diagnostics-11-01664/article_deploy/html/images/diagnostics-11-01664-g001.png
+zhu2021-fig3.png https://pub.mdpi-res.com/diagnostics/diagnostics-11-01664/article_deploy/html/images/diagnostics-11-01664-g003.png
+rodriguez2017-fig1.jpg https://cdn.ncbi.nlm.nih.gov/pmc/blobs/63db/5303328/c75a67c67f19/jced-9-e259-g001.jpg
+kim2021-fig3.png https://pub.mdpi-res.com/applsci/applsci-11-00816/article_deploy/html/images/applsci-11-00816-g003.png
+kim2021-fig4.png https://pub.mdpi-res.com/applsci/applsci-11-00816/article_deploy/html/images/applsci-11-00816-g004.png
+kim2021-fig5.png https://pub.mdpi-res.com/applsci/applsci-11-00816/article_deploy/html/images/applsci-11-00816-g005.png
