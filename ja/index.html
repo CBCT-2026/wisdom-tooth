@@ -27,9 +27,19 @@
     camera-controls camera-orbit="90deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
     shadow-intensity="1" exposure="1" loading="eager">
     <button slot="ar-button" class="ar-btn">AR表示（目の前の空間に置く）</button>
+    <button class="hotspot" slot="hotspot-1" data-position="-0.0374m -0.0324m -0.048m" data-normal="0.95 0 0.3" data-visibility-attribute="visible" aria-label="神経・動脈">1<span class="label">神経・動脈</span></button>
+    <button class="hotspot" slot="hotspot-2" data-position="-0.0263m -0.0163m -0.0723m" data-normal="0.95 -0.12 -0.29" data-visibility-attribute="visible" aria-label="親知らずの根">2<span class="label">親知らずの根</span></button>
+    <button class="hotspot" slot="hotspot-3" data-position="-0.029m -0.0018m -0.0579m" data-normal="0.87 0.49 0" data-visibility-attribute="visible" aria-label="親知らず">3<span class="label">親知らず</span></button>
+    <button class="hotspot" slot="hotspot-4" data-position="-0.0508m -0.0472m -0.0018m" data-normal="0.94 -0.08 0.34" data-visibility-attribute="visible" aria-label="顎の骨">4<span class="label">顎の骨</span></button>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
   </model-viewer>
-  <p class="hint">ドラッグで回転、ピンチで拡大・縮小できます。<b>AR表示</b>をタップすると、目の前の机の上にモデルを置けます。</p>
+  <div class="controls" role="group" aria-label="モデルの操作">
+    <button type="button" data-orbit="90deg 80deg auto" aria-pressed="true">全体</button>
+    <button type="button" data-orbit="100deg 80deg 0.075m" data-target="-0.033m -0.015m -0.06m" aria-pressed="false">根と神経（拡大）</button>
+    <button type="button" data-orbit="270deg 80deg auto" aria-pressed="false">内側（舌側）</button>
+    <button type="button" class="play" id="play">歯を抜くときの動きを見る</button>
+  </div>
+  <p class="hint">ドラッグで回転、ピンチで拡大・縮小できます。番号の点をタップすると名前が表示されます。<b>AR表示</b>をタップすると、目の前の机の上にモデルを置けます。</p>
 
   <ul class="legend" aria-label="色の説明">
     <li><span class="dot" style="background:#d6cbbb"></span>顎の骨と歯</li>
@@ -93,14 +103,6 @@
   <p class="disclaimer">このページは名古屋大学の研究および一般的な情報提供のためのものです。ご自身の歯についての助言ではありません。ご自身の状況については、担当の歯科医師・口腔外科医にご相談ください。</p>
 </main>
 
-<script>
-  // モデルの読み込みが終わったら進捗バーを隠します。
-  const mv = document.getElementById('mv');
-  mv.addEventListener('progress', e => {
-    const bar = mv.querySelector('.progress');
-    bar.querySelector('.progress-fill').style.width = (e.detail.totalProgress * 100) + '%';
-    if (e.detail.totalProgress === 1) bar.classList.add('done');
-  });
-</script>
+<script src="../viewer.js"></script>
 </body>
 </html>
