@@ -14,6 +14,11 @@ LABELS = {
     'ja': {'refs': '参考にした論文', 'credit': '写真：Rodriguez y Baena R, et al. J Clin Exp Dent. 2017, Figure 1. ライセンス：<a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a>。元の画像のまま使用。'},
 }
 
+def link(ref):
+    if 'doi' in ref:
+        return f'<a href="https://doi.org/{ref["doi"]}">doi.org/{ref["doi"]}</a>'
+    return f'<a href="{ref["url"]}">{ref["url"].split("://")[1].rstrip("/")}</a>'
+
 def render(lang, img):
     text = (ROOT / f'content/shared-{lang}.html').read_text().replace('{{img}}', img)
     order = []
@@ -26,7 +31,7 @@ def render(lang, img):
     text = re.sub(r'\[\[(\w+)\]\]', cite, text)
     text = text.replace('</figcaption>', f'<span class="credit">{LABELS[lang]["credit"]}</span></figcaption>')
     items = '\n'.join(
-        f'    <li id="ref-{i}">{REFS[k]["text"]} <a href="https://doi.org/{REFS[k]["doi"]}">doi.org/{REFS[k]["doi"]}</a></li>'
+        f'    <li id="ref-{i}">{REFS[k]["text"]} {link(REFS[k])}</li>'
         for i, k in enumerate(order, 1))
     refs = f'<section class="refs">\n  <h2>{LABELS[lang]["refs"]}</h2>\n  <ol>\n{items}\n  </ol>\n</section>'
     return text.strip() + '\n\n' + refs
