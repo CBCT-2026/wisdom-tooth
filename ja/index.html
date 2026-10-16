@@ -6,12 +6,21 @@
 <title>親知らずと神経</title>
 <meta name="description" content="うまっている下の親知らずをぬくと、なぜ隣の神経が傷つく可能性があるのかを示す3Dモデルです。">
 <meta name="robots" content="noindex">
+<script>
+// Pick light or dark before the page draws: the saved choice, else the device setting.
+try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+// The models are Draco-compressed; the decoder is served from this site.
+self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', location.href).href };
+</script>
 <link rel="stylesheet" href="../style.css">
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
 </head>
 <body>
 <header class="bar">
-  <a class="lang" href="../en/" lang="en" hreflang="en">English</a>
+  <div class="bar-left">
+    <a class="lang" href="../en/" lang="en" hreflang="en">English</a>
+    <button class="theme" id="theme" type="button" data-dark="ダークモード" data-light="ライトモード">ダークモード</button>
+  </div>
   <img class="logo" src="../images/nagoya-logo.png" width="85" height="64" alt="名古屋大学">
 </header>
 
@@ -73,7 +82,7 @@
   <h2>神経について</h2>
   <p>下あごの骨の中には、細い管があり、その中を神経が通っています。ここでは「<b>下あごの神経</b>」とよびます。医学での名前は「<b>かしそう神経</b>」です。同じ管の中を、2本の血管（<b>かしそう動脈</b>と<b>かしそう静脈</b>）もいっしょに通っています。<sup class="cite"><a href="#ref-1">1</a></sup></p>
   <p>下あごの神経は、同じ側の下の歯と歯ぐきの感覚を伝えています。<sup class="cite"><a href="#ref-2">2</a></sup> あごの前の方で、この神経の枝が、骨の小さなあなから外に出ます。この枝を「<b>おとがい神経</b>」とよびます。下くちびるとあごの感覚を伝えています。<sup class="cite"><a href="#ref-3">3</a></sup></p>
-  <p>舌の感覚は、別の神経（<b>舌神経</b>）が伝えています。舌神経も、親知らずをぬくときに傷つくことがあります。<sup class="cite"><a href="#ref-4">4</a></sup></p>
+  <p>舌の感覚は、別の神経（<b>舌神経</b>）が伝えています。舌神経も、親知らずをぬくときに傷つくことがあります。<sup class="cite"><a href="#ref-4">4</a></sup> ずっと続く傷はまれで、1000人に1〜3人ほどです。<sup class="cite"><a href="#ref-5">5</a></sup> このモデルには、舌神経はありません。</p>
   <p>このモデルでは、<b>親知らずの根が、神経と動脈に巻き付いています</b>。</p>
 </section>
 
@@ -95,12 +104,12 @@
   <p>くちびるや顔は、今までどおり動かせます。<sup class="cite"><a href="#ref-2">2</a></sup></p>
   <p><b>一時的な場合：</b>感覚はもどります。多くは、数週間から数か月かかります。<sup class="cite"><a href="#ref-2">2</a></sup><br>
   <b>ずっと続く場合：</b>感覚が完全にはもどりません。<sup class="cite"><a href="#ref-2">2</a></sup></p>
-  <p><b>年れい：</b>24才くらいより上の人では、神経が傷つきやすくなります。<sup class="cite"><a href="#ref-2">2</a></sup> 年れいが高いほど、感覚が完全にはもどりにくくなります。<sup class="cite"><a href="#ref-5">5</a></sup> 5年間調べた小さな研究では、30才未満の人は全員、感覚が完全にもどりました。30才をこえる人では、8人中3人だけでした。<sup class="cite"><a href="#ref-6">6</a></sup> ただし、何才から変わるかは、研究によってちがいます。</p>
+  <p><b>年れい：</b>24才くらいより上の人では、神経が傷つきやすくなります。<sup class="cite"><a href="#ref-2">2</a></sup> 年れいが高いほど、感覚が完全にはもどりにくくなります。<sup class="cite"><a href="#ref-6">6</a></sup> 5年間調べた小さな研究では、30才未満の人は全員、感覚が完全にもどりました。30才をこえる人では、8人中3人だけでした。<sup class="cite"><a href="#ref-7">7</a></sup> ただし、何才から変わるかは、研究によってちがいます。</p>
 </section>
 
 <section class="risk">
   <h2>どのくらい起こりますか？</h2>
-  <p>根が神経に近い親知らずについて、16の研究をまとめた報告があります。結果は次のとおりです。<sup class="cite"><a href="#ref-7">7</a></sup></p>
+  <p>根が神経に近い親知らずについて、16の研究をまとめた報告があります。結果は次のとおりです。<sup class="cite"><a href="#ref-8">8</a></sup></p>
   <div class="stats">
     <div><strong>100人中 約7人</strong><span>歯を全部ぬいた後に、神経が傷ついた</span></div>
     <div><strong>100人中 約1人</strong><span>神経の傷が治らなかった</span></div>
@@ -109,25 +118,44 @@
 
 <section>
   <h2>3Dの検査が役に立つ理由</h2>
-  <p>ふつうの、口全体のレントゲン写真を「<b>パノラマ写真</b>」とよびます。英語では「OPG（オルソパントモグラム）」といいます。これは平らな写真です。平らな写真では、本当は根が神経にふれていなくても、ふれているように見えることがあります。<sup class="cite"><a href="#ref-8">8</a></sup> パノラマ写真にも、根が神経に近いことを知らせるサインがあります。<sup class="cite"><a href="#ref-9">9</a></sup></p>
-  <p>「<b>CBCT</b>」は、3Dのレントゲン検査です。「コーンビームCT」の略で、歯科用のCTです。根が本当に神経にふれているかがわかります。神経が根のどちら側にあるかもわかります。<sup class="cite"><a href="#ref-8">8</a></sup> 研究では、パノラマ写真よりもCBCTの方が、これをよく見分けられました。<sup class="cite"><a href="#ref-10">10</a></sup></p>
+  <p>ふつうの、口全体のレントゲン写真を「<b>パノラマ写真</b>」とよびます。英語では「OPG（オルソパントモグラム）」といいます。これは平らな写真です。平らな写真では、本当は根が神経にふれていなくても、ふれているように見えることがあります。<sup class="cite"><a href="#ref-9">9</a></sup> パノラマ写真にも、根が神経に近いことを知らせるサインがあります。<sup class="cite"><a href="#ref-10">10</a></sup></p>
+  <p>「<b>CBCT</b>」は、3Dのレントゲン検査です。「コーンビームCT」の略で、歯科用のCTです。根が本当に神経にふれているかがわかります。神経が根のどちら側にあるかもわかります。<sup class="cite"><a href="#ref-9">9</a></sup> 研究では、パノラマ写真よりもCBCTの方が、これをよく見分けられました。<sup class="cite"><a href="#ref-11">11</a></sup></p>
   <figure class="xray">
     <img src="../images/opg-vs-cbct.jpg" width="745" height="686" alt="よく似た2まいのパノラマ写真と、それぞれのCBCTの3D画像。上のCBCTでは歯は神経にふれていません。下のCBCTでは根が神経に巻き付いています。">
-    <figcaption>2まいのパノラマ写真（aとc）は、よく似ています。でも、CBCTで見ると、ちがいがわかります。上（b）：歯は神経にふれていません。下（d）：根が神経に巻き付いています。bとdでは、歯が黄色、神経がオレンジ色です。<sup class="cite"><a href="#ref-8">8</a></sup><span class="credit">写真：Rodriguez y Baena R, et al. J Clin Exp Dent. 2017, Figure 1. ライセンス：<a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a>。元の画像のまま使用。</span></figcaption>
+    <figcaption>2まいのパノラマ写真（aとc）は、よく似ています。でも、CBCTで見ると、ちがいがわかります。上（b）：歯は神経にふれていません。下（d）：根が神経に巻き付いています。bとdでは、歯が黄色、神経がオレンジ色です。<sup class="cite"><a href="#ref-9">9</a></sup> <span class="credit">写真：Rodriguez y Baena R, et al. J Clin Exp Dent. 2017, Figure 1. ライセンス：<a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a>。元の画像のまま使用。</span></figcaption>
   </figure>
-  <p>次の画像で、それぞれの検査がどう見えるかがわかります。ある人の下の親知らずの画像で、神経が根の間を通っています。<sup class="cite"><a href="#ref-11">11</a></sup></p>
+  <p>次の画像で、それぞれの検査がどう見えるかがわかります。ある人の下の親知らずの画像で、神経が根の間を通っています。<sup class="cite"><a href="#ref-12">12</a></sup></p>
   <figure class="xray">
     <img src="../images/opg-cbct-slices-3d.jpg" width="1064" height="1199" alt="上：口全体のパノラマ写真。中：下の親知らずとあごの骨のCBCTの断面のならび。下：CBCTから作った3Dの画像。白い親知らずの根の間を、黄色の神経が通っています。">
-    <figcaption><b>a：</b>パノラマ写真。口全体を1まいの平らな写真で見ます。<b>b：</b>CBCT。あごを、うすく切ったパンのような、たくさんの断面で見ます。骨の中の小さな黒い丸が、神経の通る管です。<b>c：</b>コンピューターで、CBCTの断面から3Dの画像を作れます。親知らずは白、神経は黄色です。<sup class="cite"><a href="#ref-11">11</a></sup><span class="credit">画像：Marquez Rocco V, et al. Clin Case Rep. 2026, Figure 1, 2（上の列）, 3. ライセンス：<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。切り取って1つにまとめ、a〜cの文字を加えました。</span></figcaption>
+    <figcaption><b>a：</b>パノラマ写真。口全体を1まいの平らな写真で見ます。<b>b：</b>CBCT。あごを、うすく切ったパンのような、たくさんの断面で見ます。骨の中の小さな黒い丸が、神経の通る管です。<b>c：</b>コンピューターで、CBCTの断面から3Dの画像を作れます。親知らずは白、神経は黄色です。<sup class="cite"><a href="#ref-12">12</a></sup> <span class="credit">画像：Marquez Rocco V, et al. Clin Case Rep. 2026, Figure 1, 2（上の列）, 3. ライセンス：<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。切り取って1つにまとめ、a〜cの文字を加えました。</span></figcaption>
   </figure>
-  <p>CBCTは、パノラマ写真よりも多くのエックス線を使います。そのため、パノラマ写真で根が神経に近いかもしれないときに使います。<sup class="cite"><a href="#ref-8">8</a></sup></p>
+  <p>CBCTは、パノラマ写真よりも多くのエックス線を使います。そのため、パノラマ写真で根が神経に近いかもしれないときに使います。<sup class="cite"><a href="#ref-9">9</a></sup></p>
+</section>
+
+<section>
+  <h2>歯をぬくことの危険</h2>
+  <p>ぬいた後は、いたみ、はれ、口が開けにくくなることがよくあります。多くは、短い間でよくなります。<sup class="cite"><a href="#ref-13">13</a></sup></p>
+  <p>それより少ないですが、ぬいた後のあなが感染することがあります。また、あなの血のかたまりが取れて、強くいたむこと（ドライソケット）もあります。<sup class="cite"><a href="#ref-13">13</a></sup> 上で説明したように、神経が傷つくこともあります。<sup class="cite"><a href="#ref-13">13</a></sup></p>
+</section>
+
+<section>
+  <h2>歯をぬかないことの危険</h2>
+  <p>残した親知らずが、後で問題を起こすことがあります。たとえば：<sup class="cite"><a href="#ref-14">14</a></sup></p>
+  <ul>
+    <li>親知らずの上の歯ぐきの感染</li>
+    <li>前の歯の歯周病やむし歯</li>
+    <li>前の歯の根がとけること</li>
+    <li>歯のまわりの<b>のうほう</b>（液体の入ったふくろ）</li>
+  </ul>
+  <p>ある研究のまとめでは、ぬいた親知らず100本のうち、約4本にのうほうがありました。<sup class="cite"><a href="#ref-15">15</a></sup> そのため、残した歯は定期的な検査が必要です。<sup class="cite"><a href="#ref-14">14</a></sup></p>
+  <p><b>一人一人の危険と、いちばんよい方法については、歯医者さんや口の手術の先生がくわしく話します。</b></p>
 </section>
 
 <section>
   <h2>歯医者さん・口の手術の先生が提案するかもしれない方法</h2>
   <ul>
     <li><b>ぬかずに、定期的に様子を見る</b>（問題が起きていない場合）。</li>
-    <li><b>コロネクトミー：</b>歯の上の部分だけを取り、神経を囲む根は残します。同じ報告では、この方法の後に神経が傷ついたのは、約200人に1人でした。<sup class="cite"><a href="#ref-7">7</a></sup> ただし、残した根が動くことがあります。まれに、後で根を取り出すこともあります。</li>
+    <li><b>コロネクトミー：</b>歯の上の部分だけを取り、神経を囲む根は残します。同じ報告では、この方法の後に神経が傷ついたのは、約200人に1人でした。<sup class="cite"><a href="#ref-8">8</a></sup> ただし、残した根が動くことがあります。まれに、後で根を取り出すこともあります。</li>
     <li><b>歯を全部ぬく。</b>多くの場合、「<b>外科的な歯のぬき方</b>」になります。歯ぐきを小さく切って開きます。骨が歯のじゃまになっているときは、その骨を少しけずることもあります。</li>
   </ul>
   <p>どの治りょうでも、始める前に、歯医者さんや口の手術の先生が、利点・危険・ほかの方法を、もっとくわしく説明します。</p>
@@ -151,18 +179,22 @@
     <li id="ref-2">Sarikov R, Juodzbalys G. Inferior alveolar nerve injury after mandibular third molar extraction: a literature review. J Oral Maxillofac Res. 2014;5(4):e1. <a href="https://doi.org/10.5037/jomr.2014.5401">doi.org/10.5037/jomr.2014.5401</a></li>
     <li id="ref-3">Juodzbalys G, Wang HL, Sabalys G. Anatomy of mandibular vital structures. Part II: mandibular incisive canal, mental foramen and associated neurovascular bundles in relation with dental implantology. J Oral Maxillofac Res. 2010;1(1):e3. <a href="https://doi.org/10.5037/jomr.2010.1103">doi.org/10.5037/jomr.2010.1103</a></li>
     <li id="ref-4">Renton T, Yilmaz Z. Profiling of patients presenting with posttraumatic neuropathy of the trigeminal nerve. J Orofac Pain. 2011;25(4):333-344. PMID 22247929. <a href="https://pubmed.ncbi.nlm.nih.gov/22247929/">pubmed.ncbi.nlm.nih.gov/22247929</a></li>
-    <li id="ref-5">Queral-Godoy E, Valmaseda-Castellón E, Berini-Aytés L, Gay-Escoda C. Incidence and evolution of inferior alveolar nerve lesions following lower third molar extraction. Oral Surg Oral Med Oral Pathol Oral Radiol Endod. 2005;99(3):259-264. <a href="https://doi.org/10.1016/j.tripleo.2004.06.001">doi.org/10.1016/j.tripleo.2004.06.001</a></li>
-    <li id="ref-6">Kjølle GK, Bjørnland T. Low risk of neurosensory dysfunction after mandibular third molar surgery in patients less than 30 years of age. A prospective study following removal of 1220 mandibular third molars. Oral Surg Oral Med Oral Pathol Oral Radiol. 2013;116(4):411-417. <a href="https://doi.org/10.1016/j.oooo.2013.06.024">doi.org/10.1016/j.oooo.2013.06.024</a></li>
-    <li id="ref-7">Rico-Barroso L, Barroso-Medel M, Gutiérrez-Pérez J, Serrera-Figallo M, Torres-Lagares D. Coronectomy as an alternative technique to complete extraction of mandibular third molars with risk of nerve injury. Med Oral Patol Oral Cir Bucal. 2026;31(1):e19-e30. <a href="https://doi.org/10.4317/medoral.27459">doi.org/10.4317/medoral.27459</a></li>
-    <li id="ref-8">Rodriguez y Baena R, Beltrami R, Tagliabo A, Rizzo S, Lupi SM. Differences between panoramic and Cone Beam-CT in the surgical evaluation of lower third molars. J Clin Exp Dent. 2017;9(2):e259-e265. <a href="https://doi.org/10.4317/jced.53234">doi.org/10.4317/jced.53234</a></li>
-    <li id="ref-9">Rood JP, Shehab BA. The radiological prediction of inferior alveolar nerve injury during third molar surgery. Br J Oral Maxillofac Surg. 1990;28(1):20-25. <a href="https://doi.org/10.1016/0266-4356(90)90005-6">doi.org/10.1016/0266-4356(90)90005-6</a></li>
-    <li id="ref-10">Reia VCB, de Toledo Telles-Araujo G, Peralta-Mamani M, Biancardi MR, Rubira CMF, Rubira-Bullen IRF. Diagnostic accuracy of CBCT compared to panoramic radiography in predicting IAN exposure: a systematic review and meta-analysis. Clin Oral Investig. 2021;25(8):4721-4733. <a href="https://doi.org/10.1007/s00784-021-03942-4">doi.org/10.1007/s00784-021-03942-4</a></li>
-    <li id="ref-11">Marquez Rocco V, Thor A, Hashim AA, Bellerud D. Root migration after coronectomy of a mandibular third molar with the inferior alveolar nerve passing between the roots: a case report. Clin Case Rep. 2026;14(10):e73673. <a href="https://doi.org/10.1002/ccr3.73673">doi.org/10.1002/ccr3.73673</a></li>
+    <li id="ref-5">Lee J, Feng B, Park JS, et al. Incidence of lingual nerve damage following surgical extraction of mandibular third molars with lingual flap retraction: a systematic review and meta-analysis. PLoS One. 2023;18(2):e0282185. <a href="https://doi.org/10.1371/journal.pone.0282185">doi.org/10.1371/journal.pone.0282185</a></li>
+    <li id="ref-6">Queral-Godoy E, Valmaseda-Castellón E, Berini-Aytés L, et al. Incidence and evolution of inferior alveolar nerve lesions following lower third molar extraction. Oral Surg Oral Med Oral Pathol Oral Radiol Endod. 2005;99(3):259-264. <a href="https://doi.org/10.1016/j.tripleo.2004.06.001">doi.org/10.1016/j.tripleo.2004.06.001</a></li>
+    <li id="ref-7">Kjølle GK, Bjørnland T. Low risk of neurosensory dysfunction after mandibular third molar surgery in patients less than 30 years of age. A prospective study following removal of 1220 mandibular third molars. Oral Surg Oral Med Oral Pathol Oral Radiol. 2013;116(4):411-417. <a href="https://doi.org/10.1016/j.oooo.2013.06.024">doi.org/10.1016/j.oooo.2013.06.024</a></li>
+    <li id="ref-8">Rico-Barroso L, Barroso-Medel M, Gutiérrez-Pérez J, et al. Coronectomy as an alternative technique to complete extraction of mandibular third molars with risk of nerve injury. Med Oral Patol Oral Cir Bucal. 2026;31(1):e19-e30. <a href="https://doi.org/10.4317/medoral.27459">doi.org/10.4317/medoral.27459</a></li>
+    <li id="ref-9">Rodriguez y Baena R, Beltrami R, Tagliabo A, et al. Differences between panoramic and Cone Beam-CT in the surgical evaluation of lower third molars. J Clin Exp Dent. 2017;9(2):e259-e265. <a href="https://doi.org/10.4317/jced.53234">doi.org/10.4317/jced.53234</a></li>
+    <li id="ref-10">Rood JP, Shehab BA. The radiological prediction of inferior alveolar nerve injury during third molar surgery. Br J Oral Maxillofac Surg. 1990;28(1):20-25. <a href="https://doi.org/10.1016/0266-4356(90)90005-6">doi.org/10.1016/0266-4356(90)90005-6</a></li>
+    <li id="ref-11">Reia VCB, de Toledo Telles-Araujo G, Peralta-Mamani M, et al. Diagnostic accuracy of CBCT compared to panoramic radiography in predicting IAN exposure: a systematic review and meta-analysis. Clin Oral Investig. 2021;25(8):4721-4733. <a href="https://doi.org/10.1007/s00784-021-03942-4">doi.org/10.1007/s00784-021-03942-4</a></li>
+    <li id="ref-12">Marquez Rocco V, Thor A, Hashim AA, et al. Root migration after coronectomy of a mandibular third molar with the inferior alveolar nerve passing between the roots: a case report. Clin Case Rep. 2026;14(10):e73673. <a href="https://doi.org/10.1002/ccr3.73673">doi.org/10.1002/ccr3.73673</a></li>
+    <li id="ref-13">Bailey E, Kashbour W, Shah N, et al. Surgical techniques for the removal of mandibular wisdom teeth. Cochrane Database Syst Rev. 2020;7(7):CD004345. <a href="https://doi.org/10.1002/14651858.CD004345.pub3">doi.org/10.1002/14651858.CD004345.pub3</a></li>
+    <li id="ref-14">Ghaeminia H, Nienhuijs ME, Toedtling V, et al. Surgical removal versus retention for the management of asymptomatic disease-free impacted wisdom teeth. Cochrane Database Syst Rev. 2020;5(5):CD003879. <a href="https://doi.org/10.1002/14651858.CD003879.pub5">doi.org/10.1002/14651858.CD003879.pub5</a></li>
+    <li id="ref-15">Mello FW, Melo G, Kammer PV, et al. Prevalence of odontogenic cysts and tumors associated with impacted third molars: a systematic review and meta-analysis. J Craniomaxillofac Surg. 2019;47(6):996-1002. <a href="https://doi.org/10.1016/j.jcms.2019.03.026">doi.org/10.1016/j.jcms.2019.03.026</a></li>
   </ol>
 </section>
   <!-- SHARED TEXT END -->
 
-  <p class="disclaimer">このページは、名古屋大学の研究のためのものです。</p>
+  <p class="disclaimer">このページは、名古屋大学の研究のためのものです。第1.0版（2026年10月16日）。</p>
 </main>
 
 <script src="../viewer.js"></script>

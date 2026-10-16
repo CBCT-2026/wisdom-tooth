@@ -1,6 +1,7 @@
 """Flesch-Kincaid Grade Level (FKGL) of the English patient text, per section and overall.
 
-Scores the webpage (en/index.html) and the pamphlet (pamphlet/en/index.html) as a reader sees them:
+Scores the webpage (en/index.html), the pamphlet (pamphlet/en/index.html) and the card for the 3D print
+(pamphlet/model/en/index.html) as a reader sees them:
 title, intro, numbered-dot notes, viewer tips, colour key, each text section and the disclaimer.
 The source list and the picture credit are left out (they are citations, not patient text).
 
@@ -67,6 +68,9 @@ def sections(path):
     buttons = main.select('.controls button, .ar-more button, .ar-btn')
     if buttons:
         res.append(('Buttons', [' '.join(b.get_text(' ').split()) + '.' for b in buttons]))
+    mnote = main.select_one('.model-note')
+    if mnote:
+        res.append(('Note on the 3D print', units(mnote)))
     legend = main.select_one('.legend')
     if legend:
         res.append(('Colour key', units(legend)))
@@ -88,7 +92,8 @@ def report():
     out = ['# Readability of the English patient text', '',
            'Primary measure: Flesch-Kincaid Grade Level (FKGL), textstat 0.7.3. Target: grade 6 or below.',
            'Each heading, paragraph and bullet is counted as one sentence. Source list and picture credit excluded.', '']
-    for name, path in [('Webpage', ROOT / 'en/index.html'), ('Pamphlet', ROOT / 'pamphlet/en/index.html')]:
+    for name, path in [('Webpage', ROOT / 'en/index.html'), ('Pamphlet', ROOT / 'pamphlet/en/index.html'),
+                       ('Card for the 3D print', ROOT / 'pamphlet/model/en/index.html')]:
         secs = sections(path)
         out += [f'## {name}', '', '| Section | Words | Sentences | FKGL | Reading Ease |', '|---|---:|---:|---:|---:|']
         for s, lines in secs:

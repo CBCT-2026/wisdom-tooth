@@ -1,3 +1,16 @@
+// Light/dark toggle. The label names the mode a tap switches to.
+const themeBtn = document.getElementById('theme');
+const isDark = () => (document.documentElement.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')) === 'dark';
+const showTheme = () => { const d = isDark(); themeBtn.textContent = d ? themeBtn.dataset.light : themeBtn.dataset.dark; themeBtn.setAttribute('aria-pressed', d); };
+themeBtn.addEventListener('click', () => {
+  const t = isDark() ? 'light' : 'dark';
+  document.documentElement.dataset.theme = t;
+  try { localStorage.setItem('theme', t); } catch (e) {}
+  showTheme();
+});
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', showTheme);
+showTheme();
+
 // Labels, preset views and the tooth-removal animation for the 3D model.
 const mv = document.getElementById('mv');
 
