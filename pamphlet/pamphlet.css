@@ -18,7 +18,7 @@
 .pamphlet .legend { margin: 6px 0; }
 .parts { border-top: 0; padding: 4px 0; }
 .parts > h2, .removal > h2 { margin-bottom: 4px; }
-.parts { columns: 4; column-gap: 6px; }
+.parts { columns: 3; column-gap: 6px; column-fill: balance; }
 .parts > h2 { column-span: all; }
 .part { background: var(--card); border-radius: 8px; padding: 6px 8px; margin-bottom: 6px; break-inside: avoid; display: inline-block; width: 100%; }
 .part h3 { font-size: 13px; margin: 0 0 2px; line-height: 1.25; }
@@ -43,7 +43,7 @@
   .sheet-head .logo { height: 12mm; }
   .important { margin: 0 0 2mm; padding: 1.5mm 3mm; }
   .important h2 { font-size: 10.5pt; }
-  .model-shots img { height: 34mm; object-fit: contain; }
+  .model-shots img { height: 38mm; object-fit: contain; }
   .model-shots figcaption { font-size: 8pt; padding: 0.5mm 2mm 1mm; }
   .pamphlet .legend { font-size: 8pt; margin: 1mm 0; gap: 2px 14px; }
   .pamphlet .legend .dot { width: 9px; height: 9px; }
