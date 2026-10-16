@@ -14,10 +14,11 @@
 @page { size: A4; margin: 12mm 12mm 12mm; }
 @media print {
   .pamphlet { font-size: 9.3pt; line-height: 1.42; }
+  html[lang="ja"] .pamphlet { line-height: 1.36; }
   .pamphlet main { max-width: none; padding: 0; column-count: 2; column-gap: 8mm; }
   .pamphlet .brand, .pamphlet h1, .model-shots, .key, .pamphlet .legend { column-span: all; }
   .pamphlet h1 { font-size: 16pt; margin: 2px 0 8px; }
-  .model-shots { max-width: 150mm; }
+
   .pamphlet section { padding: 6px 0; break-inside: avoid; }
   .pamphlet h2 { font-size: 11pt; margin-bottom: 2px; }
   .pamphlet p { margin: 0 0 5px; }
@@ -27,9 +28,11 @@
   .pamphlet .stats strong { font-size: 11pt; }
   .pamphlet .stats span { font-size: 8.5pt; }
   .pamphlet .xray { margin: 6px 0; break-inside: avoid; }
+  .pamphlet .xray img { width: 55%; margin: 0 auto; }
+  .pamphlet .model-shots { max-width: 105mm; }
   .pamphlet .xray figcaption { font-size: 8.5pt; }
   .pamphlet .refs { break-inside: auto; }
-  .pamphlet .refs ol { font-size: 7pt; }
+  .pamphlet .refs ol { font-size: 6.8pt; line-height: 1.3; }
   .pamphlet .refs li { margin-bottom: 2px; }
   .pamphlet .disclaimer { font-size: 8pt; padding-top: 6px; }
   .pamphlet a { color: inherit; text-decoration: none; }
