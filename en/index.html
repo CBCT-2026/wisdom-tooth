@@ -18,12 +18,12 @@
 <main>
   <h1>Your lower wisdom tooth and the nerve beside it</h1>
 
-  <!-- MODEL: replace models/placeholder.glb with the final model (keep it under 5 MB). -->
+  <!-- MODEL: models/wisdom-tooth.glb (keep it under 5 MB). -->
   <model-viewer id="mv"
-    src="../models/placeholder.glb"
+    src="../models/wisdom-tooth.glb"
     alt="3D model of an impacted lower wisdom tooth whose roots wrap around the nerve and artery"
     ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
-    camera-controls camera-orbit="45deg 70deg auto" touch-action="pan-y" interaction-prompt="auto"
+    camera-controls camera-orbit="90deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
     shadow-intensity="1" exposure="1" loading="eager">
     <button slot="ar-button" class="ar-btn">View in your space (AR)</button>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
@@ -31,9 +31,9 @@
   <p class="hint">Drag to turn the model. Pinch to zoom. Tap <b>View in your space</b> to place it on the table in front of you.</p>
 
   <ul class="legend" aria-label="Colour key">
-    <li><span class="dot" style="background:#f2ede0"></span>Wisdom tooth</li>
-    <li><span class="dot" style="background:#f9cc26"></span>Nerve</li>
-    <li><span class="dot" style="background:#d92626"></span>Artery</li>
+    <li><span class="dot" style="background:#2973b8"></span>Wisdom tooth</li>
+    <li><span class="dot" style="background:#ccc602"></span>Nerve and artery (in their canal)</li>
+    <li><span class="dot" style="background:#fff6ef"></span>Jaw bone and other teeth</li>
   </ul>
 
   <!-- SHARED TEXT: copy word for word into the pamphlet and the card beside the printed model. -->

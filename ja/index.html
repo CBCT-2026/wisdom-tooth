@@ -18,12 +18,12 @@
 <main>
   <h1>下顎の親知らずと、そのそばを通る神経</h1>
 
-  <!-- MODEL: models/placeholder.glb を完成版のモデルに差し替えてください（5 MB以下）。 -->
+  <!-- MODEL: models/wisdom-tooth.glb（5 MB以下）。 -->
   <model-viewer id="mv"
-    src="../models/placeholder.glb"
+    src="../models/wisdom-tooth.glb"
     alt="根が神経と動脈に巻き付いている、埋伏した下顎の親知らずの3Dモデル"
     ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
-    camera-controls camera-orbit="45deg 70deg auto" touch-action="pan-y" interaction-prompt="auto"
+    camera-controls camera-orbit="90deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
     shadow-intensity="1" exposure="1" loading="eager">
     <button slot="ar-button" class="ar-btn">AR表示（目の前の空間に置く）</button>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
@@ -31,9 +31,9 @@
   <p class="hint">ドラッグで回転、ピンチで拡大・縮小できます。<b>AR表示</b>をタップすると、目の前の机の上にモデルを置けます。</p>
 
   <ul class="legend" aria-label="色の説明">
-    <li><span class="dot" style="background:#f2ede0"></span>親知らず</li>
-    <li><span class="dot" style="background:#f9cc26"></span>神経</li>
-    <li><span class="dot" style="background:#d92626"></span>動脈</li>
+    <li><span class="dot" style="background:#2973b8"></span>親知らず</li>
+    <li><span class="dot" style="background:#ccc602"></span>神経・動脈（下顎管）</li>
+    <li><span class="dot" style="background:#fff6ef"></span>顎の骨とほかの歯</li>
   </ul>
 
   <!-- 共通テキスト：パンフレットと3Dプリントモデル横のカードに一字一句同じ文章を使用してください。 -->
