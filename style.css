@@ -65,7 +65,9 @@ model-viewer.labels-off .hotspot { display: none; }
 .controls .play { flex-basis: 100%; background: var(--ar); color: var(--ar-text); border: 0; }
 .cite { font-size: .7em; line-height: 0; margin-left: 1px; }
 .cite a { text-decoration: none; }
-.xray { margin: 12px 0; }
+.xray, .areas { margin: 12px 0; }
+.areas img { width: 100%; height: auto; border-radius: 10px; display: block; background: #fff; }
+.areas figcaption { font-size: 14px; color: var(--muted); margin-top: 6px; }
 .xray img { width: 100%; height: auto; border-radius: 10px; display: block; }
 .xray figcaption { font-size: 14px; color: var(--muted); margin-top: 6px; }
 .credit { overflow-wrap: anywhere; }
