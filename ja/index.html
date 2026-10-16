@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>親知らずと神経</title>
+<meta name="description" content="埋伏した下顎の親知らずを抜くと、なぜ隣の神経が傷つく可能性があるのかを示す3Dモデルです。">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="../style.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+<header class="bar">
+  <span class="brand">名古屋大学</span>
+  <a class="lang" href="../en/" lang="en" hreflang="en">English</a>
+</header>
+
+<main>
+  <h1>下顎の親知らずと、そのそばを通る神経</h1>
+
+  <!-- MODEL: models/placeholder.glb を完成版のモデルに差し替えてください（5 MB以下）。 -->
+  <model-viewer id="mv"
+    src="../models/placeholder.glb"
+    alt="根が神経と動脈に巻き付いている、埋伏した下顎の親知らずの3Dモデル"
+    ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
+    camera-controls camera-orbit="45deg 70deg auto" touch-action="pan-y" interaction-prompt="auto"
+    shadow-intensity="1" exposure="1" loading="eager">
+    <button slot="ar-button" class="ar-btn">AR表示（目の前の空間に置く）</button>
+    <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
+  </model-viewer>
+  <p class="hint">ドラッグで回転、ピンチで拡大・縮小できます。<b>AR表示</b>をタップすると、目の前の机の上にモデルを置けます。</p>
+
+  <ul class="legend" aria-label="色の説明">
+    <li><span class="dot" style="background:#f2ede0"></span>親知らず</li>
+    <li><span class="dot" style="background:#f9cc26"></span>神経</li>
+    <li><span class="dot" style="background:#d92626"></span>動脈</li>
+  </ul>
+
+  <!-- 共通テキスト：パンフレットと3Dプリントモデル横のカードに一字一句同じ文章を使用してください。 -->
+  <section>
+    <h2>どのような状態ですか？</h2>
+    <p>下顎の親知らずが埋伏しています。歯ぐきと骨の下に埋まっていて、正しく生えてくることができない状態です。</p>
+  </section>
+
+  <section>
+    <h2>神経について</h2>
+    <p>下顎の骨の中には<b>下歯槽神経</b>が通っており、そのそばに動脈があります。この神経は、同じ側の下唇、あご、下の歯と歯ぐきの感覚を担っています。</p>
+    <p>この例では、<b>親知らずの根が神経と動脈に巻き付いています</b>。</p>
+  </section>
+
+  <section>
+    <h2>なぜ抜歯で神経が傷つくことがあるのか</h2>
+    <p>歯を抜くには、根を骨から引き抜く必要があります。根が神経を取り囲むように曲がっているため、根を取り出す際に神経が圧迫されたり、引き伸ばされたり、切れたりすることがあります。そばにある動脈から出血することもあります。</p>
+  </section>
+
+  <section>
+    <h2>神経が傷つくとどうなるか</h2>
+    <p>同じ側の下唇、あご、歯、歯ぐきに、しびれ、ピリピリ感、感覚の変化、ときに痛みが生じます。唇や顔の動きには影響しません。</p>
+    <p><b>一時的な場合：</b>通常、数週間から数か月で感覚が戻ります。<br>
+    <b>永久的な場合：</b>感覚が完全には戻りません。</p>
+  </section>
+
+  <section class="risk">
+    <h2>どのくらいの頻度で起こるのか</h2>
+    <p>根が神経に近い親知らずについて、16件の研究をまとめた報告では、次のような結果でした。</p>
+    <div class="stats">
+      <div><strong>100人中 約7人</strong><span>歯を全部抜いた後に神経損傷が生じた</span></div>
+      <div><strong>100人中 約1人</strong><span>永久的な損傷が残った</span></div>
+    </div>
+    <p class="small">出典：Rico-Barroso L, et al. Med Oral Patol Oral Cir Bucal. 2026;31(1):e19-e30. <a href="https://doi.org/10.4317/medoral.27459">doi.org/10.4317/medoral.27459</a></p>
+  </section>
+
+  <section>
+    <h2>担当医と相談できる選択肢</h2>
+    <ul>
+      <li><b>抜かずに定期的に経過をみる</b>（問題を起こしていない場合）。</li>
+      <li><b>歯冠切除術（コロネクトミー）：</b>歯の頭の部分だけを取り除き、神経を取り囲む根は残します。同じ報告では、コロネクトミー後の神経損傷は約200人に1人でしたが、残した根が動くことがあり、まれに後から取り除く必要があります。</li>
+      <li><b>歯を全部抜く。</b></li>
+    </ul>
+    <p>歯科用CT（CBCT）で撮影すると、神経の正確な位置を確認できます。</p>
+  </section>
+
+  <section>
+    <h2>担当医に聞いてみましょう</h2>
+    <ul>
+      <li>私の歯の根は、神経にどのくらい近いですか？</li>
+      <li>私の場合、神経が傷つく可能性はどのくらいですか？</li>
+      <li>私にコロネクトミーは適していますか？</li>
+      <li>抜かずにおくと、どうなりますか？</li>
+    </ul>
+  </section>
+
+  <p class="disclaimer">このページは名古屋大学の研究および一般的な情報提供のためのものです。ご自身の歯についての助言ではありません。ご自身の状況については、担当の歯科医師・口腔外科医にご相談ください。</p>
+</main>
+
+<script>
+  // モデルの読み込みが終わったら進捗バーを隠します。
+  const mv = document.getElementById('mv');
+  mv.addEventListener('progress', e => {
+    const bar = mv.querySelector('.progress');
+    bar.querySelector('.progress-fill').style.width = (e.detail.totalProgress * 100) + '%';
+    if (e.detail.totalProgress === 1) bar.classList.add('done');
+  });
+</script>
+</body>
+</html>
