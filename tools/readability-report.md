@@ -13,6 +13,7 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Viewer and AR tips | 98 | 9 | 2.8 | 94.25 |
 | Buttons | 35 | 5 | 0.1 | 106.67 |
 | Colour key | 11 | 2 | -1.7 | 116.65 |
+| Every person is different | 57 | 5 | 5.4 | 76.82 |
 | What is the problem? | 50 | 6 | 1.8 | 96.89 |
 | The nerve | 137 | 12 | 3.0 | 93.74 |
 | Why taking the tooth out can hurt the nerve | 77 | 7 | 1.7 | 102.61 |
@@ -21,16 +22,18 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Why a 3D scan can help | 272 | 30 | 0.9 | 104.54 |
 | Choices your dentist/surgeon might offer | 115 | 12 | 3.5 | 87.11 |
 | Questions you could ask your dentist/surgeon | 46 | 6 | 1.6 | 97.5 |
-| Disclaimer | 33 | 4 | 4.2 | 79.97 |
-| **Overall** | **1304** | **145** | **2.1** | **96.18** |
+| Disclaimer | 10 | 1 | 4.8 | 78.25 |
+| **Overall** | **1338** | **147** | **2.1** | **96.08** |
 
 ## Pamphlet
 
 | Section | Words | Sentences | FKGL | Reading Ease |
 |---|---:|---:|---:|---:|
 | Title | 9 | 1 | 4.4 | 79.26 |
-| Numbered key | 29 | 7 | 3.7 | 75.77 |
 | Colour key | 11 | 2 | -1.7 | 116.65 |
+| Every person is different | 57 | 5 | 5.4 | 76.82 |
+| Parts of the model | 220 | 27 | 1.7 | 97.09 |
+| How the tooth comes out | 18 | 3 | -1.5 | 116.15 |
 | What is the problem? | 50 | 6 | 1.8 | 96.89 |
 | The nerve | 137 | 12 | 3.0 | 93.74 |
 | Why taking the tooth out can hurt the nerve | 77 | 7 | 1.7 | 102.61 |
@@ -39,6 +42,6 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Why a 3D scan can help | 272 | 30 | 0.9 | 104.54 |
 | Choices your dentist/surgeon might offer | 115 | 12 | 3.5 | 87.11 |
 | Questions you could ask your dentist/surgeon | 46 | 6 | 1.6 | 97.5 |
-| Disclaimer | 33 | 4 | 4.2 | 79.97 |
-| **Overall** | **952** | **109** | **2.0** | **96.48** |
+| Disclaimer | 10 | 1 | 4.8 | 78.25 |
+| **Overall** | **1195** | **134** | **2.0** | **96.28** |
 

@@ -4,7 +4,7 @@ Webpage hosted augmented reality model demonstrating an impacted lower left thir
 ## Patient text, pamphlet and sources
 
 - The patient text is written once in `content/shared-en.html` and `content/shared-ja.html`, with citations as `[[key]]` (keys in `content/references.json`). Run `python3 tools/build.py` to copy it into the webpages (`en/`, `ja/`) and the pamphlet (`pamphlet/en/`, `pamphlet/ja/`), with numbered citations and a source list.
-- Printable pamphlets: `pamphlet/wisdom-tooth-pamphlet-EN.pdf` and `-JA.pdf` (A4, 2 pages), printed from the pamphlet pages.
+- Information sheet: `pamphlet/wisdom-tooth-pamphlet-EN.pdf` and `-JA.pdf` (one A4 sheet, both sides, colour), printed from the pamphlet pages with Chrome print-to-PDF. It uses the same text as the webpage; the numbered parts and their notes are copied from the webpage dots by `tools/build.py`. Model pictures (`images/model-*.jpg`, `images/removal-*.jpg`) are renders of the same 3D model.
 - Reading level: run `python3 tools/readability.py` for the Flesch-Kincaid Grade Level of every English section (webpage and pamphlet), saved to `tools/readability-report.md`. Every section is grade 6 or below. Japanese uses only kanji taught by grade 6 (MEXT 2020 list).
 
 ## 3D models

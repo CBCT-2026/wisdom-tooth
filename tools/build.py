@@ -46,6 +46,28 @@ def inject(path, block):
                lambda m: m.group(1) + block + '\n' + m.group(2).lstrip('\n'), s, flags=re.S)
     path.write_text(s)
 
+def block(path, name, html):
+    s = path.read_text()
+    s = re.sub(rf'(<!-- {name} START[^>]*-->\n).*?(\s*<!-- {name} END -->)',
+               lambda m: m.group(1) + html + '\n' + m.group(2).lstrip('\n'), s, flags=re.S)
+    path.write_text(s)
+
+
+def key(lang):
+    """The numbered parts with their notes, copied from the dots on the webpage."""
+    page = (ROOT / f'{lang}/index.html').read_text()
+    items = []
+    for num, title, notes in re.findall(r'class="hotspot" slot="hotspot-(\d+)".*?<span class="label">(.*?)</span><span class="note">(.*?)</span></button>', page):
+        lis = ''.join(f'<li>{n}</li>' for n in re.findall(r'<span>(.*?)</span>', notes))
+        items.append(f'    <div class="part"><h3><span class="num">{num}</span>{title}</h3><ul>{lis}</ul></div>')
+    return '\n'.join(items)
+
+
 for lang in ('en', 'ja'):
     inject(ROOT / f'{lang}/index.html', render(lang, '../images'))
-    inject(ROOT / f'pamphlet/{lang}/index.html', render(lang, '../../images'))
+    text = render(lang, '../../images')
+    important = re.search(r'<section class="important">.*?</section>\n*', text, flags=re.S)
+    sheet = ROOT / f'pamphlet/{lang}/index.html'
+    inject(sheet, text.replace(important.group(0), ''))
+    block(sheet, 'IMPORTANT', important.group(0).strip())
+    block(sheet, 'KEY', key(lang))

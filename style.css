@@ -78,3 +78,6 @@ model-viewer.labels-off .hotspot { display: none; }
 main p, main li, figcaption { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 main ul, main ol, .info, .info li, .refs li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .controls, .ar-more { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
+.important { background: #fff7e0; border: 2px solid #d9a400; border-radius: 12px; padding: 12px 14px; margin: 12px 0; }
+.important h2 { color: #6b4e00; }
+.important p { margin: 0; color: #231f20; }
