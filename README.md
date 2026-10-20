@@ -1,5 +1,5 @@
 # wisdom-tooth
-Webpage hosted augmented reality model demonstrating an impacted lower left third molar with roots that wrap around the left inferior alveolar nerve. Used for patient education.
+AR web page: a web-hosted augmented reality model demonstrating an impacted lower left third molar with roots that wrap around the left inferior alveolar nerve. Used for patient education.
 
 ## Patient text, 2D information sheet and sources
 
