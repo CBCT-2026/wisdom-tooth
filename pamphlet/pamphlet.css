@@ -18,7 +18,7 @@
 .pamphlet .legend { margin: 6px 0; }
 .model-note { background: var(--card); border-left: 4px solid var(--accent); border-radius: 6px; padding: 6px 10px; margin: 8px 0; }
 .parts { border-top: 0; padding: 4px 0; }
-.parts > h2, .removal > h2 { margin-bottom: 4px; }
+.parts > h2 { margin-bottom: 4px; }
 .parts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .parts > h2 { grid-column: 1 / -1; }
 .parts .col { display: flex; flex-direction: column; gap: 6px; }
@@ -27,13 +27,6 @@
 .part .num { display: inline-block; width: 18px; height: 18px; line-height: 18px; border-radius: 50%; text-align: center;
   background: var(--accent); color: #fff; font-size: 11px; margin-right: 5px; }
 .part ul { margin: 0; padding-left: 1.05em; font-size: 12px; line-height: 1.35; }
-.removal { border-top: 0; padding: 4px 0; }
-.removal .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.removal figure { margin: 0; background: var(--card); border-radius: 8px; overflow: hidden; }
-.removal img { width: 100%; display: block; }
-.removal figcaption { font-size: 12px; padding: 2px 8px 5px; }
-.step { display: inline-block; width: 16px; height: 16px; line-height: 16px; border-radius: 50%; text-align: center;
-  background: var(--accent); color: #fff; font-size: 10px; margin-right: 5px; font-weight: 700; }
 @page { size: A4; margin: 8mm; }
 @media print {
   .pamphlet { font-size: 8.5pt; line-height: 1.28; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -55,12 +48,7 @@
   .part h3 { font-size: 7.8pt; }
   .part .num { width: 12px; height: 12px; line-height: 12px; font-size: 7pt; }
   .part ul { font-size: 7.3pt; line-height: 1.28; }
-  .removal { padding: 0 0 1mm; }
-  .removal { break-inside: avoid; }
-  .removal .steps { gap: 1.5mm; }
-  .removal img { height: 23mm; object-fit: cover; }
-  .removal figcaption { font-size: 7pt; line-height: 1.2; padding: 0.5mm 1.5mm 1mm; }
-  .pamphlet section { padding: 1.2mm 0; }
+            .pamphlet section { padding: 1.2mm 0; }
   .pamphlet h2 { break-after: avoid; }
   .pamphlet li, .pamphlet .stats { break-inside: avoid; }
   .pamphlet section.refs { break-inside: auto; }

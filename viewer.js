@@ -11,7 +11,7 @@ themeBtn.addEventListener('click', () => {
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', showTheme);
 showTheme();
 
-// Labels, preset views and the tooth-removal animation for the 3D model.
+// Labels and preset views for the 3D model.
 const mv = document.getElementById('mv');
 
 mv.addEventListener('progress', e => {
@@ -59,46 +59,6 @@ viewButtons.forEach(b => b.addEventListener('click', () => {
   mv.cameraTarget = b.dataset.target || 'auto auto auto';
   viewButtons.forEach(o => o.setAttribute('aria-pressed', o === b));
 }));
-
-// Play the extraction once, then return to the start.
-const play = document.getElementById('play');
-// Step captions during the animation (same words as the pictures on the information sheet).
-const stepText = document.getElementById('anim-step');
-const STEPS = [[0, 'step1'], [2.0, 'step2'], [4.6, 'step3']];
-function showStep(t) {
-  let key = null;
-  for (const [start, k] of STEPS) if (t >= start) key = k;
-  const text = key ? play.dataset[key] : '';
-  if (stepText.textContent !== text) stepText.textContent = text;
-  stepText.hidden = !text;
-}
-function stop() {
-  stepText.hidden = true;
-  mv.pause();
-  mv.currentTime = 0;
-  mv.classList.remove('playing');
-  play.disabled = false;
-}
-play.addEventListener('click', () => {
-  // Move in close so the two pieces can be seen.
-  mv.cameraOrbit = '95deg 72deg 0.12m';
-  mv.cameraTarget = '-0.031m 0.002m -0.06m';
-  viewButtons.forEach(o => o.setAttribute('aria-pressed', false));
-  mv.animationName = 'extraction';
-  mv.currentTime = 0;
-  mv.classList.add('playing');
-  play.disabled = true;
-  mv.play();
-  let last = 0;
-  const watch = () => {
-    const t = mv.currentTime;
-    if (t < last || t >= mv.duration - 0.05) return stop();
-    showStep(t);
-    last = t;
-    requestAnimationFrame(watch);
-  };
-  requestAnimationFrame(watch);
-});
 
 // Show a plain message in the viewer box if 3D cannot be shown, instead of an empty box.
 function showProblem(text) {
