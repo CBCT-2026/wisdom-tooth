@@ -3,7 +3,7 @@
 Primary measure: Flesch-Kincaid Grade Level (FKGL), textstat 0.7.3. Target: grade 6 or below.
 Each heading, paragraph and bullet is counted as one sentence. Source list and picture credit excluded.
 
-## Webpage
+## AR web page
 
 | Section | Words | Sentences | FKGL | Reading Ease |
 |---|---:|---:|---:|---:|
