@@ -82,6 +82,6 @@ for lang in ('en', 'ja'):
     # The information sheet and the card that goes with the 3D print get the same text and key.
     for sheet, img in ((ROOT / f'pamphlet/{lang}/index.html', text),
                        (ROOT / f'pamphlet/model/{lang}/index.html', render(lang, '../../../images'))):
-        inject(sheet, img.replace(important.group(0), ''))
-        block(sheet, 'IMPORTANT', important.group(0).strip())
+        inject(sheet, img.replace(important.group(0), '') if important else img)
+        block(sheet, 'IMPORTANT', important.group(0).strip() if important else '')
         block(sheet, 'KEY', key(lang))
