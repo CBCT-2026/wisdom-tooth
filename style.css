@@ -92,3 +92,4 @@ main ul, main ol, .info, .info li, .refs li { text-align: justify; hyphens: auto
 .important h2 { color: #6b4e00; }
 .important p { margin: 0; color: #231f20; }
 
+.stats .icons { display: block; width: 100%; max-width: 260px; margin: 0 0 6px; }
