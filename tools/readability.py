@@ -92,7 +92,7 @@ def report():
     out = ['# Readability of the English patient text', '',
            'Primary measure: Flesch-Kincaid Grade Level (FKGL), textstat 0.7.3. Target: grade 6 or below.',
            'Each heading, paragraph and bullet is counted as one sentence. Source list and picture credit excluded.', '']
-    for name, path in [('Webpage', ROOT / 'en/index.html'), ('Pamphlet', ROOT / 'pamphlet/en/index.html'),
+    for name, path in [('Webpage', ROOT / 'en/index.html'), ('2D information sheet', ROOT / 'pamphlet/en/index.html'),
                        ('Card for the 3D print', ROOT / 'pamphlet/model/en/index.html')]:
         secs = sections(path)
         out += [f'## {name}', '', '| Section | Words | Sentences | FKGL | Reading Ease |', '|---|---:|---:|---:|---:|']

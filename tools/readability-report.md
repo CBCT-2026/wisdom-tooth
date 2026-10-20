@@ -21,7 +21,7 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Disclaimer | 15 | 2 | 5.0 | 72.32 |
 | **Overall** | **962** | **100** | **2.3** | **95.57** |
 
-## Pamphlet
+## 2D information sheet
 
 | Section | Words | Sentences | FKGL | Reading Ease |
 |---|---:|---:|---:|---:|

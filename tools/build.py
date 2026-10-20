@@ -1,4 +1,4 @@
-"""Insert the shared patient text (content/shared-*.html) into the webpage and the pamphlet.
+"""Insert the shared patient text (content/shared-*.html) into the webpage and the 2D information sheet.
 
 Citations are written as [[key]] (keys in content/references.json). They are numbered
 in order of first use and a reference list is added after the text.

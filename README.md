@@ -1,14 +1,14 @@
 # wisdom-tooth
 Webpage hosted augmented reality model demonstrating an impacted lower left third molar with roots that wrap around the left inferior alveolar nerve. Used for patient education.
 
-## Patient text, pamphlet and sources
+## Patient text, 2D information sheet and sources
 
 - The patient text is written once in `content/shared-en.html` and `content/shared-ja.html`, with citations as `[[key]]` (keys in `content/references.json`). Run `python3 tools/build.py` to copy it into the webpages (`en/`, `ja/`) and the pamphlet (`pamphlet/en/`, `pamphlet/ja/`), with numbered citations and a source list.
-- Information sheet: `pamphlet/wisdom-tooth-pamphlet-EN.pdf` and `-JA.pdf` (one A4 sheet, both sides, colour), printed from the pamphlet pages with Chrome print-to-PDF. It uses the same text as the webpage; the numbered parts and their notes are copied from the webpage dots by `tools/build.py`. Model pictures (`images/model-*.jpg`) are renders of the same 3D model.
+- Information sheet: `pamphlet/wisdom-tooth-information-sheet-EN.pdf` and `-JA.pdf` (one A4 sheet, both sides, colour), printed from the information sheet pages (in the `pamphlet/` folder) with Chrome print-to-PDF. It uses the same text as the webpage; the numbered parts and their notes are copied from the webpage dots by `tools/build.py`. Model pictures (`images/model-*.jpg`) are renders of the same 3D model.
 - Card for the 3D print: `pamphlet/model/en/`, `pamphlet/model/ja/` (PDFs `pamphlet/model/wisdom-tooth-3d-print-card-EN.pdf` and `-JA.pdf`). It is the information sheet with the three model pictures replaced by a pointer to the numbered stickers on the print, so all three formats carry the same text, key and pictures of the tooth coming out. `tools/build.py` fills it from the same sources.
 - Stickers for the 3D print: `pamphlet/model/stickers.html` (PDF `pamphlet/model/wisdom-tooth-3d-print-stickers.pdf`): placement guide plus numbered stickers 1 to 7 in 6, 8 and 10 mm. The print has no tongue (lingual) nerve, so it has no sticker; the text covers it.
 - Version: every page and sheet ends with its version and date. Tagged releases on GitHub freeze each version.
-- Reading level: run `python3 tools/readability.py` for the Flesch-Kincaid Grade Level of every English section (webpage and pamphlet), saved to `tools/readability-report.md`. Every section is grade 6 or below. Japanese uses only kanji taught by grade 6 (MEXT 2020 list).
+- Reading level: run `python3 tools/readability.py` for the Flesch-Kincaid Grade Level of every English section (webpage and information sheet), saved to `tools/readability-report.md`. Every section is grade 6 or below. Japanese uses only kanji taught by grade 6 (MEXT 2020 list).
 
 ## 3D models
 
