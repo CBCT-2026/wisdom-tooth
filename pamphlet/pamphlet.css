@@ -27,23 +27,34 @@
 .part .num { display: inline-block; width: 18px; height: 18px; line-height: 18px; border-radius: 50%; text-align: center;
   background: var(--accent); color: #fff; font-size: 11px; margin-right: 5px; }
 .part ul { margin: 0; padding-left: 1.05em; font-size: 12px; line-height: 1.35; }
+.visual { display: grid; grid-template-columns: repeat(10, 1fr); gap: 8px;
+  grid-template-areas: "w w w w w w c c c c" "w w w w w w k k k k" "b b b b b l l l l l"; }
+.visual .v-w { grid-area: w; } .visual .v-c { grid-area: c; } .visual .v-key { grid-area: k; }
+.visual .v-b { grid-area: b; } .visual .v-l { grid-area: l; }
+.visual figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+.visual img { width: 100%; flex: 1 1 auto; object-fit: contain; display: block; min-height: 0; }
+.visual figcaption { font-size: 13px; font-weight: 600; color: var(--accent); padding: 2px 8px 5px; }
+.visual .v-key .legend { margin: 0 0 4px; }
 .names { list-style: none; margin: 0; padding: 0; text-align: left; display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px 12px; font-size: 13px; }
 .names .num, .part .num { display: inline-block; width: 18px; height: 18px; line-height: 18px; border-radius: 50%; text-align: center;
   background: var(--accent); color: #fff; font-size: 11px; margin-right: 5px; }
 .parts:has(.names) { display: block; }
 @page { size: A4; margin: 7mm; }
 @media print {
-  .pamphlet { font-size: 9.4pt; line-height: 1.3; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pamphlet { font-size: 7.9pt; line-height: 1.22; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   html[lang="ja"] .pamphlet { line-height: 1.3; }
-  .pamphlet main { max-width: none; padding: 0; column-count: 2; column-gap: 6mm; }
-  .sheet-head, .important, .model-shots, .model-note, .pamphlet .legend, .parts { column-span: all; }
+  .pamphlet main { max-width: none; padding: 0; column-count: 3; column-gap: 5mm; }
+  .sheet-head, .important, .visual, .model-note { column-span: all; }
   .sheet-head { margin: 0 0 2mm; padding: 2mm 3mm 2mm 4mm; }
   .sheet-head h1 { font-size: 15pt; }
   .sheet-head .logo { height: 12mm; }
   .important { margin: 0 0 2mm; padding: 1.5mm 3mm; }
   .important h2 { font-size: 10.5pt; }
-  .model-shots img { height: 38mm; object-fit: contain; }
-  .model-shots figcaption { font-size: 8pt; padding: 0.5mm 2mm 1mm; }
+  .visual { gap: 2mm; margin-bottom: 2mm; }
+  .visual .v-w img { height: 78mm; }
+  .visual .v-c img { height: 50mm; }
+  .visual .v-b img, .visual .v-l img { height: 46mm; }
+  .visual figcaption { font-size: 8.5pt; padding: 0.5mm 2mm 1mm; }
   .pamphlet .legend { font-size: 8pt; margin: 1mm 0; gap: 2px 14px; }
   .pamphlet .legend .dot { width: 9px; height: 9px; }
   .parts { gap: 1.5mm; padding: 0 0 1mm; }
@@ -52,28 +63,28 @@
   .part h3 { font-size: 7.8pt; }
   .part .num { width: 12px; height: 12px; line-height: 12px; font-size: 7pt; }
   .part ul { font-size: 7.3pt; line-height: 1.28; }
-  .names { grid-template-columns: repeat(4, 1fr); gap: 0.6mm 3mm; font-size: 8pt; line-height: 1.25; }
+  .names { grid-template-columns: 1fr; gap: 0.8mm; font-size: 8.5pt; line-height: 1.25; }
   .names .num { width: 11px; height: 11px; line-height: 11px; font-size: 6.5pt; margin-right: 3px; }
-  .parts:has(.names) > h2 { display: none; }
+  .parts:has(.names) > h2 { font-size: 9.5pt; margin: 0 0 1mm; }
   .pamphlet .stats .icons { max-width: none; margin: 0 0 1mm; }
-            .pamphlet section { padding: 1.2mm 0; }
+  .pamphlet section { padding: 0.8mm 0; }
   .pamphlet h2 { break-after: avoid; }
   .pamphlet li, .pamphlet .stats { break-inside: avoid; }
   .pamphlet section.refs { break-inside: auto; }
-  .pamphlet h2 { font-size: 11pt; margin: 0 0 1px; }
+  .pamphlet h2 { font-size: 9.5pt; margin: 0 0 1px; }
   .pamphlet p { margin: 0 0 3px; }
   .pamphlet ul, .pamphlet ol { margin: 0; }
   .pamphlet .stats { gap: 2mm; margin: 1mm 0; }
   .pamphlet .stats div { padding: 1mm 2mm; }
-  .pamphlet .stats strong { font-size: 11pt; }
-  .pamphlet .stats span { font-size: 8.4pt; }
+  .pamphlet .stats strong { font-size: 9.5pt; }
+  .pamphlet .stats span { font-size: 7.6pt; line-height: 1.2; }
   .pamphlet .xray, .pamphlet .areas { margin: 1mm 0; break-inside: avoid; }
   .pamphlet .areas img { width: 100%; margin: 0 auto; }
   .pamphlet .areas figcaption { font-size: 8pt; line-height: 1.3; }
   .pamphlet .xray img { width: 32%; margin: 0 auto; }
   .pamphlet .xray figcaption { font-size: 7.6pt; line-height: 1.3; }
   .pamphlet .refs h2 { font-size: 9pt; }
-  .pamphlet .refs ol { font-size: 6.4pt; line-height: 1.2; text-align: left; }
+  .pamphlet .refs ol { font-size: 5.8pt; line-height: 1.2; text-align: left; }
   .pamphlet .refs li { margin-bottom: 1px; }
   .pamphlet .refs .rt { display: none; }
   .pamphlet .disclaimer { font-size: 7.5pt; padding-top: 1mm; margin: 0; }
