@@ -47,7 +47,6 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
     <button class="hotspot" slot="hotspot-5" data-position="-0.0505m -0.006m 0.008m" data-normal="1 0 0.25" data-visibility-attribute="visible" aria-label="5. 第一・第二小きゅう歯">5<span class="label">第一・第二小きゅう歯</span><span class="note"><span>大きゅう歯の前にある歯です。</span><span>これも食べ物をかむのを助けます。</span></span></button>
     <button class="hotspot" slot="hotspot-6" data-position="-0.0592m -0.039m 0.0204m" data-normal="1 -0.02 0.05" data-visibility-attribute="visible" aria-label="6. あごの先の神経（おとがい神経）">6<span class="label">あごの先の神経（おとがい神経）</span><span class="note"><span>下あごの神経の枝です。骨の小さなあな（おとがいあな）から外に出ます。</span><span>下くちびるとあごの感覚を伝えます。</span><span>もっとおくで下あごの神経が傷つくと、くちびるやあごの感じ方も変わることがあります。</span></span></button>
     <button class="hotspot" slot="hotspot-7" data-position="-0.0508m -0.0472m -0.0018m" data-normal="0.94 -0.08 0.34" data-visibility-attribute="visible" aria-label="7. 下あごの骨">7<span class="label">下あごの骨</span><span class="note"><span>神経、動脈、静脈が、この骨の中の管を通っています。</span></span></button>
-    <button class="hotspot" slot="hotspot-8" data-position="-0.0325m 0.0145m -0.0800m" data-normal="-0.93 0.35 -0.09" data-visibility-attribute="visible" aria-label="8. 神経が骨に入る所（小舌）">8<span class="label">神経が骨に入る所（小舌）</span><span class="note"><span>下あごの神経・動脈・静脈は、ここで舌側の小さなあな（かがくこう）から骨に入ります。</span><span>このあなの前のふちにある、小さなとがった骨が「小舌」です。</span></span></button>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
 </model-viewer>
   <div class="ar-more" id="ar-more" role="group" aria-label="ほかの向きのAR表示" hidden>
@@ -76,32 +75,28 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
 <section>
   <h2>神経について</h2>
   <p>下あごの骨の中には、細い管があり、その中を神経が通っています。ここでは「<b>下あごの神経</b>」とよびます。医学での名前は「<b>かしそう神経</b>」です。同じ管の中を、2本の血管（<b>かしそう動脈</b>と<b>かしそう静脈</b>）もいっしょに通っています。<sup class="cite"><a href="#ref-1">1</a></sup></p>
-  <p>下あごの神経は、顔の感覚を伝える大きな神経「<b>三さ神経</b>」の<b>枝</b>です。三さ神経の3つの大きな部分のうち、いちばん下の部分（<b>かがく神経</b>）から出ています。神経・動脈・静脈は、舌側にある小さなあな（<b>かがくこう</b>）から、あごの骨に入ります。<sup class="cite"><a href="#ref-1">1</a></sup> このあなの前のふちにある、小さなとがった骨を「<b>小舌</b>」といいます。<sup class="cite"><a href="#ref-2">2</a></sup></p>
-  <p>下あごの神経は、同じ側の下の歯と歯ぐきの感覚を伝えています。<sup class="cite"><a href="#ref-3">3</a></sup> あごの前の方で、この神経の枝が、骨の小さなあなから外に出ます。この枝を「<b>おとがい神経</b>」とよびます。下くちびるとあごの感覚を伝えています。<sup class="cite"><a href="#ref-4">4</a></sup></p>
-  <p>舌の感覚は、別の神経（<b>舌神経</b>）が伝えています。舌神経も、親知らずをぬくときに傷つくことがあります。<sup class="cite"><a href="#ref-5">5</a></sup> 舌神経の傷がずっと続くことはまれで、1000人に1〜3人ほどです。<sup class="cite"><a href="#ref-6">6</a></sup> このモデルでは、舌神経は表していません。</p>
+  <p>下あごの神経は、顔の感覚を伝える大きな神経「<b>三さ神経</b>」の<b>枝</b>です。三さ神経の3つの大きな部分のうち、いちばん下の部分（<b>かがく神経</b>）から出ています。神経・動脈・静脈は、舌側にある小さなあな（<b>かがくこう</b>）から、あごの骨に入ります。<sup class="cite"><a href="#ref-1">1</a></sup></p>
+  <p>下あごの神経は、同じ側の下の歯と歯ぐきの感覚を伝えています。<sup class="cite"><a href="#ref-2">2</a></sup> あごの前の方で、この神経の枝が、骨の小さなあなから外に出ます。この枝を「<b>おとがい神経</b>」とよびます。下くちびるとあごの感覚を伝えています。<sup class="cite"><a href="#ref-3">3</a></sup></p>
+  <p>舌の感覚は、別の神経（<b>舌神経</b>）が伝えています。舌神経も、親知らずをぬくときに傷つくことがあります。<sup class="cite"><a href="#ref-4">4</a></sup> 舌神経の傷がずっと続くことはまれで、1000人に1〜3人ほどです。<sup class="cite"><a href="#ref-5">5</a></sup> このモデルでは、舌神経は表していません。</p>
   <p>このモデルでは、<b>親知らずの根が、神経と動脈に巻き付いています</b>。</p>
 </section>
 
 <section>
   <h2>歯をぬくと、なぜ神経が傷つくことがあるのですか？</h2>
   <p>歯をぬくには、根を骨から取り出す必要があります。根は、神経を囲むように曲がっています。そのため、根を取り出すときに、神経がおされたり、のびたり、切れたりすることがあります。いっしょに通る動脈や静脈が傷ついて、血が出ることもあります。<sup class="cite"><a href="#ref-1">1</a></sup></p>
-  <p>下あごの神経が傷つくと、その枝のおとがい神経もうまく働かなくなることがあります。<sup class="cite"><a href="#ref-4">4</a></sup></p>
+  <p>下あごの神経が傷つくと、その枝のおとがい神経もうまく働かなくなることがあります。<sup class="cite"><a href="#ref-3">3</a></sup></p>
 </section>
 
 <section>
   <h2>神経が傷つくと、どうなりますか？</h2>
-  <p>同じ側の下くちびる、あご、歯、歯ぐきが、しびれたり、ピリピリしたり、いつもとちがう感じがしたり、いたんだりします。<sup class="cite"><a href="#ref-3">3</a></sup><sup class="cite"><a href="#ref-5">5</a></sup></p>
-  <figure class="areas">
-    <img src="../images/nerve-areas-ja.svg" alt="顔と、下の歯と舌の図。親知らずと同じ側で、下の歯が赤（下あごの神経）、下くちびる・あご先・前の歯ぐきがオレンジ（おとがい神経）、舌の前の部分・口のそこ・舌側の歯ぐきが青（舌神経）。">
-    <figcaption>親知らずと同じ側で、それぞれの神経が感覚を伝える所です。神経が傷つくと、この部分の感じ方が変わることがあります。<b>a：</b>前から見た顔。<b>b：</b>前から見た、下の歯と舌。<sup class="cite"><a href="#ref-7">7</a></sup><sup class="cite"><a href="#ref-4">4</a></sup><sup class="cite"><a href="#ref-8">8</a></sup> この研究のためにかいた図です。</figcaption>
-  </figure>
-  <p><b>一時的な場合：</b>感覚はもどります。多くは、数週間から数か月かかります。<b>ずっと続く場合：</b>感覚が完全にはもどりません。<sup class="cite"><a href="#ref-3">3</a></sup></p>
-  <p>年れいが高い人ほど、神経が傷つきやすく、感覚も完全にはもどりにくくなります。<sup class="cite"><a href="#ref-3">3</a></sup><sup class="cite"><a href="#ref-9">9</a></sup></p>
+  <p>同じ側の下くちびる、あご、歯、歯ぐきが、しびれたり、ピリピリしたり、いつもとちがう感じがしたり、いたんだりします。<sup class="cite"><a href="#ref-2">2</a></sup><sup class="cite"><a href="#ref-4">4</a></sup></p>
+  <p><b>一時的な場合：</b>感覚はもどります。多くは、数週間から数か月かかります。<b>ずっと続く場合：</b>感覚が完全にはもどりません。<sup class="cite"><a href="#ref-2">2</a></sup></p>
+  <p>年れいが高い人ほど、神経が傷つきやすく、感覚も完全にはもどりにくくなります。<sup class="cite"><a href="#ref-2">2</a></sup><sup class="cite"><a href="#ref-6">6</a></sup></p>
 </section>
 
 <section class="risk">
   <h2>どのくらい起こりますか？</h2>
-  <p>根が神経に近い親知らずについて、16の研究をまとめた報告があります。結果は次のとおりです。<sup class="cite"><a href="#ref-10">10</a></sup></p>
+  <p>根が神経に近い親知らずについて、16の研究をまとめた報告があります。結果は次のとおりです。<sup class="cite"><a href="#ref-7">7</a></sup></p>
   <div class="stats">
     <div><img class="icons" src="../images/risk-7-in-100.svg" alt="100人のうち、7人が赤い色。"><strong>100人中 約7人</strong><span>歯を全部ぬいた後に、神経が傷ついた</span></div>
     <div><img class="icons" src="../images/risk-1-in-100.svg" alt="100人のうち、1人が赤い色。"><strong>100人中 約1人</strong><span>神経の傷が治らなかった</span></div>
@@ -112,15 +107,12 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
   <h2>参考にした論文</h2>
   <ol>
     <li id="ref-1">Juodzbalys G, Wang HL, Sabalys G. <span class="rt">Anatomy of mandibular vital structures. Part I: mandibular canal and inferior alveolar neurovascular bundle in relation with dental implantology.</span> J Oral Maxillofac Res. 2010;1(1):e2. <a href="https://doi.org/10.5037/jomr.2010.1102">doi.org/10.5037/jomr.2010.1102</a></li>
-    <li id="ref-2">Hsu KJ, Lee HN, Chen CM. <span class="rt">Morphological investigation of mandibular lingula: a literature review.</span> J Pers Med. 2022;12(6):1015. <a href="https://doi.org/10.3390/jpm12061015">doi.org/10.3390/jpm12061015</a></li>
-    <li id="ref-3">Sarikov R, Juodzbalys G. <span class="rt">Inferior alveolar nerve injury after mandibular third molar extraction: a literature review.</span> J Oral Maxillofac Res. 2014;5(4):e1. <a href="https://doi.org/10.5037/jomr.2014.5401">doi.org/10.5037/jomr.2014.5401</a></li>
-    <li id="ref-4">Juodzbalys G, Wang HL, Sabalys G. <span class="rt">Anatomy of mandibular vital structures. Part II: mandibular incisive canal, mental foramen and associated neurovascular bundles in relation with dental implantology.</span> J Oral Maxillofac Res. 2010;1(1):e3. <a href="https://doi.org/10.5037/jomr.2010.1103">doi.org/10.5037/jomr.2010.1103</a></li>
-    <li id="ref-5">Renton T, Yilmaz Z. <span class="rt">Profiling of patients presenting with posttraumatic neuropathy of the trigeminal nerve.</span> J Orofac Pain. 2011;25(4):333-344. PMID 22247929. <a href="https://pubmed.ncbi.nlm.nih.gov/22247929/">pubmed.ncbi.nlm.nih.gov/22247929</a></li>
-    <li id="ref-6">Lee J, Feng B, Park JS, et al. <span class="rt">Incidence of lingual nerve damage following surgical extraction of mandibular third molars with lingual flap retraction: a systematic review and meta-analysis.</span> PLoS One. 2023;18(2):e0282185. <a href="https://doi.org/10.1371/journal.pone.0282185">doi.org/10.1371/journal.pone.0282185</a></li>
-    <li id="ref-7">Khoury J, Townsend G. <span class="rt">Neural blockade anaesthesia of the mandibular nerve and its terminal branches: rationale for different anaesthetic techniques including their advantages and disadvantages.</span> Anesthesiol Res Pract. 2011;2011:307423. <a href="https://doi.org/10.1155/2011/307423">doi.org/10.1155/2011/307423</a></li>
-    <li id="ref-8">Ngeow WC, Tay HW, Sarna K, et al. <span class="rt">Challenges in diagnosing the course of the lingual nerve for clinical practice and research.</span> Diagnostics (Basel). 2025;15(13):1609. <a href="https://doi.org/10.3390/diagnostics15131609">doi.org/10.3390/diagnostics15131609</a></li>
-    <li id="ref-9">Queral-Godoy E, Valmaseda-Castellón E, Berini-Aytés L, et al. <span class="rt">Incidence and evolution of inferior alveolar nerve lesions following lower third molar extraction.</span> Oral Surg Oral Med Oral Pathol Oral Radiol Endod. 2005;99(3):259-264. <a href="https://doi.org/10.1016/j.tripleo.2004.06.001">doi.org/10.1016/j.tripleo.2004.06.001</a></li>
-    <li id="ref-10">Rico-Barroso L, Barroso-Medel M, Gutiérrez-Pérez J, et al. <span class="rt">Coronectomy as an alternative technique to complete extraction of mandibular third molars with risk of nerve injury.</span> Med Oral Patol Oral Cir Bucal. 2026;31(1):e19-e30. <a href="https://doi.org/10.4317/medoral.27459">doi.org/10.4317/medoral.27459</a></li>
+    <li id="ref-2">Sarikov R, Juodzbalys G. <span class="rt">Inferior alveolar nerve injury after mandibular third molar extraction: a literature review.</span> J Oral Maxillofac Res. 2014;5(4):e1. <a href="https://doi.org/10.5037/jomr.2014.5401">doi.org/10.5037/jomr.2014.5401</a></li>
+    <li id="ref-3">Juodzbalys G, Wang HL, Sabalys G. <span class="rt">Anatomy of mandibular vital structures. Part II: mandibular incisive canal, mental foramen and associated neurovascular bundles in relation with dental implantology.</span> J Oral Maxillofac Res. 2010;1(1):e3. <a href="https://doi.org/10.5037/jomr.2010.1103">doi.org/10.5037/jomr.2010.1103</a></li>
+    <li id="ref-4">Renton T, Yilmaz Z. <span class="rt">Profiling of patients presenting with posttraumatic neuropathy of the trigeminal nerve.</span> J Orofac Pain. 2011;25(4):333-344. PMID 22247929. <a href="https://pubmed.ncbi.nlm.nih.gov/22247929/">pubmed.ncbi.nlm.nih.gov/22247929</a></li>
+    <li id="ref-5">Lee J, Feng B, Park JS, et al. <span class="rt">Incidence of lingual nerve damage following surgical extraction of mandibular third molars with lingual flap retraction: a systematic review and meta-analysis.</span> PLoS One. 2023;18(2):e0282185. <a href="https://doi.org/10.1371/journal.pone.0282185">doi.org/10.1371/journal.pone.0282185</a></li>
+    <li id="ref-6">Queral-Godoy E, Valmaseda-Castellón E, Berini-Aytés L, et al. <span class="rt">Incidence and evolution of inferior alveolar nerve lesions following lower third molar extraction.</span> Oral Surg Oral Med Oral Pathol Oral Radiol Endod. 2005;99(3):259-264. <a href="https://doi.org/10.1016/j.tripleo.2004.06.001">doi.org/10.1016/j.tripleo.2004.06.001</a></li>
+    <li id="ref-7">Rico-Barroso L, Barroso-Medel M, Gutiérrez-Pérez J, et al. <span class="rt">Coronectomy as an alternative technique to complete extraction of mandibular third molars with risk of nerve injury.</span> Med Oral Patol Oral Cir Bucal. 2026;31(1):e19-e30. <a href="https://doi.org/10.4317/medoral.27459">doi.org/10.4317/medoral.27459</a></li>
   </ol>
 </section>
   <!-- SHARED TEXT END -->

@@ -5,7 +5,7 @@ This is the spoken script that plays while a participant looks at the 3D printed
 - **English:** 136 words, about 55 to 60 seconds at 130 to 140 words a minute. Flesch-Kincaid grade 3.0.
 - **Japanese:** 305 characters, about 55 to 60 seconds at about 320 characters a minute. All kanji are grade 6 or below. Needs a native-speaker check before recording.
 
-To fit 60 seconds, the script leaves out these points from the sheet and web page: the artery and vein, the trigeminal nerve and lingula, the tongue nerve, and the age effect.
+To fit 60 seconds, the script leaves out these points from the sheet and web page: the artery and vein, the trigeminal nerve, the tongue nerve, and the age effect.
 
 ## English
 
