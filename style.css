@@ -51,7 +51,7 @@ ul { padding-left: 1.2em; }
 .hotspot { width: 44px; height: 44px; border-radius: 50%; border: 2px solid #fff; padding: 0;
   background: var(--ar); color: var(--ar-text); font: 700 18px/40px system-ui, sans-serif;
   box-shadow: 0 1px 4px rgba(0,0,0,.35); cursor: pointer; position: relative; }
-.hotspot:not([data-visible]), model-viewer.playing .hotspot { opacity: 0; pointer-events: none; }
+.hotspot:not([data-visible]) { opacity: 0; pointer-events: none; }
 model-viewer.labels-off .hotspot { display: none; }
 .hotspot .note { display: none; }
 .hotspot .label { display: none; position: absolute; left: 50%; top: 34px; transform: translateX(-50%);
@@ -62,7 +62,6 @@ model-viewer.labels-off .hotspot { display: none; }
 .controls button { flex: 1 1 auto; min-height: 44px; padding: 8px 12px; border-radius: 999px;
   border: 1px solid var(--line); background: var(--card); color: var(--text); font: 600 15px/1.2 inherit; cursor: pointer; }
 .controls button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
-.controls .play { flex-basis: 100%; background: var(--ar); color: var(--ar-text); border: 0; }
 .cite { font-size: .7em; line-height: 0; margin-left: 1px; }
 .cite a { text-decoration: none; }
 .xray, .areas { margin: 12px 0; }
@@ -93,7 +92,3 @@ main ul, main ol, .info, .info li, .refs li { text-align: justify; hyphens: auto
 .important h2 { color: #6b4e00; }
 .important p { margin: 0; color: #231f20; }
 
-/* Caption for the current step of the animation. */
-.anim-step { position: absolute; left: 10px; right: 10px; top: 10px; margin: 0; padding: 6px 10px;
-  background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 8px;
-  font-size: 15px; font-weight: 600; text-align: left; pointer-events: none; }

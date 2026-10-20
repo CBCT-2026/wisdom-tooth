@@ -11,7 +11,7 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Intro (what AR means) | 39 | 3 | 4.8 | 83.66 |
 | Numbered dots (titles and notes) | 253 | 29 | 2.0 | 96.48 |
 | Viewer and AR tips | 98 | 9 | 2.8 | 94.25 |
-| Buttons | 35 | 5 | 0.1 | 106.67 |
+| Buttons | 29 | 4 | 0.2 | 106.37 |
 | Colour key | 11 | 2 | -1.7 | 116.65 |
 | Every person is different | 57 | 5 | 5.4 | 76.82 |
 | What is the problem? | 50 | 6 | 1.8 | 96.89 |
@@ -25,7 +25,7 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Choices your dentist/surgeon might offer | 150 | 15 | 3.7 | 86.71 |
 | Questions you could ask your dentist/surgeon | 46 | 6 | 1.6 | 97.5 |
 | Disclaimer | 15 | 2 | 5.0 | 72.32 |
-| **Overall** | **1724** | **183** | **2.2** | **95.77** |
+| **Overall** | **1718** | **182** | **2.2** | **95.77** |
 
 ## Pamphlet
 
@@ -35,7 +35,6 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Colour key | 11 | 2 | -1.7 | 116.65 |
 | Every person is different | 57 | 5 | 5.4 | 76.82 |
 | Parts of the model | 265 | 30 | 2.0 | 96.38 |
-| How the tooth can come out in pieces | 31 | 4 | 0.4 | 105.86 |
 | What is the problem? | 50 | 6 | 1.8 | 96.89 |
 | The nerve | 228 | 20 | 3.0 | 93.74 |
 | Why taking the tooth out can hurt the nerve | 77 | 7 | 1.7 | 102.61 |
@@ -47,7 +46,7 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Choices your dentist/surgeon might offer | 150 | 15 | 3.7 | 86.71 |
 | Questions you could ask your dentist/surgeon | 46 | 6 | 1.6 | 97.5 |
 | Disclaimer | 15 | 2 | 5.0 | 72.32 |
-| **Overall** | **1595** | **171** | **2.2** | **95.88** |
+| **Overall** | **1564** | **167** | **2.2** | **95.77** |
 
 ## Card for the 3D print
 
@@ -58,7 +57,6 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Colour key | 11 | 2 | -1.7 | 116.65 |
 | Every person is different | 57 | 5 | 5.4 | 76.82 |
 | Parts of the model | 265 | 30 | 2.0 | 96.38 |
-| How the tooth can come out in pieces | 31 | 4 | 0.4 | 105.86 |
 | What is the problem? | 50 | 6 | 1.8 | 96.89 |
 | The nerve | 228 | 20 | 3.0 | 93.74 |
 | Why taking the tooth out can hurt the nerve | 77 | 7 | 1.7 | 102.61 |
@@ -70,5 +68,5 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Choices your dentist/surgeon might offer | 150 | 15 | 3.7 | 86.71 |
 | Questions you could ask your dentist/surgeon | 46 | 6 | 1.6 | 97.5 |
 | Disclaimer | 15 | 2 | 5.0 | 72.32 |
-| **Overall** | **1611** | **173** | **2.2** | **95.88** |
+| **Overall** | **1580** | **169** | **2.2** | **95.88** |
 
