@@ -63,13 +63,19 @@ def block(path, name, html):
     path.write_text(s)
 
 
-def key(lang):
-    """The numbered parts with their notes, copied from the dots on the webpage."""
+def key(lang, notes=True):
+    """The numbered parts with their notes, copied from the dots on the webpage.
+    Without notes it is a short list of names for the one-sided information sheet."""
     page = (ROOT / f'{lang}/index.html').read_text()
     items = []
-    for num, title, notes in re.findall(r'class="hotspot" slot="hotspot-(\d+)".*?<span class="label">(.*?)</span><span class="note">(.*?)</span></button>', page):
-        lis = ''.join(f'<li>{n}</li>' for n in re.findall(r'<span>(.*?)</span>', notes))
+    for num, title, text in re.findall(r'class="hotspot" slot="hotspot-(\d+)".*?<span class="label">(.*?)</span><span class="note">(.*?)</span></button>', page):
+        if not notes:
+            items.append(f'      <li><span class="num">{num}</span>{title}</li>')
+            continue
+        lis = ''.join(f'<li>{n}</li>' for n in re.findall(r'<span>(.*?)</span>', text))
         items.append(f'      <div class="part"><h3><span class="num">{num}</span>{title}</h3><ul>{lis}</ul></div>')
+    if not notes:
+        return '    <ol class="names">\n' + '\n'.join(items) + '\n    </ol>'
     # Three columns (1-2, 3-5, 6-8); the boxes stretch so the columns end level.
     cols = [items[:2], items[2:5], items[5:]]
     return '\n'.join('    <div class="col">\n' + '\n'.join(c) + '\n    </div>' for c in cols)
@@ -79,9 +85,9 @@ for lang in ('en', 'ja'):
     inject(ROOT / f'{lang}/index.html', render(lang, '../images'))
     text = render(lang, '../../images')
     important = re.search(r'<section class="important">.*?</section>\n*', text, flags=re.S)
-    # The information sheet and the card that goes with the 3D print get the same text and key.
+    # The information sheet and the card that goes with the 3D print get the same text; the one-sided sheet gets only the part names.
     for sheet, img in ((ROOT / f'pamphlet/{lang}/index.html', text),
                        (ROOT / f'pamphlet/model/{lang}/index.html', render(lang, '../../../images'))):
         inject(sheet, img.replace(important.group(0), '') if important else img)
         block(sheet, 'IMPORTANT', important.group(0).strip() if important else '')
-        block(sheet, 'KEY', key(lang))
+        block(sheet, 'KEY', key(lang, notes='model' in sheet.parts))
