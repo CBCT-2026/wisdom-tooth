@@ -41,10 +41,16 @@ def main():
 
     script = json.loads((HERE / f"script-{args.lang}.json").read_text(encoding="utf-8"))
     kokoro = Kokoro(f"{args.model_dir}/kokoro-v1.0.onnx", f"{args.model_dir}/voices-v1.0.bin")
-    g2p = None
+    sentence_gap = script.get("sentence_gap", SENTENCE_GAP)
+    paragraph_gap = script.get("paragraph_gap", PARAGRAPH_GAP)
     if args.lang == "ja":
         from misaki import ja
         g2p = ja.JAG2P()
+    else:
+        # British English pronunciation from misaki (needs spaCy en_core_web_sm); sounds less robotic than espeak.
+        from misaki import en
+        english = en.G2P(trf=False, british=True, fallback=None)
+        g2p = lambda text: english(text)[0]
 
     sr = 24000
     chunks = [np.zeros(int(LEAD_IN * sr), dtype=np.float32)]
@@ -56,12 +62,10 @@ def main():
             if isinstance(sent, str):
                 sent = {"text": sent}
             spoken = sent.get("tts", sent["text"])
-            if g2p:
-                result = g2p(spoken)
-                phonemes = result[0] if isinstance(result, tuple) else result
-                audio, sr = kokoro.create(phonemes, voice=script["voice"], speed=script["speed"], lang="ja", is_phonemes=True)
-            else:
-                audio, sr = kokoro.create(spoken, voice=script["voice"], speed=script["speed"], lang="en-gb")
+            result = g2p(spoken)
+            phonemes = result[0] if isinstance(result, tuple) else result
+            audio, sr = kokoro.create(phonemes, voice=script["voice"], speed=script["speed"],
+                                      lang="ja" if args.lang == "ja" else "en-gb", is_phonemes=True)
             dur = len(audio) / sr
             parts = split_cue(sent["text"], MAX_CUE[args.lang])
             total = sum(len(x) for x in parts)
@@ -73,7 +77,7 @@ def main():
             chunks.append(audio.astype(np.float32))
             t += dur
             last = s == len(para["sentences"]) - 1
-            gap = PARAGRAPH_GAP if last else SENTENCE_GAP
+            gap = paragraph_gap if last else sentence_gap
             if p == len(script["paragraphs"]) - 1 and last:
                 gap = TAIL
             chunks.append(np.zeros(int(gap * sr), dtype=np.float32))

@@ -8,12 +8,12 @@ The fourth patient education material: a portrait (9:16, 1080 × 1920) video of 
 
 ## Voice
 
-Kokoro-82M (Apache 2.0), run with [kokoro-onnx](https://github.com/thewh1teagle/kokoro-onnx). English voice `bf_emma`, Japanese voice `jf_alpha`. Japanese readings come from misaki (pyopenjtalk). The Japanese voice needs a native-speaker check.
+Kokoro-82M (Apache 2.0), run with [kokoro-onnx](https://github.com/thewh1teagle/kokoro-onnx). English voice `bf_emma` at its natural speed, with British pronunciation from misaki (`misaki[en]` plus spaCy `en_core_web_sm`), chosen by Luke on 21 October 2026 as the least robotic of five samples. Japanese voice `jf_alpha`, with readings from misaki (pyopenjtalk). The Japanese voice needs a native-speaker check.
 
 ## Rebuild
 
 ```
-pip install kokoro-onnx soundfile "misaki[ja]"
+pip install kokoro-onnx soundfile "misaki[en,ja]"
 # model files from https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.0
 python video/tts.py en --model-dir DIR          # narration.wav, subtitles, timings
 MODEL_VIEWER_JS=path/to/model-viewer.min.js node video/render.js en   # frames + mp4 (Playwright, ffmpeg)
