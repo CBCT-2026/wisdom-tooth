@@ -116,4 +116,5 @@
   html[lang="ja"] .pamphlet section { padding: 1mm 0; }
   html[lang="ja"] .visual .v-w img, html[lang="ja"] .visual .v-c img { height: 79mm; }
   html[lang="ja"] .visual .v-b img, html[lang="ja"] .visual .v-l img { height: 46mm; }
+  .pamphlet .disclaimer { font-size: 4.6pt; line-height: 1.25; margin: 0.6mm 0 0; }
 }
