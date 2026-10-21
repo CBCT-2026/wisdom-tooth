@@ -20,36 +20,12 @@ mv.addEventListener('progress', e => {
   if (e.detail.totalProgress === 1) bar.classList.add('done');
 });
 
-// Tap a numbered dot to show its name on the model and its notes under the model.
-const info = document.getElementById('info');
-mv.querySelectorAll('.hotspot').forEach(h => h.addEventListener('click', () => {
-  const open = !h.classList.contains('open');
-  mv.querySelectorAll('.hotspot').forEach(o => o.classList.remove('open'));
-  h.classList.toggle('open', open);
-  info.hidden = !open;
-  if (!open) return;
-  const num = h.getAttribute('slot').split('-')[1];
-  const items = [...h.querySelectorAll('.note > span')].map(s => '<li>' + s.innerHTML + '</li>').join('');
-  info.innerHTML = '<h3><span class="num">' + num + '</span>' + h.querySelector('.label').innerHTML + '</h3><ul>' + items + '</ul>';
-  info.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-}));
-
-// Tap the notes box to close it.
-info.addEventListener('click', () => {
-  info.hidden = true;
-  mv.querySelectorAll('.hotspot').forEach(o => o.classList.remove('open'));
-});
-
-// Hide or show all the numbered dots.
+// Hide or show the labels on the model.
 const labels = document.getElementById('labels');
 labels.addEventListener('click', () => {
   const off = mv.classList.toggle('labels-off');
   labels.setAttribute('aria-pressed', off);
   labels.textContent = off ? labels.dataset.off : labels.dataset.on;
-  if (off) {
-    mv.querySelectorAll('.hotspot').forEach(o => o.classList.remove('open'));
-    info.hidden = true;
-  }
 });
 
 // Preset camera views.
@@ -99,4 +75,10 @@ more.querySelectorAll('[data-ar]').forEach(b => b.addEventListener('click', () =
       '&mode=ar_preferred#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;' +
       'S.browser_fallback_url=' + encodeURIComponent(back) + ';end;';
   }
+}));
+
+// A tap on a source number opens the closed list of sources first.
+document.querySelectorAll('.cite a').forEach(a => a.addEventListener('click', () => {
+  const d = document.querySelector('.refs details');
+  if (d) d.open = true;
 }));

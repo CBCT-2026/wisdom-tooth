@@ -28,7 +28,7 @@
   background: var(--accent); color: #fff; font-size: 11px; margin-right: 5px; }
 .part ul { margin: 0; padding-left: 1.05em; font-size: 12px; line-height: 1.35; }
 .visual { display: grid; grid-template-columns: repeat(10, 1fr); gap: 8px;
-  grid-template-areas: "w w w w w w c c c c" "w w w w w w k k k k" "b b b b b l l l l l"; }
+  grid-template-areas: "w w w w w w c c c c" "w w w w w w c c c c" "b b b b b l l l l l"; }
 .visual .v-w { grid-area: w; } .visual .v-c { grid-area: c; } .visual .v-key { grid-area: k; }
 .visual .v-b { grid-area: b; } .visual .v-l { grid-area: l; }
 .visual figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
@@ -52,7 +52,7 @@
   .important h2 { font-size: 10.5pt; }
   .visual { gap: 2mm; margin-bottom: 2mm; }
   .visual .v-w img { height: 78mm; }
-  .visual .v-c img { height: 50mm; }
+  .visual .v-c img { height: 78mm; }
   .visual .v-b img, .visual .v-l img { height: 46mm; }
   .visual figcaption { font-size: 8.5pt; padding: 0.5mm 2mm 1mm; }
   .pamphlet .legend { font-size: 8pt; margin: 1mm 0; gap: 2px 14px; }
@@ -74,7 +74,7 @@
   .pamphlet h2 { font-size: 9.5pt; margin: 0 0 1px; }
   .pamphlet p { margin: 0 0 3px; }
   .pamphlet ul, .pamphlet ol { margin: 0; }
-  .pamphlet ul.symptoms { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2mm; margin: 0 0 3px; }
+  .pamphlet .symptoms { margin: 0.5mm 0 1mm; break-inside: avoid; }
   .pamphlet .stats { gap: 2mm; margin: 1mm 0; }
   .pamphlet .stats div { padding: 1mm 2mm; }
   .pamphlet .stats strong { font-size: 9.5pt; }

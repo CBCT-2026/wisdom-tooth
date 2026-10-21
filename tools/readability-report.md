@@ -8,35 +8,30 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | Section | Words | Sentences | FKGL | Reading Ease |
 |---|---:|---:|---:|---:|
 | Title | 9 | 1 | 4.4 | 79.26 |
-| Intro (what AR means) | 39 | 3 | 4.8 | 83.66 |
-| Numbered dots (titles and notes) | 217 | 26 | 1.8 | 96.89 |
-| Viewer and AR tips | 98 | 9 | 2.8 | 94.25 |
+| Numbered dots (titles and notes) | 19 | 4 | 5.2 | 66.6 |
 | Buttons | 29 | 4 | 0.2 | 106.37 |
-| Colour key | 11 | 2 | -1.7 | 116.65 |
 | Main message | 25 | 2 | 2.3 | 101.09 |
 | What is the problem? | 45 | 5 | 2.1 | 96.18 |
 | The nerve | 159 | 15 | 2.7 | 94.56 |
 | Why taking the tooth out can hurt the nerve | 75 | 7 | 1.6 | 102.91 |
-| What nerve damage feels like | 60 | 5 | 3.3 | 93.14 |
+| What nerve damage feels like | 54 | 4 | 3.8 | 91.61 |
 | How often does it happen? | 57 | 7 | 1.7 | 97.09 |
 | Disclaimer | 15 | 2 | 5.0 | 72.32 |
-| **Overall** | **839** | **88** | **2.3** | **95.67** |
+| **Overall** | **487** | **51** | **2.3** | **95.67** |
 
 ## 2D information sheet
 
 | Section | Words | Sentences | FKGL | Reading Ease |
 |---|---:|---:|---:|---:|
 | Title | 9 | 1 | 4.4 | 79.26 |
-| Colour key | 11 | 2 | -1.7 | 116.65 |
 | Main message | 25 | 2 | 2.3 | 101.09 |
-| Parts of the model | 40 | 8 | 2.9 | 83.32 |
 | What is the problem? | 45 | 5 | 2.1 | 96.18 |
 | The nerve | 159 | 15 | 2.7 | 94.56 |
 | Why taking the tooth out can hurt the nerve | 75 | 7 | 1.6 | 102.91 |
-| What nerve damage feels like | 60 | 5 | 3.3 | 93.14 |
+| What nerve damage feels like | 54 | 4 | 3.8 | 91.61 |
 | How often does it happen? | 57 | 7 | 1.7 | 97.09 |
 | Disclaimer | 15 | 2 | 5.0 | 72.32 |
-| **Overall** | **496** | **54** | **2.2** | **95.98** |
+| **Overall** | **439** | **43** | **2.5** | **94.96** |
 
 ## Card for the 3D print
 
@@ -50,8 +45,8 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | What is the problem? | 45 | 5 | 2.1 | 96.18 |
 | The nerve | 159 | 15 | 2.7 | 94.56 |
 | Why taking the tooth out can hurt the nerve | 75 | 7 | 1.6 | 102.91 |
-| What nerve damage feels like | 60 | 5 | 3.3 | 93.14 |
+| What nerve damage feels like | 54 | 4 | 3.8 | 91.61 |
 | How often does it happen? | 57 | 7 | 1.7 | 97.09 |
 | Disclaimer | 15 | 2 | 5.0 | 72.32 |
-| **Overall** | **700** | **75** | **2.2** | **95.88** |
+| **Overall** | **694** | **74** | **2.2** | **95.77** |
 
