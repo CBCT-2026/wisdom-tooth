@@ -1,0 +1,83 @@
+{
+  "lang": "en",
+  "voice": "bf_emma",
+  "speed": 0.78,
+  "title": "Impacted lower wisdom tooth and the nerve near it",
+  "labels": {
+    "nerve": [
+      "Jaw nerve",
+      "inferior alveolar nerve"
+    ],
+    "roots": [
+      "Roots",
+      ""
+    ],
+    "tooth": [
+      "Wisdom tooth",
+      "third molar"
+    ],
+    "chin": [
+      "Chin nerve",
+      "mental nerve"
+    ],
+    "bone": [
+      "Jaw bone",
+      "mandible"
+    ],
+    "molars": [
+      "Molars",
+      ""
+    ],
+    "premolars": [
+      "Premolars",
+      ""
+    ]
+  },
+  "risk": [
+    [
+      "About 7 in 100",
+      "may get nerve damage after the whole tooth is taken out"
+    ],
+    [
+      "About 1 in 100",
+      "may have nerve damage that does not go away"
+    ]
+  ],
+  "paragraphs": [
+    {
+      "scene": "intro",
+      "sentences": [
+        "This is an impacted lower wisdom tooth.",
+        "Its roots wrap around a nerve.",
+        "Taking the tooth out can damage the nerve and make your lip and chin numb."
+      ]
+    },
+    {
+      "scene": "nerve",
+      "sentences": [
+        "The red part is the nerve.",
+        "It gives feeling to the lower teeth, gums, lip and chin."
+      ]
+    },
+    {
+      "scene": "roots",
+      "sentences": [
+        "As the tooth comes out, the nerve can be pressed or cut.",
+        "The feeling often comes back, but sometimes it never does."
+      ]
+    },
+    {
+      "scene": "risk",
+      "sentences": [
+        "Rates vary, but about 7 in 100 may get nerve damage.",
+        "1 in 100 may have damage that does not go away."
+      ]
+    },
+    {
+      "scene": "specialist",
+      "sentences": [
+        "For a tooth like this, it is a good idea to see a specialist (an oral surgeon) first."
+      ]
+    }
+  ]
+}

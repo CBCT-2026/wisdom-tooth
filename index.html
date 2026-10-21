@@ -7,18 +7,31 @@
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="style.css">
 <style>
-  .pick { display: grid; gap: 14px; margin-top: 28px; }
-  .pick a { display: block; text-align: center; padding: 18px; border-radius: 14px;
+  .choice { margin-top: 28px; padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+  .choice h2 { margin: 0 0 14px; text-align: center; font-size: 22px; line-height: 1.35; }
+  .choice h2 span { display: block; font-size: 18px; font-weight: 600; }
+  .pick { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .pick a { display: block; text-align: center; padding: 16px 8px; border-radius: 14px;
     background: var(--ar); color: var(--ar-text); text-decoration: none; font-weight: 600; font-size: 18px; }
 </style>
 </head>
 <body>
 <main>
-  <h1>Choose your language<br><span lang="ja">言語を選んでください</span></h1>
-  <div class="pick">
-    <a href="en/">English</a>
-    <a href="ja/" lang="ja">日本語</a>
-  </div>
+  <h1>Choose a page and language<br><span lang="ja">ページと言語を選んでください</span></h1>
+  <section class="choice" aria-labelledby="ar">
+    <h2 id="ar">AR web page<span lang="ja">ARウェブページ</span></h2>
+    <div class="pick">
+      <a href="en/">English</a>
+      <a href="ja/" lang="ja">日本語</a>
+    </div>
+  </section>
+  <section class="choice" aria-labelledby="video">
+    <h2 id="video">Narrated video<span lang="ja">ナレーション動画</span></h2>
+    <div class="pick">
+      <a href="video/en/">English</a>
+      <a href="video/ja/" lang="ja">日本語</a>
+    </div>
+  </section>
 </main>
 </body>
 </html>

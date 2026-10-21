@@ -1,0 +1,152 @@
+<!doctype html>
+<!-- Frame renderer for the narrated video. Opened by video/render.js, not by participants. -->
+<html><head><meta charset="utf-8">
+<script>
+self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', location.href).href };
+</script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<style>
+  html, body { margin: 0; width: 540px; height: 960px; overflow: hidden; background: #f4f1ea;
+    font-family: "Noto Sans", "Noto Sans JP", "Hiragino Sans", Arial, sans-serif; color: #1d1d1d; }
+  html[lang=ja] body { font-family: "Noto Sans JP", sans-serif; }
+  #title { position: absolute; top: 34px; left: 24px; right: 24px; font-size: 21px; font-weight: 700;
+    line-height: 1.3; color: #00674C; text-align: center; }
+  model-viewer { position: absolute; top: 100px; left: 0; width: 540px; height: 580px;
+    --poster-color: transparent; --progress-bar-height: 0px; transition: none; }
+  .hs { width: 1px; height: 1px; border: 0; padding: 0; background: none; pointer-events: none; }
+  #labels { position: absolute; inset: 0; pointer-events: none; }
+  #labels .main { font-size: 18px; font-weight: 700; fill: #1b1d21; }
+  #labels .med { font-size: 13px; font-weight: 400; fill: #1b1d21; }
+  #labels rect { fill: #fff; stroke: #1b1d21; stroke-width: 1; }
+  #labels line { stroke: #1b1d21; stroke-width: 1.6; }
+  #labels circle { fill: #1b1d21; stroke: #fff; stroke-width: 1.5; }
+  #risk { position: absolute; top: 120px; left: 40px; right: 40px; display: flex; flex-direction: column;
+    gap: 22px; opacity: 0; }
+  #risk div { background: #fff; border-radius: 14px; padding: 16px 22px; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+  #risk img { width: 78%; display: block; margin: 0 auto 10px; }
+  #risk strong { display: block; font-size: 24px; color: #c8303a; }
+  #risk span { display: block; font-size: 19px; line-height: 1.35; margin-top: 4px; }
+  #sub { position: absolute; left: 24px; right: 24px; top: 712px; text-align: center; }
+  #sub span { display: inline; font-size: 26px; line-height: 1.5; font-weight: 600; color: #fff;
+    background: rgba(20, 20, 20, .82); padding: 3px 10px; box-decoration-break: clone;
+    -webkit-box-decoration-break: clone; border-radius: 6px; }
+  html[lang=ja] #sub span, html[lang=ja] #risk span { word-break: auto-phrase; }
+  #sub span:empty { display: none; }
+  #draft { position: absolute; top: 676px; left: 0; right: 0; text-align: center; font-size: 15px;
+    font-weight: 700; color: #a15c00; display: none; }
+</style></head>
+<body>
+<div id="title"></div>
+<model-viewer id="mv" src="../models/wisdom-tooth.glb" interaction-prompt="none"
+  shadow-intensity="1" exposure="1" loading="eager" camera-orbit="90deg 80deg 0.34m"
+  min-camera-orbit="auto auto 0.05m" max-camera-orbit="auto auto 1m" interpolation-decay="1">
+  <button class="hs" slot="hotspot-nerve" data-position="-0.0374m -0.0324m -0.048m" data-normal="0.95 0 0.3"></button>
+  <button class="hs" slot="hotspot-roots" data-position="-0.0263m -0.0163m -0.0723m" data-normal="0.95 -0.12 -0.29"></button>
+  <button class="hs" slot="hotspot-tooth" data-position="-0.029m -0.0018m -0.0579m" data-normal="0.87 0.49 0"></button>
+  <button class="hs" slot="hotspot-molars" data-position="-0.0375m -0.005m -0.0275m" data-normal="1 0 0.15"></button>
+  <button class="hs" slot="hotspot-chin" data-position="-0.0592m -0.039m 0.0204m" data-normal="1 -0.02 0.05"></button>
+  <button class="hs" slot="hotspot-bone" data-position="-0.0508m -0.0472m -0.0018m" data-normal="0.94 -0.08 0.34"></button>
+</model-viewer>
+<div id="risk"></div>
+<svg id="labels" width="540" height="960"></svg>
+<div id="draft">DRAFT SENTENCE, NOT YET APPROVED</div>
+<div id="sub"><span></span></div>
+<script>
+// Camera for each scene: orbit [theta deg, phi deg, radius m] at the start and end, and the target point (m).
+// Labels: [part, side, y] where y is the label's height on the screen (px).
+const SCENES = {
+  intro:      { from: [72, 78, 0.37], to: [100, 80, 0.37], target: [-0.052, -0.008, -0.036],
+                labels: [['tooth', 'r', 200], ['nerve', 'l', 550]] },
+  nerve:      { from: [100, 80, 0.28], to: [84, 78, 0.28], target: [-0.045, -0.022, -0.038],
+                labels: [['chin', 'l', 240], ['nerve', 'r', 570], ['bone', 'l', 610]] },
+  roots:      { from: [118, 98, 0.16], to: [80, 88, 0.16], target: [-0.03, -0.017, -0.062],
+                labels: [['tooth', 'r', 190], ['roots', 'r', 500], ['nerve', 'l', 560]] },
+  risk:       { from: [98, 80, 0.37], to: [104, 80, 0.37], target: [-0.052, -0.008, -0.036], labels: [], risk: true },
+  specialist: { from: [100, 80, 0.37], to: [75, 78, 0.37], target: [-0.052, -0.008, -0.036],
+                labels: [['tooth', 'r', 200], ['roots', 'r', 300], ['nerve', 'l', 550]] },
+};
+const BLEND = 0.9;   // seconds to move the camera from one scene to the next
+const FADE = 0.4;    // seconds for labels to fade in
+
+let T;
+const mv = document.getElementById('mv');
+const ease = x => x < 0 ? 0 : x > 1 ? 1 : x * x * (3 - 2 * x);
+const mix = (a, b, k) => a.map((v, i) => v + (b[i] - v) * k);
+
+window.init = async (timelineUrl) => {
+  T = await (await fetch(timelineUrl)).json();
+  document.documentElement.lang = T.lang;
+  document.getElementById('title').textContent = T.title;
+  document.getElementById('risk').innerHTML = T.risk.map((r, i) =>
+    `<div><img src="../images/risk-${i ? 1 : 7}-in-100.svg" alt=""><strong>${r[0]}</strong><span>${r[1]}</span></div>`).join('');
+  if (!mv.loaded) await new Promise(r => mv.addEventListener('load', r, { once: true }));
+  await document.fonts.ready;
+  return T.duration;
+};
+
+function sceneAt(t) {
+  let i = T.scenes.findIndex(s => t < s.end);
+  if (i < 0) i = T.scenes.length - 1;
+  return i;
+}
+
+function cameraAt(i, t) {
+  const s = T.scenes[i], c = SCENES[s.scene];
+  const k = ease((t - s.start) / (s.end - s.start));
+  let orbit = mix(c.from, c.to, k), target = c.target;
+  if (i > 0 && t - s.start < BLEND) {           // glide from where the last scene ended
+    const p = SCENES[T.scenes[i - 1].scene], b = ease((t - s.start) / BLEND);
+    orbit = mix(p.to, orbit, b);
+    target = mix(p.target, target, b);
+  }
+  return { orbit, target };
+}
+
+const ctx = document.createElement('canvas').getContext('2d');
+function measure(text, px, weight) {
+  ctx.font = `${weight} ${px}px ` + getComputedStyle(document.body).fontFamily;
+  return ctx.measureText(text).width;
+}
+
+window.setFrame = async (t) => {
+  const i = sceneAt(t), s = T.scenes[i], c = SCENES[s.scene];
+  const cam = cameraAt(i, t);
+  mv.cameraOrbit = `${cam.orbit[0]}deg ${cam.orbit[1]}deg ${cam.orbit[2]}m`;
+  mv.cameraTarget = cam.target.map(v => v + 'm').join(' ');
+  mv.jumpCameraToGoal();
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+  // Risk pictures fade in over the model.
+  const rk = c.risk ? ease((t - s.start) / FADE) : 0;
+  document.getElementById('risk').style.opacity = rk;
+  mv.style.opacity = 1 - rk;
+
+  // Line labels.
+  const a = ease((t - s.start) / FADE);
+  const host = mv.getBoundingClientRect();
+  let svg = '';
+  for (const [part, side, y] of c.labels) {
+    const h = mv.querySelector(`[slot="hotspot-${part}"]`).getBoundingClientRect();
+    const ax = h.left + h.width / 2, ay = h.top + h.height / 2;
+    if (ay < host.top || ay > host.bottom) continue;
+    // Box with the everyday name in bold and the medical name underneath (as on the sheet and web page).
+    const [main, med] = T.labels[part];
+    const w = Math.max(measure(main, 18, 700), med ? measure(med, 13, 400) : 0) + 16;
+    const bh = med ? 46 : 30;
+    const bx = side === 'l' ? 14 : 526 - w, by = y - bh / 2;
+    const lx = side === 'l' ? bx + w : bx;
+    svg += `<g opacity="${a}"><line x1="${lx}" y1="${y}" x2="${ax}" y2="${ay}"/>` +
+           `<rect x="${bx}" y="${by}" width="${w}" height="${bh}" rx="3"/>` +
+           `<text class="main" x="${bx + 8}" y="${by + 21}">${main}</text>` +
+           (med ? `<text class="med" x="${bx + 8}" y="${by + 38}">${med}</text>` : '') +
+           `<circle cx="${ax}" cy="${ay}" r="4"/></g>`;
+  }
+  document.getElementById('labels').innerHTML = svg;
+
+  // Subtitles.
+  const cue = T.cues.find(q => t >= q.start && t < q.end + 0.25);
+  document.querySelector('#sub span').textContent = cue ? cue.text : '';
+  document.getElementById('draft').style.display = s.placeholder ? 'block' : 'none';
+};
+</script>
+</body></html>
