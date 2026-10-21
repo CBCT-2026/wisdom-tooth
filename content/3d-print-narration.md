@@ -2,8 +2,8 @@
 
 This is the spoken script that plays while a participant looks at the 3D printed model. No written card and no stickers go with the model, as in a clinic. The script points to parts by colour and position (the red nerve, the tooth at the back). Sources are the same as for the 2D information sheet and the AR web page.
 
-- **English:** 136 words, about 55 to 60 seconds at 130 to 140 words a minute. Flesch-Kincaid grade 3.0.
-- **Japanese:** 305 characters, about 55 to 60 seconds at about 320 characters a minute. All kanji are grade 6 or below. Needs a native-speaker check before recording.
+- **English:** 140 words, about 55 to 60 seconds at 130 to 140 words a minute. Flesch-Kincaid grade 3.1
+- **Japanese:** 336 characters, about 55 to 60 seconds at about 320 characters a minute. All kanji are grade 6 or below. Needs a native-speaker check before recording.
 
 To fit 60 seconds, the script leaves out these points from the sheet and web page: the artery and vein, the trigeminal nerve, the tongue nerve, and the age effect.
 
@@ -17,7 +17,7 @@ The tooth roots wrap around the nerve. So taking the tooth out can press, stretc
 
 Then the lip, chin, teeth or gums on that side may feel numb, tingle or hurt. Most often, the feeling comes back within weeks to months. Sometimes it never fully comes back.
 
-For teeth like this, about 7 in 100 people had nerve damage. About 1 in 100 had damage that did not go away.
+For teeth like this, rates vary but about 7 in 100 people may get nerve damage. 1 in 100 may have damage that does not go away.
 
 ## Japanese
 
@@ -29,4 +29,4 @@ For teeth like this, about 7 in 100 people had nerve damage. About 1 in 100 had 
 
 すると、同じ側の下くちびる、あご、歯、歯ぐきが、しびれたり、いたんだりします。多くは、数週間から数か月で感覚がもどりますが、完全にはもどらないこともあります。
 
-このような親知らずでは、100人中約7人に神経の傷が起こり、約1人は治りませんでした。
+このような親知らずでは、報告によって差がありますが、100人中約7人に神経の傷が起こるかもしれません。100人中1人は、傷が治らないかもしれません。
