@@ -48,8 +48,8 @@
   .sheet-head { margin: 0 0 2mm; padding: 2mm 3mm 2mm 4mm; }
   .sheet-head h1 { font-size: 15pt; }
   .sheet-head .logo { height: 12mm; }
-  .important { margin: 0 0 1.5mm; padding: 1.4mm 3mm; display: flex; align-items: center; justify-content: center; }
-  .important p { text-align: center; text-align-last: center; line-height: 1.2; }
+  .pamphlet .important { margin: 0 0 1.5mm; padding: 1.2mm 3mm; display: flex; align-items: center; justify-content: center; }
+  .pamphlet .important p { margin: 0; text-align: center; text-align-last: center; line-height: 1.2; }
   .important h2 { font-size: 10.5pt; }
   .visual { gap: 2mm; margin-bottom: 2mm; }
   .visual .v-w img { height: 78mm; }
