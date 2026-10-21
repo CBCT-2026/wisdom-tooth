@@ -2,16 +2,11 @@
   --bg: #ffffff; --text: #231f20; --muted: #5a616b; --line: #e3e6ea;
   --accent: #00674c; --card: #eef5f2; --ar: #00674c; --ar-text: #ffffff;
 }
-/* Dark colours: follow the device unless the reader picks a mode with the toggle (saved in localStorage). */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --bg: #121417; --text: #eef0f3; --muted: #a9b0b9; --line: #2a2e34;
-    --accent: #5cc49d; --card: #18211e; --ar: #5cc49d; --ar-text: #0d1117; }
-}
+/* Pages open in light mode; the toggle switches to dark for this browser tab (sessionStorage). */
 :root[data-theme="dark"] { --bg: #121417; --text: #eef0f3; --muted: #a9b0b9; --line: #2a2e34;
     --accent: #5cc49d; --card: #18211e; --ar: #5cc49d; --ar-text: #0d1117; }
 :root { color-scheme: light; }
 :root[data-theme="dark"] { color-scheme: dark; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; } }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 body { margin: 0; background: var(--bg); color: var(--text);
