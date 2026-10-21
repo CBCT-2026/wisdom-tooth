@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wisdom tooth removal: the risk to your nerve</title>
 <meta name="robots" content="noindex">
+<script>
+try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+</script>
 <link rel="stylesheet" href="style.css">
 <style>
   .lead { font-size: 18px; font-weight: 600; margin: 8px 0 0; }
@@ -12,12 +15,14 @@
   .choice h2 { margin: 0 0 14px; text-align: center; font-size: 22px; line-height: 1.35; }
   .choice h2 span { display: block; font-size: 18px; font-weight: 600; }
   .pick { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .top { display: flex; justify-content: flex-end; padding-top: 10px; }
   .pick a { display: block; text-align: center; padding: 16px 8px; border-radius: 14px;
     background: var(--ar); color: var(--ar-text); text-decoration: none; font-weight: 600; font-size: 18px; }
 </style>
 </head>
 <body>
 <main>
+  <div class="top"><button class="theme" id="theme" type="button" data-dark="Dark mode / ダークモード" data-light="Light mode / ライトモード">Dark mode / ダークモード</button></div>
   <h1>Wisdom tooth removal: the risk to your nerve</h1>
   <p class="lead">Choose a page and language<br><span lang="ja">ページと言語を選んでください</span></p>
   <section class="choice" aria-labelledby="ar">
@@ -35,5 +40,6 @@
     </div>
   </section>
 </main>
+<script src="theme.js"></script>
 </body>
 </html>
