@@ -1,8 +1,8 @@
 # 3D printed model and narrated video: 45-second narration script
 
-This is the spoken script that plays while a participant looks at the 3D printed model. The narrated video uses the same script, with subtitles. No written card and no stickers go with the model, as in a clinic. The script points to parts by colour and position (the red nerve). Sources are the same as for the 2D information sheet and the AR web page.
+This is the spoken script that plays while a participant looks at the 3D printed model. The narrated video uses the same script, with subtitles. No written card and no stickers go with the model, as in a clinic. The script points to parts by colour and position (the red nerve). Sources are the same as for the 2D information sheet and the AR web page. The risk figures rest on at least 3 reviews each: Rico-Barroso 2026, Derbishi 2026, Kang 2025 and Sarikov 2014 for about 7 in 100; Rico-Barroso 2026, Kang 2019 and Cervera-Espert 2016 for about 1 in 100 (full list in content/references.json).
 
-- **English:** 106 words, about 45 seconds at a comfortable pace (text-to-speech test of the 107-word version: 44.8 s). Flesch-Kincaid grade 2.7.
+- **English:** 111 words, about 45 seconds at a comfortable pace (narrated video, natural-pace voice: about 41 s). Flesch-Kincaid grade 2.7.
 - **Japanese:** 245 characters (text-to-speech test of the 239-character version: 43.9 s). All kanji are grade 6 or below. Needs a native-speaker check before recording.
 
 To fit 45 seconds at a comfortable pace, the script leaves out these points from the sheet and web page: the tube in the bone, the artery and vein, the name of the chin nerve, the tongue nerve, the list of symptoms, how long recovery takes, and the age effect. The last sentence follows referral guidance (Dental Board of Australia scope of practice 2020: refer when a case is beyond the dentist's competence; FDS RCS England 2020 parameters of care) and does not say a specialist lowers the risk, as no study shows that (see the "Specialist referral and reference check" review). "The nerve can be pressed or cut" follows suggested reference fix 3 from that review.
@@ -15,7 +15,7 @@ The red part is the nerve. It gives feeling to the lower teeth, gums, lip and ch
 
 As the tooth comes out, the nerve can be pressed or cut. The feeling often comes back, but sometimes it never does.
 
-Rates vary, but about 7 in 100 may get nerve damage. 1 in 100 may have damage that does not go away.
+For a tooth like this, rates vary, but about 7 in 100 may get nerve damage. 1 in 100 may have damage that does not go away.
 
 If your dentist thinks the risk to the nerve is higher, they may refer you to a specialist.
 
