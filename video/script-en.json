@@ -2,7 +2,7 @@
   "lang": "en",
   "voice": "bf_emma",
   "speed": 0.78,
-  "title": "Impacted lower wisdom tooth and the nerve near it",
+  "title": "Wisdom tooth removal: the risk to your nerve",
   "labels": {
     "nerve": [
       "Jaw nerve",
@@ -49,7 +49,7 @@
       "sentences": [
         "This is an impacted lower wisdom tooth.",
         "Its roots wrap around a nerve.",
-        "Taking the tooth out can damage the nerve and make your lip and chin numb."
+        "Taking it out can damage the nerve and make your lip and chin numb."
       ]
     },
     {
@@ -76,7 +76,7 @@
     {
       "scene": "specialist",
       "sentences": [
-        "For a tooth like this, it is a good idea to see a specialist (an oral surgeon) first."
+        "If your dentist thinks the risk to the nerve is higher, they may refer you to a specialist."
       ]
     }
   ]
