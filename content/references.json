@@ -78,5 +78,29 @@
   "rcs": {
     "text": "Faculty of Dental Surgery, Royal College of Surgeons of England. Parameters of care for patients undergoing mandibular third molar surgery. London: RCS England; 2020.",
     "url": "https://www.rcseng.ac.uk/-/media/files/rcs/fds/guidelines/3rd-molar-guidelines--april-2021.pdf"
+  },
+  "derbishi": {
+    "text": "Derbishi AA, Altayyar RA, Alsubaiei AS, Alghannam RJ, Albalushi A, Mubarki O, et al. Coronectomy versus total extraction for third molar surgery: a systematic review and meta-analysis. Cureus. 2026;18(3):e105646.",
+    "doi": "10.7759/cureus.105646"
+  },
+  "kang2025": {
+    "text": "Kang FW, Yuan XR, Li GC, Yang YFZ, Zhang XM, Hou GY. Coronectomy in lower third molar surgery: a systematic review and meta-analysis. J Oral Maxillofac Surg. 2025;83(5):601-615.",
+    "doi": "10.1016/j.joms.2025.01.014"
+  },
+  "kang2019": {
+    "text": "Kang F, Sah MK, Fei G. Determining the risk relationship associated with inferior alveolar nerve injury following removal of mandibular third molar teeth: a systematic review. J Stomatol Oral Maxillofac Surg. 2019;121(1):63-69.",
+    "doi": "10.1016/j.jormas.2019.06.010"
+  },
+  "cervera": {
+    "text": "Cervera-Espert J, Pérez-Martínez S, Cervera-Ballester J, Peñarrocha-Oltra D, Peñarrocha-Diago M. Coronectomy of impacted mandibular third molars: a meta-analysis and systematic review of the literature. Med Oral Patol Oral Cir Bucal. 2016;21(4):e505-e513.",
+    "doi": "10.4317/medoral.21074"
+  },
+  "pichler": {
+    "text": "Pichler JW, Beirne OR. Lingual flap retraction and prevention of lingual nerve damage associated with third molar surgery: a systematic review of the literature. Oral Surg Oral Med Oral Pathol Oral Radiol Endod. 2001;91(4):395-401.",
+    "doi": "10.1067/moe.2001.114154"
+  },
+  "petroni": {
+    "text": "Petroni G, Passaretti A, Zaccheo F, Di Nardo D, Testarelli L, Cicconetti A. Lingual flap protection during third molar surgery: a literature review. Eur J Dent. 2021;15(4):776-781.",
+    "doi": "10.1055/s-0041-1730042"
   }
 }
