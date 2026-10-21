@@ -91,7 +91,7 @@ main ul, main ol, .refs li { text-align: justify; hyphens: auto; -webkit-hyphens
 .controls, .ar-more { text-align: left; hyphens: manual; -webkit-hyphens: manual; }
 .important { background: #fff7e0; border: 2px solid #d9a400; border-radius: 12px; padding: 12px 14px; margin: 12px 0; }
 .important h2 { color: #6b4e00; }
-.important p { margin: 0; color: #231f20; }
+.important p { margin: 0; color: #231f20; text-align: center; text-align-last: center; }
 
 .stats .icons { display: block; width: 100%; max-width: 260px; margin: 0 0 6px; }
 .symptoms { margin: 8px 0; }
