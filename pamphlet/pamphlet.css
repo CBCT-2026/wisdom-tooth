@@ -80,19 +80,19 @@
   .pamphlet .symptoms { margin: 0.5mm 0 1mm; break-inside: avoid; }
   .pamphlet .stats { gap: 2mm; margin: 1mm 0; }
   .pamphlet .stats div { padding: 1mm 2mm; }
-  .pamphlet .stats strong { font-size: 9.5pt; }
-  .pamphlet .stats span { font-size: 7.6pt; line-height: 1.2; width: 23mm; }
+  .pamphlet .stats strong { font-size: 9.5pt; width: 23mm; margin: 0 auto; white-space: nowrap; }
+  .pamphlet .stats span { font-size: 7.6pt; line-height: 1.2; width: 23mm; margin: 0 auto; }
   .pamphlet .xray, .pamphlet .areas { margin: 1mm 0; break-inside: avoid; }
   .pamphlet .areas img { width: 100%; margin: 0 auto; }
   .pamphlet .areas figcaption { font-size: 8pt; line-height: 1.3; }
   .pamphlet .xray img { width: 32%; margin: 0 auto; }
   .pamphlet .xray figcaption { font-size: 7.6pt; line-height: 1.3; }
   .pamphlet .refs h2 { font-size: 9pt; }
-  .pamphlet .refs ol { font-size: 5.8pt; line-height: 1.2; text-align: left; }
+  .pamphlet .refs ol { font-size: 5.8pt; line-height: 1.2; text-align: justify; }
   .pamphlet .refs li { margin-bottom: 1px; }
   .pamphlet .refs .rt { display: none; }
   /* Sources as a tiny full-width footer: one run-on line per source. */
-  .pamphlet section.refs { column-span: all; padding: 0.6mm 0 0; border-top: 1px solid var(--line); }
+  .pamphlet section.refs { column-span: all; text-align: justify; padding: 0.6mm 0 0; border-top: 1px solid var(--line); }
   .pamphlet .refs h2 { display: inline; font-size: 5pt; margin: 0 1mm 0 0; color: var(--text); }
   .pamphlet .refs ol { display: inline; padding: 0; font-size: 4.6pt; line-height: 1.25; counter-reset: ref; }
   .pamphlet .refs li { display: inline; margin: 0 1.2mm 0 0; }
