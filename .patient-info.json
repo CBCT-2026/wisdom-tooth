@@ -1,0 +1,13 @@
+{
+  "files": [
+    { "glob": "content/shared-en.html", "lang": "en" },
+    { "glob": "content/shared-ja.html", "lang": "ja" },
+    { "glob": "content/3d-print-narration.md", "lang": "auto" }
+  ],
+  "pairs": [["content/shared-en.html", "content/shared-ja.html"]],
+  "ignore_selectors": ["sup.cite", ".credit", ".refs"],
+  "ignore_sections": ["narration script$"],
+  "address_reader": "you",
+  "ja_address_reader": "omit",
+  "jargon_allow": ["impacted", "AR"]
+}

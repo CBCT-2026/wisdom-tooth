@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v pitk >/dev/null 2>&1 && pitk hook || true",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -15,7 +15,7 @@ The red part is a nerve in a tube in the jaw bone. This jaw nerve gives feeling 
 
 The tooth roots wrap around the nerve. So taking the tooth out can press, stretch or cut the nerve.
 
-Then the lip, chin, teeth or gums on that side may feel numb, tingle or hurt. Most often, the feeling comes back within weeks to months. Sometimes it never fully comes back.
+Then your lip, chin, teeth or gums on that side may feel numb, tingle or hurt. Most often, the feeling comes back within weeks to months. Sometimes it never fully comes back.
 
 For teeth like this, rates vary but about 7 in 100 people may get nerve damage. 1 in 100 may have damage that does not go away.
 
