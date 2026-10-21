@@ -42,7 +42,7 @@ model-viewer { width: 100%; height: 58vh; min-height: 320px; max-height: 560px;
 .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0; }
 .stats div { background: var(--card); border-radius: 12px; padding: 12px; }
 .stats strong { display: block; font-size: 1.2rem; }
-.stats span { font-size: 14px; color: var(--muted); }
+.stats span { display: block; font-size: 14px; color: var(--muted); text-align: justify; }
 .small { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
 a { color: var(--accent); }
 ul { padding-left: 1.2em; }
