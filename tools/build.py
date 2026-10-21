@@ -50,6 +50,12 @@ def render(lang, img):
     refs = f'<section class="refs">\n  <h2>{LABELS[lang]["refs"]}</h2>\n  <ol>\n{items}\n  </ol>\n</section>'
     return text.strip() + '\n\n' + refs
 
+def collapse(block):
+    """On the webpage the sources start closed (supervisor, 21 October 2026); the printed sheet keeps them open."""
+    block = re.sub(r'<section class="refs">\n  (<h2>.*?</h2>)', r'<section class="refs">\n<details>\n  <summary>\1</summary>', block)
+    return block.replace('  </ol>\n</section>', '  </ol>\n</details>\n</section>')
+
+
 def inject(path, block):
     s = path.read_text()
     s = re.sub(r'(<!-- SHARED TEXT START[^>]*-->\n).*?(\s*<!-- SHARED TEXT END -->)',
@@ -63,26 +69,9 @@ def block(path, name, html):
     path.write_text(s)
 
 
-def key(lang, notes=True):
-    """The numbered parts with their notes, copied from the dots on the webpage.
-    Without notes it is a short list of names for the one-sided information sheet."""
-    page = (ROOT / f'{lang}/index.html').read_text()
-    items = []
-    for num, title, text in re.findall(r'class="hotspot" slot="hotspot-(\d+)".*?<span class="label">(.*?)</span><span class="note">(.*?)</span></button>', page):
-        if not notes:
-            items.append(f'      <li><span class="num">{num}</span>{title}</li>')
-            continue
-        lis = ''.join(f'<li>{n}</li>' for n in re.findall(r'<span>(.*?)</span>', text))
-        items.append(f'      <div class="part"><h3><span class="num">{num}</span>{title}</h3><ul>{lis}</ul></div>')
-    if not notes:
-        return '    <ol class="names">\n' + '\n'.join(items) + '\n    </ol>'
-    # Three columns (1-2, 3-5, 6-8); the boxes stretch so the columns end level.
-    cols = [items[:2], items[2:5], items[5:]]
-    return '\n'.join('    <div class="col">\n' + '\n'.join(c) + '\n    </div>' for c in cols)
-
 
 for lang in ('en', 'ja'):
-    inject(ROOT / f'{lang}/index.html', render(lang, '../images'))
+    inject(ROOT / f'{lang}/index.html', collapse(render(lang, '../images')))
     text = render(lang, '../../images')
     important = re.search(r'<section class="important">.*?</section>\n*', text, flags=re.S)
     # The information sheet and the card that goes with the 3D print get the same text; the one-sided sheet gets only the part names.
@@ -90,4 +79,3 @@ for lang in ('en', 'ja'):
                        (ROOT / f'pamphlet/model/{lang}/index.html', render(lang, '../../../images'))):
         inject(sheet, img.replace(important.group(0), '') if important else img)
         block(sheet, 'IMPORTANT', important.group(0).strip() if important else '')
-        block(sheet, 'KEY', key(lang, notes='model' in sheet.parts))

@@ -4,9 +4,11 @@
   --ar: #00674c; --ar-text: #fff; background: #fff; color: var(--text); font-size: 15px; }
 .pamphlet main { max-width: 820px; }
 .pamphlet h2 { color: var(--accent); }
-.sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+.sheet-head { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px;
   background: var(--accent); color: #fff; border-radius: 10px; padding: 8px 10px 8px 16px; margin: 8px 0; }
-.sheet-head h1 { margin: 0; color: #fff; }
+.sheet-head::before { content: ""; }
+.sheet-head h1 { margin: 0; color: #fff; text-align: center; grid-column: 2; }
+.sheet-head .logo { grid-column: 3; justify-self: end; }
 .sheet-head .logo { height: 52px; padding: 3px 5px; }
 .important { background: #fff7e0; border: 2px solid #d9a400; border-radius: 10px; padding: 8px 12px; margin: 8px 0; }
 .important h2 { color: #6b4e00; margin: 0 0 2px; }
@@ -28,7 +30,7 @@
   background: var(--accent); color: #fff; font-size: 11px; margin-right: 5px; }
 .part ul { margin: 0; padding-left: 1.05em; font-size: 12px; line-height: 1.35; }
 .visual { display: grid; grid-template-columns: repeat(10, 1fr); gap: 8px;
-  grid-template-areas: "w w w w w w c c c c" "w w w w w w k k k k" "b b b b b l l l l l"; }
+  grid-template-areas: "w w w w w w c c c c" "w w w w w w c c c c" "b b b b b l l l l l"; }
 .visual .v-w { grid-area: w; } .visual .v-c { grid-area: c; } .visual .v-key { grid-area: k; }
 .visual .v-b { grid-area: b; } .visual .v-l { grid-area: l; }
 .visual figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
@@ -48,11 +50,12 @@
   .sheet-head { margin: 0 0 2mm; padding: 2mm 3mm 2mm 4mm; }
   .sheet-head h1 { font-size: 15pt; }
   .sheet-head .logo { height: 12mm; }
-  .important { margin: 0 0 1.5mm; padding: 1mm 3mm; }
+  .pamphlet .important { margin: 0 0 1.5mm; padding: 1.2mm 3mm; display: flex; align-items: center; justify-content: center; }
+  .pamphlet .important p { margin: 0; text-align: center; text-align-last: center; line-height: 1.2; }
   .important h2 { font-size: 10.5pt; }
   .visual { gap: 2mm; margin-bottom: 2mm; }
   .visual .v-w img { height: 78mm; }
-  .visual .v-c img { height: 50mm; }
+  .visual .v-c img { height: 78mm; }
   .visual .v-b img, .visual .v-l img { height: 46mm; }
   .visual figcaption { font-size: 8.5pt; padding: 0.5mm 2mm 1mm; }
   .pamphlet .legend { font-size: 8pt; margin: 1mm 0; gap: 2px 14px; }
@@ -74,26 +77,26 @@
   .pamphlet h2 { font-size: 9.5pt; margin: 0 0 1px; }
   .pamphlet p { margin: 0 0 3px; }
   .pamphlet ul, .pamphlet ol { margin: 0; }
-  .pamphlet ul.symptoms { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2mm; margin: 0 0 3px; }
+  .pamphlet .symptoms { margin: 0.5mm 0 1mm; break-inside: avoid; }
   .pamphlet .stats { gap: 2mm; margin: 1mm 0; }
   .pamphlet .stats div { padding: 1mm 2mm; }
-  .pamphlet .stats strong { font-size: 9.5pt; }
-  .pamphlet .stats span { font-size: 7.6pt; line-height: 1.2; }
+  .pamphlet .stats strong { font-size: 9.5pt; width: 23mm; margin: 0 auto; white-space: nowrap; }
+  .pamphlet .stats span { font-size: 7.6pt; line-height: 1.2; width: 23mm; margin: 0 auto; }
   .pamphlet .xray, .pamphlet .areas { margin: 1mm 0; break-inside: avoid; }
   .pamphlet .areas img { width: 100%; margin: 0 auto; }
   .pamphlet .areas figcaption { font-size: 8pt; line-height: 1.3; }
   .pamphlet .xray img { width: 32%; margin: 0 auto; }
   .pamphlet .xray figcaption { font-size: 7.6pt; line-height: 1.3; }
   .pamphlet .refs h2 { font-size: 9pt; }
-  .pamphlet .refs ol { font-size: 5.8pt; line-height: 1.2; text-align: left; }
+  .pamphlet .refs ol { font-size: 5.8pt; line-height: 1.2; text-align: justify; }
   .pamphlet .refs li { margin-bottom: 1px; }
   .pamphlet .refs .rt { display: none; }
   /* Sources as a tiny full-width footer: one run-on line per source. */
-  .pamphlet section.refs { column-span: all; padding: 0.6mm 0 0; border-top: 1px solid var(--line); }
+  .pamphlet section.refs { column-span: all; text-align: justify; padding: 0.6mm 0 0; border-top: 1px solid var(--line); }
   .pamphlet .refs h2 { display: inline; font-size: 5pt; margin: 0 1mm 0 0; color: var(--text); }
-  .pamphlet .refs ol { display: inline; padding: 0; font-size: 4.6pt; line-height: 1.25; }
+  .pamphlet .refs ol { display: inline; padding: 0; font-size: 4.6pt; line-height: 1.25; counter-reset: ref; }
   .pamphlet .refs li { display: inline; margin: 0 1.2mm 0 0; }
-  .pamphlet .refs li::before { content: counter(list-item) ". "; font-weight: 700; }
+  .pamphlet .refs li::before { counter-increment: ref; content: counter(ref) ". "; font-weight: 700; }
   .pamphlet .disclaimer { column-span: all; }
   .pamphlet .disclaimer { font-size: 7.5pt; padding-top: 1mm; margin: 0; }
   .pamphlet a { color: inherit; text-decoration: none; }

@@ -1,32 +1,32 @@
-# 3D printed model: 60-second narration script
+# 3D printed model and narrated video: 45-second narration script
 
-This is the spoken script that plays while a participant looks at the 3D printed model. No written card and no stickers go with the model, as in a clinic. The script points to parts by colour and position (the red nerve, the tooth at the back). Sources are the same as for the 2D information sheet and the AR web page.
+This is the spoken script that plays while a participant looks at the 3D printed model. The narrated video uses the same script, with subtitles. No written card and no stickers go with the model, as in a clinic. The script points to parts by colour and position (the red nerve). Sources are the same as for the 2D information sheet and the AR web page.
 
-- **English:** 142 words, about 55 to 60 seconds at 130 to 140 words a minute. Flesch-Kincaid grade 2.0
-- **Japanese:** 335 characters, about 55 to 60 seconds at about 320 characters a minute. All kanji are grade 6 or below. Needs a native-speaker check before recording.
+- **English:** 106 words, about 45 seconds at a comfortable pace (text-to-speech test of the 107-word version: 44.8 s). Flesch-Kincaid grade 2.7.
+- **Japanese:** 245 characters (text-to-speech test of the 239-character version: 43.9 s). All kanji are grade 6 or below. Needs a native-speaker check before recording.
 
-To fit 60 seconds, the script leaves out these points from the sheet and web page: the artery and vein, the name of the chin nerve, the tongue nerve, and the age effect. It starts with the same main message as the sheet and web page.
+To fit 45 seconds at a comfortable pace, the script leaves out these points from the sheet and web page: the tube in the bone, the artery and vein, the name of the chin nerve, the tongue nerve, the list of symptoms, how long recovery takes, and the age effect. The last sentence follows referral guidance (Dental Board of Australia scope of practice 2020: refer when a case is beyond the dentist's competence; FDS RCS England 2020 parameters of care) and does not say a specialist lowers the risk, as no study shows that (see the "Specialist referral and reference check" review). "The nerve can be pressed or cut" follows suggested reference fix 3 from that review.
 
 ## English
 
-This model shows an impacted lower wisdom tooth. Its roots wrap around a nerve. Taking the tooth out can damage the nerve and make your lip and chin numb.
+This is an impacted lower wisdom tooth. Its roots wrap around a nerve. Taking it out can damage the nerve and make your lip and chin numb.
 
-The tooth is stuck under the gum and bone at the back of the jaw. The red part is the nerve, in a tube in the jaw bone. This jaw nerve gives feeling to the lower teeth, gums, lip and chin.
+The red part is the nerve. It gives feeling to the lower teeth, gums, lip and chin.
 
-As the roots come out, they can press, stretch or cut the nerve.
+As the tooth comes out, the nerve can be pressed or cut. The feeling often comes back, but sometimes it never does.
 
-Then your lip, chin, teeth or gums on that side may feel numb, tingle or hurt. Most often, the feeling comes back within weeks to months. Sometimes it never fully comes back.
+Rates vary, but about 7 in 100 may get nerve damage. 1 in 100 may have damage that does not go away.
 
-For teeth like this, rates vary but about 7 in 100 people may get nerve damage. 1 in 100 may have damage that does not go away.
+If your dentist thinks the risk to the nerve is higher, they may refer you to a specialist.
 
 ## Japanese
 
-このモデルは、うまっている下の親知らずです。根が神経に巻き付いています。歯をぬくと、神経が傷つき、くちびるやあごがしびれることがあります。
+これは、うまっている下の親知らずです。根が神経に巻き付いています。歯をぬくと、神経が傷つき、くちびるやあごがしびれることがあります。
 
-親知らずは、いちばんおくの歯で、歯ぐきと骨の下にあります。赤い部分は、あごの骨の中の管を通る神経です。この神経は、下の歯、歯ぐき、くちびる、あごに感覚を伝えます。
+赤い部分が神経で、下の歯、歯ぐき、くちびる、あごに感覚を伝えます。
 
-根を取り出すときに、神経がおされたり、のびたり、切れたりすることがあります。
+ぬくとき、神経がおされたり切れたりすることがあります。多くは感覚がもどりますが、もどらないこともあります。
 
-すると、同じ側の下くちびる、あご、歯、歯ぐきが、しびれたり、いたんだりします。多くは、数週間から数か月で感覚がもどりますが、完全にはもどらないこともあります。
+差はありますが、100人中約7人に神経の傷が起こるかもしれません。約1人は治らないかもしれません。
 
-このような親知らずでは、報告によって差がありますが、100人中約7人に神経の傷が起こるかもしれません。約1人は、治らないかもしれません。
+神経が傷つく危険が高いときは、歯医者が口くう外科の専門医をしょうかいすることがあります。

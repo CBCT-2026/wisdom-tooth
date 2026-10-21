@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Wisdom Tooth and Nerve</title>
+<title>Wisdom tooth removal: the risk to your nerve</title>
 <meta name="description" content="An interactive 3D model showing why removing an impacted lower wisdom tooth can injure the nerve near it.">
 <meta name="robots" content="noindex">
 <script>
@@ -25,12 +25,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
 </header>
 
 <main>
-  <h1>Impacted lower wisdom tooth and the nerve near it</h1>
-  <p class="intro">Below is a 3D model of the left lower jaw. Some phones and tablets can also show it in <b>augmented reality (AR)</b>. AR uses the camera to show the model in the real room, as if it were there.</p>
-
-  <p class="hint">Drag to turn the model. Pinch to zoom. Tap a numbered dot to learn about that part. Tap <b>Hide labels</b> for a clear view. Tap <b>View in AR</b> to place the model on a nearby table or flat surface.</p>
-  <p class="hint arnote">AR works only on a device and browser that can use it. For example, Safari on an iPhone or iPad, or Chrome on many Android phones. If no AR button shows, AR cannot be used on that device or browser. On an iPhone, tap <b>Object</b> at the top of the AR screen to turn the model in any direction.</p>
-
+  <h1>Wisdom tooth removal: the risk to your nerve</h1>
   <!-- MODEL: models/wisdom-tooth.glb (keep it under 5 MB). -->
   <model-viewer id="mv"
     src="../models/wisdom-tooth.glb"
@@ -40,20 +35,19 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
     camera-controls camera-orbit="90deg 80deg auto" touch-action="pan-y" interaction-prompt="auto"
     shadow-intensity="1" exposure="1" loading="eager">
     <button slot="ar-button" class="ar-btn">View in AR (place in the room)</button>
-    <button class="hotspot" slot="hotspot-1" data-position="-0.0374m -0.0324m -0.048m" data-normal="0.95 0 0.3" data-visibility-attribute="visible" aria-label="1. Jaw nerve (inferior alveolar nerve)">1<span class="label">Jaw nerve (inferior alveolar nerve)</span><span class="note"><span>Gives feeling to the lower teeth, gums, lip and chin on this side.</span><span>Runs in a tube in the bone with the inferior alveolar artery and vein. Taking the tooth out can hurt these too.</span><span>Damage to the nerve can make the area feel numb, have pins and needles, feel strange or hurt. This can be short-term or long-term.</span><span>The older you are, the more likely damage is, and the less likely it is to heal fully.</span></span></button>
-    <button class="hotspot" slot="hotspot-2" data-position="-0.0263m -0.0163m -0.0723m" data-normal="0.95 -0.12 -0.29" data-visibility-attribute="visible" aria-label="2. Roots of the wisdom tooth">2<span class="label">Roots of the wisdom tooth</span><span class="note"><span>The roots wrap around the jaw nerve.</span><span>So taking the tooth out can hurt the nerve.</span></span></button>
-    <button class="hotspot" slot="hotspot-3" data-position="-0.029m -0.0018m -0.0579m" data-normal="0.87 0.49 0" data-visibility-attribute="visible" aria-label="3. Wisdom tooth (third molar)">3<span class="label">Wisdom tooth (third molar)</span><span class="note"><span>Impacted: stuck under the gum and bone.</span><span>Unerupted: it has not come through the gum.</span></span></button>
-    <button class="hotspot" slot="hotspot-4" data-position="-0.0375m -0.005m -0.0275m" data-normal="1 0 0.15" data-visibility-attribute="visible" aria-label="4. First and second molars">4<span class="label">First and second molars</span><span class="note"><span>Big back teeth used to chew.</span><span>The wisdom tooth sits behind them.</span></span></button>
-    <button class="hotspot" slot="hotspot-5" data-position="-0.0505m -0.006m 0.008m" data-normal="1 0 0.25" data-visibility-attribute="visible" aria-label="5. First and second premolars">5<span class="label">First and second premolars</span><span class="note"><span>The teeth in front of the molars.</span><span>They also help to chew.</span></span></button>
-    <button class="hotspot" slot="hotspot-6" data-position="-0.0592m -0.039m 0.0204m" data-normal="1 -0.02 0.05" data-visibility-attribute="visible" aria-label="6. Chin nerve (mental nerve)">6<span class="label">Chin nerve (mental nerve)</span><span class="note"><span>A branch of the jaw nerve. It comes out of the bone through a small hole (the mental foramen).</span><span>Gives feeling to the lower lip and chin.</span><span>If the jaw nerve is hurt further back, the lip and chin can feel different too.</span></span></button>
-    <button class="hotspot" slot="hotspot-7" data-position="-0.0508m -0.0472m -0.0018m" data-normal="0.94 -0.08 0.34" data-visibility-attribute="visible" aria-label="7. Jaw bone (mandible)">7<span class="label">Jaw bone (mandible)</span><span class="note"><span>The jaw nerve, artery and vein run in a tube inside this bone.</span></span></button>
+    <div class="hotspot" slot="hotspot-1" data-position="-0.0374m -0.0324m -0.048m" data-normal="0.95 0 0.3" data-visibility-attribute="visible" data-side="down"><span class="label">Jaw nerve<small>inferior alveolar nerve</small></span></div>
+    <div class="hotspot" slot="hotspot-2" data-position="-0.0263m -0.0163m -0.0723m" data-normal="0.95 -0.12 -0.29" data-visibility-attribute="visible" data-side="right"><span class="label">Roots</span></div>
+    <div class="hotspot" slot="hotspot-3" data-position="-0.029m -0.0018m -0.0579m" data-normal="0.87 0.49 0" data-visibility-attribute="visible" data-side="up" style="--len: 58px"><span class="label">Wisdom tooth<small>third molar</small></span></div>
+    <div class="hotspot" slot="hotspot-4" data-position="-0.0375m -0.005m -0.0275m" data-normal="1 0 0.15" data-visibility-attribute="visible" data-side="up" style="--len: 16px"><span class="label">Molars</span></div>
+    <div class="hotspot" slot="hotspot-5" data-position="-0.0505m -0.006m 0.008m" data-normal="1 0 0.25" data-visibility-attribute="visible" data-side="up" style="--len: 52px"><span class="label">Premolars</span></div>
+    <div class="hotspot" slot="hotspot-6" data-position="-0.0592m -0.039m 0.0204m" data-normal="1 -0.02 0.05" data-visibility-attribute="visible" data-side="down" style="--len: 44px"><span class="label">Chin nerve<small>mental nerve</small></span></div>
+    <div class="hotspot" slot="hotspot-7" data-position="-0.0182m 0.0196m -0.1027m" data-normal="0.92 -0.39 -0.07" data-visibility-attribute="visible" data-side="up" style="--len: 24px"><span class="label">Jaw bone<small>mandible</small></span></div>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
 </model-viewer>
   <div class="ar-more" id="ar-more" role="group" aria-label="More AR views" hidden>
     <button type="button" data-ar="wisdom-tooth-below">View in AR: from below (roots up)</button>
     <button type="button" data-ar="wisdom-tooth-cheek">View in AR: cheek side up</button>
   </div>
-  <div class="info" id="info" aria-live="polite" hidden></div>
   <div class="controls" role="group" aria-label="Model controls">
     <button type="button" data-orbit="90deg 80deg auto" aria-pressed="true">Whole jaw</button>
     <button type="button" data-orbit="100deg 80deg 0.075m" data-target="-0.033m -0.015m -0.06m" aria-pressed="false">Roots and nerve</button>
@@ -61,10 +55,6 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
     <button type="button" id="labels" aria-pressed="false" data-on="Hide labels" data-off="Show labels">Hide labels</button>
   </div>
 
-  <ul class="legend" aria-label="Colour key">
-    <li><span class="dot" style="background:#d6cbbb"></span>Jaw bone and teeth</li>
-    <li><span class="dot" style="background:#c8303a"></span>Nerve, artery and vein (in their canal)</li>
-  </ul>
 
   <!-- SHARED TEXT START: generated from content/shared-en.html by tools/build.py. Edit that file, not this block. -->
 <section class="important">
@@ -80,7 +70,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
   <h2>The nerve</h2>
   <p>A nerve runs in a tube of bone inside your lower jaw. Here we call it the <b>jaw nerve</b>. Its medical name is the <b>inferior alveolar nerve</b>. Two blood vessels run with it in the same tube. They are the <b>inferior alveolar artery and vein</b>.<sup class="cite"><a href="#ref-1">1</a></sup></p>
   <p>The jaw nerve gives feeling to your lower teeth and gums on the same side.<sup class="cite"><a href="#ref-2">2</a></sup> Near the front of your jaw, a branch of it comes out of the bone through a small hole. This branch is the <b>chin nerve</b> (<b>mental nerve</b>). It gives feeling to your lower lip and chin.<sup class="cite"><a href="#ref-3">3</a></sup></p>
-  <p>Your tongue gets its feeling from a different nerve (the <b>lingual nerve</b>). Taking out a wisdom tooth can also hurt this nerve.<sup class="cite"><a href="#ref-4">4</a></sup> Lasting damage to it is rare. It happens to about 1 to 3 in 1,000 people.<sup class="cite"><a href="#ref-5">5</a></sup> This model does not show the tongue nerve.</p>
+  <p>Taking out a wisdom tooth can also hurt the nerve to your tongue (the <b>lingual nerve</b>).<sup class="cite"><a href="#ref-4">4</a></sup> About 1 to 3 in 1,000 people may get lasting damage.<sup class="cite"><a href="#ref-5">5</a></sup> This model does not show this nerve.</p>
   <p>In this model, <b>the roots of the wisdom tooth wrap around the nerve and artery</b>.</p>
 </section>
 
@@ -93,12 +83,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
 <section>
   <h2>What nerve damage feels like</h2>
   <p>Your lower lip, chin, teeth or gums on that side may:<sup class="cite"><a href="#ref-2">2</a></sup><sup class="cite"><a href="#ref-4">4</a></sup></p>
-  <ul class="symptoms">
-    <li>feel numb</li>
-    <li>tingle</li>
-    <li>feel strange</li>
-    <li>hurt</li>
-  </ul>
+  <figure class="symptoms"><img src="../images/symptoms-en.svg" alt="Four cartoon faces. On each, the lower lip and chin on one side is coloured: numb, tingles, feels strange, and hurts."></figure>
   <p><b>Short-term:</b> the feeling comes back, most often within weeks to months. <b>Long-term:</b> the feeling does not fully come back.<sup class="cite"><a href="#ref-2">2</a></sup></p>
   <p>The older you are, the higher the risk, and the less likely the feeling is to come back fully.<sup class="cite"><a href="#ref-2">2</a></sup><sup class="cite"><a href="#ref-6">6</a></sup></p>
 </section>
@@ -110,10 +95,12 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
     <div><img class="icons" src="../images/risk-7-in-100.svg" alt="100 people, 7 of them in red."><strong>About 7 in 100</strong><span>may get nerve damage after the whole tooth is taken out</span></div>
     <div><img class="icons" src="../images/risk-1-in-100.svg" alt="100 people, 1 of them in red."><strong>About 1 in 100</strong><span>may have nerve damage that does not go away</span></div>
   </div>
+  <p>If your dentist thinks the risk to the nerve is higher, they may refer you to a specialist (an oral surgeon) to take the tooth out.<sup class="cite"><a href="#ref-8">8</a></sup></p>
 </section>
 
 <section class="refs">
-  <h2>Sources</h2>
+<details>
+  <summary><h2>Sources</h2></summary>
   <ol>
     <li id="ref-1">Juodzbalys G, Wang HL, Sabalys G. <span class="rt">Anatomy of mandibular vital structures. Part I: mandibular canal and inferior alveolar neurovascular bundle in relation with dental implantology.</span> J Oral Maxillofac Res. 2010;1(1):e2. <a href="https://doi.org/10.5037/jomr.2010.1102">doi.org/10.5037/jomr.2010.1102</a></li>
     <li id="ref-2">Sarikov R, Juodzbalys G. <span class="rt">Inferior alveolar nerve injury after mandibular third molar extraction: a literature review.</span> J Oral Maxillofac Res. 2014;5(4):e1. <a href="https://doi.org/10.5037/jomr.2014.5401">doi.org/10.5037/jomr.2014.5401</a></li>
@@ -122,7 +109,9 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
     <li id="ref-5">Lee J, Feng B, Park JS, et al. <span class="rt">Incidence of lingual nerve damage following surgical extraction of mandibular third molars with lingual flap retraction: a systematic review and meta-analysis.</span> PLoS One. 2023;18(2):e0282185. <a href="https://doi.org/10.1371/journal.pone.0282185">doi.org/10.1371/journal.pone.0282185</a></li>
     <li id="ref-6">Queral-Godoy E, Valmaseda-Castellón E, Berini-Aytés L, et al. <span class="rt">Incidence and evolution of inferior alveolar nerve lesions following lower third molar extraction.</span> Oral Surg Oral Med Oral Pathol Oral Radiol Endod. 2005;99(3):259-264. <a href="https://doi.org/10.1016/j.tripleo.2004.06.001">doi.org/10.1016/j.tripleo.2004.06.001</a></li>
     <li id="ref-7">Rico-Barroso L, Barroso-Medel M, Gutiérrez-Pérez J, et al. <span class="rt">Coronectomy as an alternative technique to complete extraction of mandibular third molars with risk of nerve injury.</span> Med Oral Patol Oral Cir Bucal. 2026;31(1):e19-e30. <a href="https://doi.org/10.4317/medoral.27459">doi.org/10.4317/medoral.27459</a></li>
+    <li id="ref-8">Faculty of Dental Surgery, Royal College of Surgeons of England. Parameters of care for patients undergoing mandibular third molar surgery. London: RCS England; 2020. <a href="https://www.rcseng.ac.uk/-/media/files/rcs/fds/guidelines/3rd-molar-guidelines--april-2021.pdf">www.rcseng.ac.uk/-/media/files/rcs/fds/guidelines/3rd-molar-guidelines--april-2021.pdf</a></li>
   </ol>
+</details>
 </section>
   <!-- SHARED TEXT END -->
 
