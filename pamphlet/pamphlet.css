@@ -101,3 +101,19 @@
   .pamphlet .disclaimer { font-size: 7.5pt; padding-top: 1mm; margin: 0; }
   .pamphlet a { color: inherit; text-decoration: none; }
 }
+/* Spread the sheet over the whole A4 side (Luke 2026-10-21): sources and version line sit at the bottom. */
+@media print {
+  .pamphlet { line-height: 1.26; }
+  html[lang="ja"] .pamphlet { line-height: 1.31; }
+  .pamphlet p { margin: 0 0 4.5px; }
+  .pamphlet section { padding: 1.1mm 0; }
+  .pamphlet h2 { margin: 0 0 2px; }
+  .sheet-head { margin: 0 0 2.5mm; }
+  .pamphlet .important { margin: 0 0 2.5mm; }
+  .visual { gap: 2.5mm; margin-bottom: 3mm; }
+  .visual .v-w img, .visual .v-c img { height: 80mm; }
+  .visual .v-b img, .visual .v-l img { height: 47mm; }
+  html[lang="ja"] .pamphlet section { padding: 1mm 0; }
+  html[lang="ja"] .visual .v-w img, html[lang="ja"] .visual .v-c img { height: 79mm; }
+  html[lang="ja"] .visual .v-b img, html[lang="ja"] .visual .v-l img { height: 46mm; }
+}
