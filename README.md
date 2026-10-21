@@ -8,6 +8,7 @@ AR web page: a web-hosted augmented reality model demonstrating an impacted lowe
 - Narration for the 3D print: `content/3d-print-narration.md`. A spoken script of at most 60 seconds (EN and JA) that plays while the print is viewed. The print has no card and no stickers, as in a clinic, so the script points to parts by colour and position.
 - Old card and stickers for the 3D print (not used in the study since 20 October 2026): `pamphlet/model/` and `pamphlet/model/stickers.html`.
 - Version: every page and sheet ends with its version and date. Tagged releases on GitHub freeze each version.
+- Patient information checks: `.patient-info.json` and `.claude/settings.json` run [patient-info-toolkit](https://github.com/CBCT-2026/patient-info-toolkit) (`pip install` it, then `pitk check`) on the shared text and the narration after every edit: reading level, jargon, "you" wording, risk numbers, Japanese kanji grade, and EN/JA matching numbers. The text speaks to the reader as "you" (NHS and CDC guidance; changed 21 October 2026).
 - Reading level: run `python3 tools/readability.py` for the Flesch-Kincaid Grade Level of every English section (webpage and information sheet), saved to `tools/readability-report.md`. Every section is grade 6 or below. Japanese uses only kanji taught by grade 6 (MEXT 2020 list).
 
 ## 3D models
