@@ -4,9 +4,11 @@
   --ar: #00674c; --ar-text: #fff; background: #fff; color: var(--text); font-size: 15px; }
 .pamphlet main { max-width: 820px; }
 .pamphlet h2 { color: var(--accent); }
-.sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+.sheet-head { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px;
   background: var(--accent); color: #fff; border-radius: 10px; padding: 8px 10px 8px 16px; margin: 8px 0; }
-.sheet-head h1 { margin: 0; color: #fff; }
+.sheet-head::before { content: ""; }
+.sheet-head h1 { margin: 0; color: #fff; text-align: center; grid-column: 2; }
+.sheet-head .logo { grid-column: 3; justify-self: end; }
 .sheet-head .logo { height: 52px; padding: 3px 5px; }
 .important { background: #fff7e0; border: 2px solid #d9a400; border-radius: 10px; padding: 8px 12px; margin: 8px 0; }
 .important h2 { color: #6b4e00; margin: 0 0 2px; }
@@ -79,7 +81,7 @@
   .pamphlet .stats { gap: 2mm; margin: 1mm 0; }
   .pamphlet .stats div { padding: 1mm 2mm; }
   .pamphlet .stats strong { font-size: 9.5pt; }
-  .pamphlet .stats span { font-size: 7.6pt; line-height: 1.2; }
+  .pamphlet .stats span { font-size: 7.6pt; line-height: 1.2; width: 23mm; }
   .pamphlet .xray, .pamphlet .areas { margin: 1mm 0; break-inside: avoid; }
   .pamphlet .areas img { width: 100%; margin: 0 auto; }
   .pamphlet .areas figcaption { font-size: 8pt; line-height: 1.3; }
