@@ -17,9 +17,9 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | The nerve | 216 | 19 | 3.0 | 93.74 |
 | Why taking the tooth out can hurt the nerve | 77 | 7 | 1.7 | 102.61 |
 | What nerve damage feels like | 59 | 5 | 4.4 | 84.88 |
-| How often does it happen? | 51 | 7 | 1.4 | 97.91 |
+| How often does it happen? | 57 | 7 | 1.7 | 97.09 |
 | Disclaimer | 15 | 2 | 5.0 | 72.32 |
-| **Overall** | **863** | **91** | **2.3** | **95.67** |
+| **Overall** | **869** | **91** | **2.3** | **95.67** |
 
 ## 2D information sheet
 
@@ -32,9 +32,9 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | The nerve | 216 | 19 | 3.0 | 93.74 |
 | Why taking the tooth out can hurt the nerve | 77 | 7 | 1.7 | 102.61 |
 | What nerve damage feels like | 59 | 5 | 4.4 | 84.88 |
-| How often does it happen? | 51 | 7 | 1.4 | 97.91 |
+| How often does it happen? | 57 | 7 | 1.7 | 97.09 |
 | Disclaimer | 15 | 2 | 5.0 | 72.32 |
-| **Overall** | **528** | **57** | **2.2** | **95.88** |
+| **Overall** | **534** | **57** | **2.2** | **95.77** |
 
 ## Card for the 3D print
 
@@ -48,7 +48,7 @@ Each heading, paragraph and bullet is counted as one sentence. Source list and p
 | The nerve | 216 | 19 | 3.0 | 93.74 |
 | Why taking the tooth out can hurt the nerve | 77 | 7 | 1.7 | 102.61 |
 | What nerve damage feels like | 59 | 5 | 4.4 | 84.88 |
-| How often does it happen? | 51 | 7 | 1.4 | 97.91 |
+| How often does it happen? | 57 | 7 | 1.7 | 97.09 |
 | Disclaimer | 15 | 2 | 5.0 | 72.32 |
-| **Overall** | **724** | **78** | **2.2** | **95.88** |
+| **Overall** | **730** | **78** | **2.2** | **95.77** |
 
