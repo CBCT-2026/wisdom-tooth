@@ -75,7 +75,8 @@ def sections(path):
     if legend:
         res.append(('Colour key', units(legend)))
     for sec in main.find_all('section'):
-        res.append((sec.find('h2').get_text(' ').strip(), units(sec)))
+        h2 = sec.find('h2')
+        res.append((h2.get_text(' ').strip() if h2 else 'Main message', units(sec)))
     disc = main.select_one('.disclaimer')
     if disc:
         res.append(('Disclaimer', [' '.join(disc.get_text(' ').split())]))
