@@ -114,7 +114,7 @@
   .visual .v-w img, .visual .v-c img { height: 70mm; }
   .visual .v-b img, .visual .v-l img { height: 40mm; }
   html[lang="ja"] .pamphlet section { padding: 1mm 0; }
-  html[lang="ja"] .visual .v-w img, html[lang="ja"] .visual .v-c img { height: 72mm; }
-  html[lang="ja"] .visual .v-b img, html[lang="ja"] .visual .v-l img { height: 42mm; }
+  html[lang="ja"] .visual .v-w img, html[lang="ja"] .visual .v-c img { height: 70mm; }
+  html[lang="ja"] .visual .v-b img, html[lang="ja"] .visual .v-l img { height: 41mm; }
   .pamphlet .disclaimer { font-size: 4.6pt; line-height: 1.25; margin: 0.6mm 0 0; }
 }
