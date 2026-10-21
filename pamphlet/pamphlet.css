@@ -41,14 +41,14 @@
 .parts:has(.names) { display: block; }
 @page { size: A4; margin: 7mm; }
 @media print {
-  .pamphlet { font-size: 8.0pt; line-height: 1.22; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pamphlet { font-size: 7.8pt; line-height: 1.2; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   html[lang="ja"] .pamphlet { line-height: 1.3; }
   .pamphlet main { max-width: none; padding: 0; column-count: 3; column-gap: 5mm; }
   .sheet-head, .important, .visual, .model-note { column-span: all; }
   .sheet-head { margin: 0 0 2mm; padding: 2mm 3mm 2mm 4mm; }
   .sheet-head h1 { font-size: 15pt; }
   .sheet-head .logo { height: 12mm; }
-  .important { margin: 0 0 2mm; padding: 1.5mm 3mm; }
+  .important { margin: 0 0 1.5mm; padding: 1mm 3mm; }
   .important h2 { font-size: 10.5pt; }
   .visual { gap: 2mm; margin-bottom: 2mm; }
   .visual .v-w img { height: 78mm; }
@@ -74,6 +74,7 @@
   .pamphlet h2 { font-size: 9.5pt; margin: 0 0 1px; }
   .pamphlet p { margin: 0 0 3px; }
   .pamphlet ul, .pamphlet ol { margin: 0; }
+  .pamphlet ul.symptoms { display: grid; grid-template-columns: 1fr 1fr; column-gap: 2mm; margin: 0 0 3px; }
   .pamphlet .stats { gap: 2mm; margin: 1mm 0; }
   .pamphlet .stats div { padding: 1mm 2mm; }
   .pamphlet .stats strong { font-size: 9.5pt; }
