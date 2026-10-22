@@ -53,7 +53,16 @@ const msg = document.documentElement.lang === 'ja'
       load: 'The 3D model could not load. Please reload the page.' };
 const canvas = document.createElement('canvas');
 if (!(canvas.getContext('webgl2') || canvas.getContext('webgl'))) showProblem(msg.gl);
-mv.addEventListener('error', e => showProblem(msg.load + ' (' + (e.detail && e.detail.type || 'error') + ')'));
+mv.addEventListener('error', e => {
+  console.warn('model-viewer error', e.detail && e.detail.type);
+  showProblem(msg.load);
+});
+// If the 3D viewer script itself does not start (blocked or offline), say so instead of an empty box.
+setTimeout(() => {
+  if (customElements.get('model-viewer')) return;
+  showProblem(msg.load);
+  document.querySelector('.controls').hidden = true;
+}, 10000);
 
 // Extra AR buttons: open the same model turned to another side, in Quick Look (iPhone/iPad)
 // or Scene Viewer (Android). They only show when the device can use AR.

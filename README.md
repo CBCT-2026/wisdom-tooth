@@ -15,7 +15,7 @@ AR web page: a web-hosted augmented reality model demonstrating an impacted lowe
 ## 3D models
 
 - `models/wisdom-tooth.glb` / `.usdz`: main model (Android/web and iPhone AR).
-- There is no tooth-removal animation, so the webpage shows the same model as the 3D print (supervisor feedback, 20 October 2026). The `.glb` files are Draco-compressed (gltf-transform 4.1.1). The decoder is served from `vendor/draco/` (from three.js r163, Apache 2.0).
+- There is no tooth-removal animation, so the webpage shows the same model as the 3D print (supervisor feedback, 20 October 2026). The `.glb` files are Draco-compressed (gltf-transform 4.1.1). The decoder is served from `vendor/draco/` (from three.js r163, Apache 2.0). The 3D viewer itself (model-viewer 3.5.0, Apache 2.0) is served from `vendor/model-viewer/`, so the AR web page needs no outside server.
 - `models/wisdom-tooth-below.*` (turned upside down, roots up) and `models/wisdom-tooth-cheek.*` (cheek side up): the same model turned, for the extra AR buttons.
 
 ## Image licences

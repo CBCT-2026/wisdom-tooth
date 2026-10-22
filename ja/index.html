@@ -7,17 +7,18 @@
 <meta name="description" content="うまっている下の親知らずをぬくと、なぜ隣の神経が傷つく可能性があるのかを示す3Dモデルです。">
 <meta name="robots" content="noindex">
 <script>
-// Pick light or dark before the page draws: the saved choice, else the device setting.
+// Pages open in light mode; dark only if chosen with the toggle in this browser tab.
 try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
 // The models are Draco-compressed; the decoder is served from this site.
 self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', location.href).href };
 </script>
 <link rel="stylesheet" href="../style.css">
-<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<script type="module" src="../vendor/model-viewer/model-viewer.min.js"></script>
 </head>
 <body>
 <header class="bar">
   <div class="bar-left">
+    <a class="lang" href="../">ホーム</a>
     <a class="lang" href="../en/" lang="en" hreflang="en">English</a>
     <button class="theme" id="theme" type="button" data-dark="ダークモード" data-light="ライトモード">ダークモード</button>
   </div>
@@ -82,7 +83,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
 
 <section>
   <h2>神経が傷つくと、どうなりますか？</h2>
-  <p>同じ側の下くちびる、あご、歯、歯ぐきに、次のようなことが起こります。<sup class="cite"><a href="#ref-7">7</a></sup><sup class="cite"><a href="#ref-3">3</a></sup></p>
+  <p>同じ側の下くちびる、あご、歯、歯ぐきに、次のようなことが起こることがあります。<sup class="cite"><a href="#ref-7">7</a></sup><sup class="cite"><a href="#ref-3">3</a></sup></p>
   <figure class="symptoms"><img src="../images/symptoms-ja.svg" alt="4つの顔の絵。どれも片側の下くちびるとあごに色がついています：しびれる、ピリピリする、いつもとちがう、いたむ。"></figure>
   <p>多くの人は、数週間から数か月で感覚がもどります（<b>一時的</b>な傷）。感覚が完全にはもどらない人もいます（<b>ずっと続く</b>傷）。<sup class="cite"><a href="#ref-7">7</a></sup><sup class="cite"><a href="#ref-8">8</a></sup><sup class="cite"><a href="#ref-9">9</a></sup></p>
   <p>年れいが高い人ほど、神経が傷つきやすく、感覚も完全にはもどりにくくなります。<sup class="cite"><a href="#ref-7">7</a></sup><sup class="cite"><a href="#ref-10">10</a></sup></p>
