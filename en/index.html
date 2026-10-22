@@ -7,17 +7,18 @@
 <meta name="description" content="An interactive 3D model showing why removing an impacted lower wisdom tooth can injure the nerve near it.">
 <meta name="robots" content="noindex">
 <script>
-// Pick light or dark before the page draws: the saved choice, else the device setting.
+// Pages open in light mode; dark only if chosen with the toggle in this browser tab.
 try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
 // The models are Draco-compressed; the decoder is served from this site.
 self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', location.href).href };
 </script>
 <link rel="stylesheet" href="../style.css">
-<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<script type="module" src="../vendor/model-viewer/model-viewer.min.js"></script>
 </head>
 <body>
 <header class="bar">
   <div class="bar-left">
+    <a class="lang" href="../">Home</a>
     <a class="lang" href="../ja/" lang="ja" hreflang="ja">日本語</a>
     <button class="theme" id="theme" type="button" data-dark="Dark mode" data-light="Light mode">Dark mode</button>
   </div>
