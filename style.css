@@ -19,7 +19,7 @@ body { margin: 0; background: var(--bg); color: var(--text);
 @media (max-width: 420px) { .bar { gap: 8px; } .bar-left { gap: 6px; } .lang, .theme { padding: 8px 10px; } .logo { height: 44px; } }
 .theme { font: inherit; font-size: 15px; color: var(--accent); background: transparent; cursor: pointer;
   padding: 8px 12px; min-height: 44px; border: 1px solid var(--line); border-radius: 999px; }
-.lang { font-size: 15px; color: var(--accent); text-decoration: none; padding: 8px 12px;
+.lang { font-size: 15px; color: var(--accent); text-decoration: none; padding: 8px 12px; min-height: 44px; display: inline-flex; align-items: center;
   border: 1px solid var(--line); border-radius: 999px; }
 main { max-width: 640px; margin: 0 auto; padding: 8px 16px 48px; }
 h1 { font-size: 1.45rem; line-height: 1.3; margin: 16px 0 12px; }
@@ -42,6 +42,8 @@ model-viewer:not(:defined) > :not(.problem) { display: none; }
 .stats div { background: var(--card); border-radius: 12px; padding: 12px; }
 .stats strong { display: block; font-size: 1.2rem; }
 .stats span { display: block; font-size: 14px; color: var(--muted); text-align: justify; }
+/* The two risk boxes are narrow on a screen, so their text is not justified there. */
+@media screen { .stats span { text-align: left; hyphens: manual; -webkit-hyphens: manual; } }
 .small { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
 a { color: var(--accent); }
 ul { padding-left: 1.2em; }
@@ -50,7 +52,7 @@ ul { padding-left: 1.2em; }
 .hotspot { --len: 34px; width: 9px; height: 9px; border-radius: 50%; padding: 0; border: 2px solid #fff;
   background: #1b1d21; box-shadow: 0 0 0 1px #1b1d21; position: relative; pointer-events: none; }
 .hotspot:not([data-visible]) { opacity: 0; }
-model-viewer.labels-off .hotspot { display: none; }
+model-viewer.labels-off .hotspot, model-viewer.zoomed .hotspot[data-far] { display: none; }
 .hotspot::after { content: ""; position: absolute; background: #1b1d21; }
 .hotspot .label { position: absolute; white-space: nowrap; text-align: center;
   background: rgba(255,255,255,.92); color: #1b1d21; border: 1px solid #1b1d21; border-radius: 4px; padding: 2px 6px;
@@ -70,6 +72,8 @@ model-viewer.labels-off .hotspot { display: none; }
 .controls button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
 .cite { font-size: .7em; line-height: 0; margin-left: 1px; }
 .cite a { text-decoration: none; }
+/* Bigger tap area for source numbers on screens (the printed sheet keeps its spacing). */
+@media screen { .cite a { display: inline-block; line-height: 1; padding: 4px 3px; margin: -4px -1px; } }
 .cite + .cite::before { content: ","; }
 .xray, .areas { margin: 12px 0; }
 .areas img { width: 100%; height: auto; border-radius: 10px; display: block; background: #fff; }
@@ -103,6 +107,8 @@ main ul, main ol, .refs li { text-align: justify; hyphens: auto; -webkit-hyphens
 .refs summary h2::after { content: " +"; color: var(--muted); }
 .refs details[open] summary h2::after { content: " \2212"; }
 @media (max-width: 480px) {
-  .hotspot .label { font-size: 11.5px; padding: 2px 5px; }
-  .hotspot .label small { font-size: 9.5px; }
+  .hotspot .label { font-size: 12px; padding: 2px 5px; }
+  .hotspot .label small { font-size: 11px; }
 }
+
+@media (prefers-reduced-motion: reduce) { .progress-fill, .progress.done { transition: none; } }

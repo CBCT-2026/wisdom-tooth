@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>親知らずをぬくときの、神経への危険</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>親知らずをぬくときの、神経への危険 | ARウェブページ</title>
 <meta name="description" content="うまっている下の親知らずをぬくと、なぜ隣の神経が傷つく可能性があるのかを示す3Dモデルです。">
 <meta name="robots" content="noindex">
 <script>
@@ -40,8 +40,8 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
     <div class="hotspot" slot="hotspot-2" data-position="-0.0263m -0.0163m -0.0723m" data-normal="0.95 -0.12 -0.29" data-visibility-attribute="visible" data-side="right"><span class="label">根</span></div>
     <div class="hotspot" slot="hotspot-3" data-position="-0.029m -0.0018m -0.0579m" data-normal="0.87 0.49 0" data-visibility-attribute="visible" data-side="up" style="--len: 58px"><span class="label">親知らず<small>第三大きゅう歯</small></span></div>
     <div class="hotspot" slot="hotspot-4" data-position="-0.0375m -0.005m -0.0275m" data-normal="1 0 0.15" data-visibility-attribute="visible" data-side="up" style="--len: 16px"><span class="label">大きゅう歯</span></div>
-    <div class="hotspot" slot="hotspot-5" data-position="-0.0505m -0.006m 0.008m" data-normal="1 0 0.25" data-visibility-attribute="visible" data-side="up" style="--len: 52px"><span class="label">小きゅう歯</span></div>
-    <div class="hotspot" slot="hotspot-6" data-position="-0.0592m -0.039m 0.0204m" data-normal="1 -0.02 0.05" data-visibility-attribute="visible" data-side="down" style="--len: 44px"><span class="label">おとがい神経<small>あごの先の神経</small></span></div>
+    <div class="hotspot" slot="hotspot-5" data-far data-position="-0.0505m -0.006m 0.008m" data-normal="1 0 0.25" data-visibility-attribute="visible" data-side="up" style="--len: 52px"><span class="label">小きゅう歯</span></div>
+    <div class="hotspot" slot="hotspot-6" data-far data-position="-0.0592m -0.039m 0.0204m" data-normal="1 -0.02 0.05" data-visibility-attribute="visible" data-side="down" style="--len: 44px"><span class="label">おとがい神経<small>あごの先の神経</small></span></div>
     <div class="hotspot" slot="hotspot-7" data-position="-0.0182m 0.0196m -0.1027m" data-normal="0.92 -0.39 -0.07" data-visibility-attribute="visible" data-side="up" style="--len: 24px"><span class="label">下あごの骨</span></div>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
 </model-viewer>
@@ -53,7 +53,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
     <button type="button" data-orbit="90deg 80deg auto" aria-pressed="true">全体</button>
     <button type="button" data-orbit="100deg 80deg 0.075m" data-target="-0.033m -0.015m -0.06m" aria-pressed="false">根と神経（拡大）</button>
     <button type="button" data-orbit="270deg 80deg auto" aria-pressed="false">内側（舌側）</button>
-    <button type="button" id="labels" aria-pressed="false" data-on="名前を消す" data-off="名前を表示">名前を消す</button>
+    <button type="button" id="labels" data-on="名前を消す" data-off="名前を表示">名前を消す</button>
   </div>
 
 
@@ -102,7 +102,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
 <section class="refs">
 <details>
   <summary><h2>参考にした論文</h2></summary>
-  <ol>
+  <ol lang="en">
     <li id="ref-1">Juodzbalys G, Wang HL, Sabalys G. <span class="rt">Anatomy of mandibular vital structures. Part I: mandibular canal and inferior alveolar neurovascular bundle in relation with dental implantology.</span> J Oral Maxillofac Res. 2010;1(1):e2. <a href="https://doi.org/10.5037/jomr.2010.1102">doi.org/10.5037/jomr.2010.1102</a></li>
     <li id="ref-2">Juodzbalys G, Wang HL, Sabalys G. <span class="rt">Anatomy of mandibular vital structures. Part II: mandibular incisive canal, mental foramen and associated neurovascular bundles in relation with dental implantology.</span> J Oral Maxillofac Res. 2010;1(1):e3. <a href="https://doi.org/10.5037/jomr.2010.1103">doi.org/10.5037/jomr.2010.1103</a></li>
     <li id="ref-3">Renton T, Yilmaz Z. <span class="rt">Profiling of patients presenting with posttraumatic neuropathy of the trigeminal nerve.</span> J Orofac Pain. 2011;25(4):333-344. PMID 22247929. <a href="https://pubmed.ncbi.nlm.nih.gov/22247929/">pubmed.ncbi.nlm.nih.gov/22247929</a></li>
@@ -122,9 +122,10 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
 </section>
   <!-- SHARED TEXT END -->
 
-  <p class="disclaimer">このページは、名古屋大学の研究のためのものです。第1.5版（2026年10月21日）。</p>
+  <p class="disclaimer">このページは、名古屋大学の研究のためのものです。第1.6版（2026年10月22日）。</p>
 </main>
 
+<script src="../theme.js"></script>
 <script src="../viewer.js"></script>
 </body>
 </html>

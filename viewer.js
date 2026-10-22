@@ -1,16 +1,3 @@
-// Light/dark toggle. Pages open in light mode; the choice lasts for this browser tab only,
-// so the next participant on the same device starts in light mode once the tab is closed.
-const themeBtn = document.getElementById('theme');
-const isDark = () => document.documentElement.dataset.theme === 'dark';
-const showTheme = () => { const d = isDark(); themeBtn.textContent = d ? themeBtn.dataset.light : themeBtn.dataset.dark; themeBtn.setAttribute('aria-pressed', d); };
-themeBtn.addEventListener('click', () => {
-  const t = isDark() ? 'light' : 'dark';
-  document.documentElement.dataset.theme = t;
-  try { sessionStorage.setItem('theme', t); } catch (e) {}
-  showTheme();
-});
-showTheme();
-
 // Labels and preset views for the 3D model.
 const mv = document.getElementById('mv');
 
@@ -24,17 +11,25 @@ mv.addEventListener('progress', e => {
 const labels = document.getElementById('labels');
 labels.addEventListener('click', () => {
   const off = mv.classList.toggle('labels-off');
-  labels.setAttribute('aria-pressed', off);
   labels.textContent = off ? labels.dataset.off : labels.dataset.on;
 });
 
-// Preset camera views.
+// Preset camera views. The zoomed view hides labels that would fall outside the box.
+// With reduced motion set, the camera jumps instead of moving and there is no hand prompt.
+const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (still) mv.setAttribute('interaction-prompt', 'none');
 const viewButtons = document.querySelectorAll('[data-orbit]');
 viewButtons.forEach(b => b.addEventListener('click', () => {
   mv.cameraOrbit = b.dataset.orbit;
   mv.cameraTarget = b.dataset.target || 'auto auto auto';
+  mv.classList.toggle('zoomed', !!b.dataset.target);
+  if (still && mv.jumpCameraToGoal) mv.jumpCameraToGoal();
   viewButtons.forEach(o => o.setAttribute('aria-pressed', o === b));
 }));
+// Turning the model by hand leaves the preset, so no preset button stays pressed.
+mv.addEventListener('camera-change', e => {
+  if (e.detail && e.detail.source === 'user-interaction') viewButtons.forEach(o => o.setAttribute('aria-pressed', 'false'));
+});
 
 // Show a plain message in the viewer box if 3D cannot be shown, instead of an empty box.
 function showProblem(text) {
