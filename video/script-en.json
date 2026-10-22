@@ -76,7 +76,10 @@
     {
       "scene": "specialist",
       "sentences": [
-        "If your dentist thinks the risk to the nerve is higher, they may refer you to a specialist."
+        {
+          "text": "So it is a good idea to see a specialist (an oral surgeon) first.",
+          "tts": "So it is a good idea to see a specialist, an oral surgeon, first."
+        }
       ]
     }
   ],
