@@ -3,60 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wisdom tooth removal: the risk to your nerve</title>
+<title>Wisdom tooth removal: the risk to your nerve | 親知らずをぬくときの、神経への危険</title>
 <meta name="robots" content="noindex">
 <script>
-try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
+// The home page starts each session in light mode, even if the last participant chose dark mode in this tab.
+try { sessionStorage.removeItem('theme'); } catch (e) {}
 </script>
 <link rel="stylesheet" href="style.css">
 <style>
+  h1 span { display: block; font-size: 1.1rem; margin-top: 4px; }
   .lead { font-size: 18px; font-weight: 600; margin: 8px 0 0; }
   .choice { margin-top: 28px; padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
   .choice h2 { margin: 0 0 14px; text-align: center; font-size: 22px; line-height: 1.35; }
   .choice h2 span { display: block; font-size: 18px; font-weight: 600; }
   .pick { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .top { display: flex; justify-content: flex-end; padding-top: 10px; }
-  .pick a { display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 16px 8px; border-radius: 14px;
+  .pick a, .pick .pick-off { display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 16px 8px; border-radius: 14px;
     background: var(--ar); color: var(--ar-text); text-decoration: none; font-weight: 600; font-size: 18px; }
-  .pick a[aria-disabled="true"] { background: var(--card); color: var(--muted); border: 1px dashed var(--line); pointer-events: none; }
-  .pick a small { display: block; font-size: 14px; font-weight: 400; }
+  .pick .pick-off { background: var(--card); color: var(--muted); border: 1px dashed var(--line); }
+  .pick a small, .pick .pick-off small { display: block; font-size: 14px; font-weight: 400; }
   .qr { margin: 28px 0 32px; text-align: center; }
   .qr button { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: var(--text); }
   .qr img { display: block; width: 160px; height: 160px; margin: 0 auto 8px; padding: 8px; background: #fff; border-radius: 8px; }
   .qr span { text-decoration: underline; }
-  #qr-big { width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: #fff; color: #000; }
+  #qr-big { width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: #fff; color: #000; }
   #qr-big[open] { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
-  #qr-big img { width: min(88vw, 78vh); height: min(88vw, 78vh); }
+  #qr-big img { width: min(88vw, 70vh); height: min(88vw, 70vh); }
   #qr-big p { margin: 0; font-size: min(18px, 4.2vw); white-space: nowrap; text-align: center; padding: 0 16px; }
   #qr-big button { font: inherit; font-size: 18px; padding: 10px 22px; border-radius: 12px; border: 1px solid #231f20; background: #fff; color: #231f20; cursor: pointer; }
 </style>
 </head>
 <body>
 <main>
-  <div class="top"><button class="theme" id="theme" type="button" data-dark="Dark mode / ダークモード" data-light="Light mode / ライトモード">Dark mode / ダークモード</button></div>
-  <h1>Wisdom tooth removal: the risk to your nerve</h1>
+  <div class="top"><button class="theme" id="theme" type="button" data-dark="Dark mode" data-dark-ja="ダークモード" data-light="Light mode" data-light-ja="ライトモード">Dark mode</button></div>
+  <h1>Wisdom tooth removal: the risk to your nerve<span lang="ja">親知らずをぬくときの、神経への危険</span></h1>
   <p class="lead">Choose a page and language<br><span lang="ja">ページと言語を選んでください</span></p>
   <section class="choice" aria-labelledby="ar">
     <h2 id="ar">AR web page<span lang="ja">ARウェブページ</span></h2>
     <div class="pick">
-      <a href="en/">English</a>
-      <a href="ja/" lang="ja">日本語</a>
+      <a href="en/" aria-label="AR web page, English">English</a>
+      <a href="ja/" lang="ja" aria-label="ARウェブページ、日本語">日本語</a>
     </div>
   </section>
   <section class="choice" aria-labelledby="video">
     <h2 id="video">Narrated video<span lang="ja">ナレーション動画</span></h2>
     <div class="pick">
-      <a href="video/en/">English</a>
-      <a href="video/ja/" lang="ja">日本語</a>
+      <a href="video/en/" aria-label="Narrated video, English">English</a>
+      <a href="video/ja/" lang="ja" aria-label="ナレーション動画、日本語">日本語</a>
     </div>
   </section>
   <section class="choice" aria-labelledby="form">
     <h2 id="form">Study form<span lang="ja">研究フォーム</span></h2>
     <p class="lead" style="text-align:center;margin:0 0 14px">Information sheet and survey<br><span lang="ja">説明書とアンケート</span></p>
     <div class="pick">
-      <a href="https://forms.cloud.microsoft/r/YUmReSXhMz">English</a>
-      <!-- TODO: Japanese Microsoft Form link. Replace href="#" with the link and remove aria-disabled and the <small> line. -->
-      <a href="#" lang="ja" aria-disabled="true">日本語<small>準備中</small></a>
+      <a href="https://forms.cloud.microsoft/r/YUmReSXhMz" target="_blank" rel="noopener" aria-label="Study form, English (opens in a new tab)">English</a>
+      <!-- TODO: Japanese Microsoft Form link. Replace this span with
+           <a href="LINK" lang="ja" target="_blank" rel="noopener" aria-label="研究フォーム、日本語（新しいタブで開きます）">日本語</a> -->
+      <span class="pick-off" lang="ja" aria-disabled="true">日本語<small>準備中</small></span>
     </div>
   </section>
   <div class="qr">
@@ -69,7 +72,7 @@ try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.d
 <dialog id="qr-big" aria-label="QR code for this page">
   <img src="images/qr-home.svg" alt="QR code: https://cbct-2026.github.io/wisdom-tooth/">
   <p>https://cbct-2026.github.io/wisdom-tooth/</p>
-  <button type="button" id="qr-close">Close / 閉じる</button>
+  <button type="button" id="qr-close">Close / <span lang="ja">閉じる</span></button>
 </dialog>
 <script src="theme.js"></script>
 <script>
@@ -80,7 +83,7 @@ document.getElementById('qr-open').addEventListener('click', () => {
 });
 const closeQr = () => { if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); qrBig.close(); };
 document.getElementById('qr-close').addEventListener('click', closeQr);
-qrBig.addEventListener('click', e => { if (e.target === qrBig) closeQr(); });
+// Only the Close button or Esc closes it, so a stray tap while someone scans does not.
 document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement && qrBig.open) qrBig.close(); });
 </script>
 </body>

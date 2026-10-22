@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Wisdom tooth removal: the risk to your nerve</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wisdom tooth removal: the risk to your nerve | AR web page</title>
 <meta name="description" content="An interactive 3D model showing why removing an impacted lower wisdom tooth can injure the nerve near it.">
 <meta name="robots" content="noindex">
 <script>
@@ -40,8 +40,8 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
     <div class="hotspot" slot="hotspot-2" data-position="-0.0263m -0.0163m -0.0723m" data-normal="0.95 -0.12 -0.29" data-visibility-attribute="visible" data-side="right"><span class="label">Roots</span></div>
     <div class="hotspot" slot="hotspot-3" data-position="-0.029m -0.0018m -0.0579m" data-normal="0.87 0.49 0" data-visibility-attribute="visible" data-side="up" style="--len: 58px"><span class="label">Wisdom tooth<small>third molar</small></span></div>
     <div class="hotspot" slot="hotspot-4" data-position="-0.0375m -0.005m -0.0275m" data-normal="1 0 0.15" data-visibility-attribute="visible" data-side="up" style="--len: 16px"><span class="label">Molars</span></div>
-    <div class="hotspot" slot="hotspot-5" data-position="-0.0505m -0.006m 0.008m" data-normal="1 0 0.25" data-visibility-attribute="visible" data-side="up" style="--len: 52px"><span class="label">Premolars</span></div>
-    <div class="hotspot" slot="hotspot-6" data-position="-0.0592m -0.039m 0.0204m" data-normal="1 -0.02 0.05" data-visibility-attribute="visible" data-side="down" style="--len: 44px"><span class="label">Chin nerve<small>mental nerve</small></span></div>
+    <div class="hotspot" slot="hotspot-5" data-far data-position="-0.0505m -0.006m 0.008m" data-normal="1 0 0.25" data-visibility-attribute="visible" data-side="up" style="--len: 52px"><span class="label">Premolars</span></div>
+    <div class="hotspot" slot="hotspot-6" data-far data-position="-0.0592m -0.039m 0.0204m" data-normal="1 -0.02 0.05" data-visibility-attribute="visible" data-side="down" style="--len: 44px"><span class="label">Chin nerve<small>mental nerve</small></span></div>
     <div class="hotspot" slot="hotspot-7" data-position="-0.0182m 0.0196m -0.1027m" data-normal="0.92 -0.39 -0.07" data-visibility-attribute="visible" data-side="up" style="--len: 24px"><span class="label">Jaw bone<small>mandible</small></span></div>
     <div class="progress" slot="progress-bar"><div class="progress-fill"></div></div>
 </model-viewer>
@@ -53,7 +53,7 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
     <button type="button" data-orbit="90deg 80deg auto" aria-pressed="true">Whole jaw</button>
     <button type="button" data-orbit="100deg 80deg 0.075m" data-target="-0.033m -0.015m -0.06m" aria-pressed="false">Roots and nerve</button>
     <button type="button" data-orbit="270deg 80deg auto" aria-pressed="false">Tongue side</button>
-    <button type="button" id="labels" aria-pressed="false" data-on="Hide labels" data-off="Show labels">Hide labels</button>
+    <button type="button" id="labels" data-on="Hide labels" data-off="Show labels">Hide labels</button>
   </div>
 
 
@@ -122,9 +122,10 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
 </section>
   <!-- SHARED TEXT END -->
 
-  <p class="disclaimer">This page is for a research study at Nagoya University. Version 1.5, 21 October 2026.</p>
+  <p class="disclaimer">This page is for a research study at Nagoya University. Version 1.6, 22 October 2026.</p>
 </main>
 
+<script src="../theme.js"></script>
 <script src="../viewer.js"></script>
 </body>
 </html>

@@ -47,7 +47,8 @@ def render(lang, img):
     items = '\n'.join(
         f'    <li id="ref-{i}">{short(REFS[k]["text"])} {link(REFS[k])}</li>'
         for i, k in enumerate(order, 1))
-    refs = f'<section class="refs">\n  <h2>{LABELS[lang]["refs"]}</h2>\n  <ol>\n{items}\n  </ol>\n</section>'
+    ol = '<ol lang="en">' if lang != 'en' else '<ol>'  # the sources are in English
+    refs = f'<section class="refs">\n  <h2>{LABELS[lang]["refs"]}</h2>\n  {ol}\n{items}\n  </ol>\n</section>'
     return text.strip() + '\n\n' + refs
 
 def collapse(block):
