@@ -16,8 +16,19 @@ try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.d
   .choice h2 span { display: block; font-size: 18px; font-weight: 600; }
   .pick { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .top { display: flex; justify-content: flex-end; padding-top: 10px; }
-  .pick a { display: block; text-align: center; padding: 16px 8px; border-radius: 14px;
+  .pick a { display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 16px 8px; border-radius: 14px;
     background: var(--ar); color: var(--ar-text); text-decoration: none; font-weight: 600; font-size: 18px; }
+  .pick a[aria-disabled="true"] { background: var(--card); color: var(--muted); border: 1px dashed var(--line); pointer-events: none; }
+  .pick a small { display: block; font-size: 14px; font-weight: 400; }
+  .qr { margin: 28px 0 32px; text-align: center; }
+  .qr button { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: var(--text); }
+  .qr img { display: block; width: 160px; height: 160px; margin: 0 auto 8px; padding: 8px; background: #fff; border-radius: 8px; }
+  .qr span { text-decoration: underline; }
+  #qr-big { width: 100vw; height: 100vh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: #fff; color: #000; }
+  #qr-big[open] { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+  #qr-big img { width: min(88vw, 78vh); height: min(88vw, 78vh); }
+  #qr-big p { margin: 0; font-size: min(18px, 4.2vw); white-space: nowrap; text-align: center; padding: 0 16px; }
+  #qr-big button { font: inherit; font-size: 18px; padding: 10px 22px; border-radius: 12px; border: 1px solid #231f20; background: #fff; color: #231f20; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -39,7 +50,38 @@ try { if (sessionStorage.getItem('theme') === 'dark') document.documentElement.d
       <a href="video/ja/" lang="ja">日本語</a>
     </div>
   </section>
+  <section class="choice" aria-labelledby="form">
+    <h2 id="form">Study form<span lang="ja">研究フォーム</span></h2>
+    <p class="lead" style="text-align:center;margin:0 0 14px">Information sheet and survey<br><span lang="ja">説明書とアンケート</span></p>
+    <div class="pick">
+      <a href="https://forms.cloud.microsoft/r/YUmReSXhMz">English</a>
+      <!-- TODO: Japanese Microsoft Form link. Replace href="#" with the link and remove aria-disabled and the <small> line. -->
+      <a href="#" lang="ja" aria-disabled="true">日本語<small>準備中</small></a>
+    </div>
+  </section>
+  <div class="qr">
+    <button type="button" id="qr-open" aria-haspopup="dialog">
+      <img src="images/qr-home.svg" alt="QR code for this page">
+      <span>Show QR code full screen</span><br><span lang="ja">QRコードを全画面で表示</span>
+    </button>
+  </div>
 </main>
+<dialog id="qr-big" aria-label="QR code for this page">
+  <img src="images/qr-home.svg" alt="QR code: https://cbct-2026.github.io/wisdom-tooth/">
+  <p>https://cbct-2026.github.io/wisdom-tooth/</p>
+  <button type="button" id="qr-close">Close / 閉じる</button>
+</dialog>
 <script src="theme.js"></script>
+<script>
+const qrBig = document.getElementById('qr-big');
+document.getElementById('qr-open').addEventListener('click', () => {
+  qrBig.showModal();
+  if (qrBig.requestFullscreen) qrBig.requestFullscreen().catch(() => {});
+});
+const closeQr = () => { if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); qrBig.close(); };
+document.getElementById('qr-close').addEventListener('click', closeQr);
+qrBig.addEventListener('click', e => { if (e.target === qrBig) closeQr(); });
+document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement && qrBig.open) qrBig.close(); });
+</script>
 </body>
 </html>
