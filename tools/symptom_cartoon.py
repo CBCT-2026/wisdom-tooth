@@ -9,7 +9,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 WORDS = {'en': ['Numb', 'Tingles', 'Feels strange', 'Hurts'],
-         'ja': ['しびれる', 'ピリピリする', 'いつもとちがう', 'いたむ']}
+         'ja': ['しびれる', 'ピリピリする', 'いつもと違う', '痛む']}
+# Furigana over a kanji above grade 6 (Japanese option C, 29 October 2026): word -> (character index, reading).
+# Japanese characters are full width, so the reading is centred on index * font size.
+RUBY = {'いつもと違う': (4, 'ちが')}
 FONT = 'system-ui, -apple-system, &quot;Hiragino Sans&quot;, &quot;Noto Sans JP&quot;, sans-serif'
 
 
@@ -40,6 +43,10 @@ def face(x, kind, word):
         g += [f'<path d="{area}" clip-path="url(#head{kind})" fill="#b9bec6" opacity=".75"/>',
               '<path d="M74 91 l-5 8 h4 l-3.5 9 l8.5 -11 h-4 l3.5 -6 z" fill="#1b1d21"/>']
     g.append(f'<text x="60" y="140" text-anchor="middle" font-family="{FONT}" font-size="15" font-weight="700" fill="#1b1d21">{word}</text>')
+    if word in RUBY:
+        i, reading = RUBY[word]
+        cx = 60 - len(word) * 15 / 2 + (i + 0.5) * 15
+        g.append(f'<text x="{cx}" y="125" text-anchor="middle" font-family="{FONT}" font-size="7" fill="#1b1d21">{reading}</text>')
     g.append('</g>')
     return ''.join(g)
 

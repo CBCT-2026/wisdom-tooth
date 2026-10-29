@@ -9,7 +9,8 @@
   "ignore_sections": ["narration script$"],
   "address_reader": "you",
   "ja_address_reader": "omit",
-  "jargon_allow": ["impacted", "AR"],
+  "jargon_allow": ["impacted", "AR", "抜歯", "オトガイ神経"],
+  "ja_kanji": "jouyou",
   "claims": [
     { "value": "7 in 100", "also": ["100人中約7人"], "cite": ["rico", "derbishi", "kang2025", "sarikov"],
       "note": "any nerve damage after taking out the whole tooth, teeth close to the nerve" },

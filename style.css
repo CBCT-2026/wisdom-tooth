@@ -112,3 +112,7 @@ main ul, main ol, .refs li { text-align: justify; hyphens: auto; -webkit-hyphens
 }
 
 @media (prefers-reduced-motion: reduce) { .progress-fill, .progress.done { transition: none; } }
+
+/* Furigana (Japanese text): keep the base kanji together when the reading is wider, and keep line spacing even. */
+ruby { ruby-align: center; white-space: nowrap; }
+rt { font-size: 0.5em; font-weight: 400; letter-spacing: 0; }
