@@ -20,16 +20,21 @@ PARAGRAPH_GAP = 0.5   # and between paragraphs
 LEAD_IN = 0.5         # silence before the first word
 TAIL = 0.8            # silence after the last word
 MAX_CUE = {"en": 80, "ja": 36}  # longest subtitle, in characters
+RUBY = re.compile(r"\{([^{}|]+)\|([^{}]*)\}")  # furigana in the Japanese script: {kanji|reading}
+
+
+def plain(text):
+    return RUBY.sub(r"\1", text)
 
 
 def split_cue(text, limit):
     """Split a long sentence at the comma nearest its middle."""
-    if len(text) <= limit:
+    if len(plain(text)) <= limit:
         return [text]
     marks = [m.end() for m in re.finditer(r"[,、]", text)]
     if not marks:
         return [text]
-    cut = min(marks, key=lambda i: abs(i - len(text) / 2))
+    cut = min(marks, key=lambda i: abs(len(plain(text[:i])) - len(plain(text)) / 2))
     return split_cue(text[:cut].strip(), limit) + split_cue(text[cut:].strip(), limit)
 
 
@@ -61,17 +66,17 @@ def main():
         for s, sent in enumerate(para["sentences"]):
             if isinstance(sent, str):
                 sent = {"text": sent}
-            spoken = sent.get("tts", sent["text"])
+            spoken = sent.get("tts", plain(sent["text"]))
             result = g2p(spoken)
             phonemes = result[0] if isinstance(result, tuple) else result
             audio, sr = kokoro.create(phonemes, voice=script["voice"], speed=script["speed"],
                                       lang="ja" if args.lang == "ja" else "en-gb", is_phonemes=True)
             dur = len(audio) / sr
             parts = split_cue(sent["text"], MAX_CUE[args.lang])
-            total = sum(len(x) for x in parts)
+            total = sum(len(plain(x)) for x in parts)
             start = t
             for part in parts:
-                end = start + dur * len(part) / total
+                end = start + dur * len(plain(part)) / total
                 cues.append({"start": round(start, 3), "end": round(end, 3), "text": part})
                 start = end
             chunks.append(audio.astype(np.float32))
@@ -92,7 +97,7 @@ def main():
     timeline.update(duration=round(t, 3), cues=cues, scenes=scenes)
     def stamp(x):
         return f"{int(x // 3600):02d}:{int(x % 3600 // 60):02d}:{x % 60:06.3f}"
-    vtt = "WEBVTT\n\n" + "\n".join(f"{stamp(c['start'])} --> {stamp(c['end'])}\n{c['text']}\n" for c in cues)
+    vtt = "WEBVTT\n\n" + "\n".join(f"{stamp(c['start'])} --> {stamp(c['end'])}\n{plain(c['text'])}\n" for c in cues)
     (out / f"narrated-video-{args.lang}.vtt").write_text(vtt, encoding="utf-8")
     (out / "timeline.json").write_text(json.dumps(timeline, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{args.lang}: {t:.1f} s, {len(cues)} subtitles")

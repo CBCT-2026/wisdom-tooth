@@ -5,6 +5,7 @@ The fourth patient education material: a portrait (9:16, 1080 × 1920) video of 
 - Pages: `video/en/` and `video/ja/` (linked from the home page). Each folder holds the video (`narrated-video-<lang>.mp4`), its subtitles as text (`.vtt`) and a poster picture.
 - Script, voice, speed and label names: `video/script-en.json`, `video/script-ja.json`. Keep the sentences word for word the same as `content/3d-print-narration.md`. A sentence can have a `tts` field that spells out how to read it (for example, numbers in Japanese).
 - Camera moves and which labels show in each part: `SCENES` in `video/render.html`.
+- Japanese furigana (option C, 29 October 2026): write `{kanji|reading}` in `script-ja.json`. The video shows the reading above the kanji in subtitles, labels, title and risk text; the `.vtt` file and the voice use the plain text (give a `tts` reading where needed).
 
 ## Voice
 

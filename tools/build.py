@@ -35,6 +35,8 @@ def short(text):
 
 def render(lang, img):
     text = (ROOT / f'content/shared-{lang}.html').read_text().replace('{{img}}', img)
+    # Furigana: {kanji|reading} becomes ruby (Japanese text, option C chosen by Luke on 29 October 2026).
+    text = re.sub(r'\{([^{}|]+)\|([^{}]*)\}', r'<ruby>\1<rt>\2</rt></ruby>', text)
     order = []
     def cite(m):
         key = m.group(1)

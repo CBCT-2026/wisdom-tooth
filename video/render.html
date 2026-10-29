@@ -19,6 +19,9 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
   #labels .med { font-size: 13px; font-weight: 400; fill: #1b1d21; }
   #labels rect { fill: #fff; stroke: #1b1d21; stroke-width: 1; }
   #labels line { stroke: #1b1d21; stroke-width: 1.6; }
+  #labels .rt { fill: #1b1d21; font-weight: 400; }
+  rt { font-size: 0.5em; font-weight: 400; }
+  ruby { ruby-align: center; }
   #labels circle { fill: #1b1d21; stroke: #fff; stroke-width: 1.5; }
   #risk { position: absolute; top: 120px; left: 40px; right: 40px; display: flex; flex-direction: column;
     gap: 22px; opacity: 0; }
@@ -31,6 +34,8 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
     background: rgba(20, 20, 20, .82); padding: 3px 10px; box-decoration-break: clone;
     -webkit-box-decoration-break: clone; border-radius: 6px; }
   html[lang=ja] #sub span, html[lang=ja] #risk span { word-break: auto-phrase; }
+  /* Room inside the dark box for furigana above the Japanese subtitles. */
+  html[lang=ja] #sub span { line-height: 2.05; padding: 9px 10px 4px; }
   #sub span:empty { display: none; }
   #draft { position: absolute; top: 676px; left: 0; right: 0; text-align: center; font-size: 15px;
     font-weight: 700; color: #a15c00; display: none; }
@@ -76,9 +81,9 @@ const mix = (a, b, k) => a.map((v, i) => v + (b[i] - v) * k);
 window.init = async (timelineUrl) => {
   T = await (await fetch(timelineUrl)).json();
   document.documentElement.lang = T.lang;
-  document.getElementById('title').textContent = T.title;
+  document.getElementById('title').innerHTML = ruby(T.title);
   document.getElementById('risk').innerHTML = T.risk.map((r, i) =>
-    `<div><img src="../images/risk-${i ? 1 : 7}-in-100.svg" alt=""><strong>${r[0]}</strong><span>${r[1]}</span></div>`).join('');
+    `<div><img src="../images/risk-${i ? 1 : 7}-in-100.svg" alt=""><strong>${ruby(r[0])}</strong><span>${ruby(r[1])}</span></div>`).join('');
   if (!mv.loaded) await new Promise(r => mv.addEventListener('load', r, { once: true }));
   await document.fonts.ready;
   return T.duration;
@@ -100,6 +105,24 @@ function cameraAt(i, t) {
     target = mix(p.target, target, b);
   }
   return { orbit, target };
+}
+
+// Furigana: the script writes {kanji|reading}; HTML text gets <ruby>, SVG labels get the reading drawn above.
+const MARK = /\{([^{}|]+)\|([^{}]*)\}/g;
+const ruby = s => s.replace(MARK, '<ruby>$1<rt>$2</rt></ruby>');
+const plain = s => s.replace(MARK, '$1');
+const hasRuby = s => /\{[^{}|]+\|[^{}]*\}/.test(s);
+function svgText(s, x, y, px, weight, cls) {
+  let out = `<text class="${cls}" x="${x}" y="${y}">${plain(s)}</text>`, before = '';
+  for (const part of s.split(/(\{[^{}|]+\|[^{}]*\})/)) {
+    const m = /^\{([^{}|]+)\|([^{}]*)\}$/.exec(part);
+    if (m) {
+      const cx = x + measure(before, px, weight) + measure(m[1], px, weight) / 2;
+      out += `<text class="rt" x="${cx}" y="${y - px * 0.92}" text-anchor="middle" font-size="${Math.round(px * 0.5)}">${m[2]}</text>`;
+    }
+    before += m ? m[1] : part;
+  }
+  return out;
 }
 
 const ctx = document.createElement('canvas').getContext('2d');
@@ -131,21 +154,22 @@ window.setFrame = async (t) => {
     if (ay < host.top || ay > host.bottom) continue;
     // Box with the everyday name in bold and the medical name underneath (as on the sheet and web page).
     const [main, med] = T.labels[part];
-    const w = Math.max(measure(main, 18, 700), med ? measure(med, 13, 400) : 0) + 16;
-    const bh = med ? 46 : 30;
+    const up = hasRuby(main) ? 9 : 0, mid = med && hasRuby(med) ? 7 : 0;
+    const w = Math.max(measure(plain(main), 18, 700), med ? measure(plain(med), 13, 400) : 0) + 16;
+    const bh = (med ? 46 : 30) + up + mid;
     const bx = side === 'l' ? 14 : 526 - w, by = y - bh / 2;
     const lx = side === 'l' ? bx + w : bx;
     svg += `<g opacity="${a}"><line x1="${lx}" y1="${y}" x2="${ax}" y2="${ay}"/>` +
            `<rect x="${bx}" y="${by}" width="${w}" height="${bh}" rx="3"/>` +
-           `<text class="main" x="${bx + 8}" y="${by + 21}">${main}</text>` +
-           (med ? `<text class="med" x="${bx + 8}" y="${by + 38}">${med}</text>` : '') +
+           svgText(main, bx + 8, by + 21 + up, 18, 700, 'main') +
+           (med ? svgText(med, bx + 8, by + 38 + up + mid, 13, 400, 'med') : '') +
            `<circle cx="${ax}" cy="${ay}" r="4"/></g>`;
   }
   document.getElementById('labels').innerHTML = svg;
 
   // Subtitles.
   const cue = T.cues.find(q => t >= q.start && t < q.end + 0.25);
-  document.querySelector('#sub span').textContent = cue ? cue.text : '';
+  document.querySelector('#sub span').innerHTML = cue ? ruby(cue.text) : '';
   document.getElementById('draft').style.display = s.placeholder ? 'block' : 'none';
 };
 </script>
