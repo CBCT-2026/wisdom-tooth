@@ -38,12 +38,18 @@ model-viewer:not(:defined) > :not(.problem) { display: none; }
 .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; list-style: none; padding: 0; margin: 8px 0 12px; font-size: 15px; }
 .dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%;
   margin-right: 6px; vertical-align: -2px; border: 1px solid var(--line); }
-.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0; }
-.stats div { background: var(--card); border-radius: 12px; padding: 12px; }
-.stats strong { display: block; font-size: 1.2rem; }
-.stats span { display: block; font-size: 14px; color: var(--muted); text-align: justify; }
-/* The two risk boxes are narrow on a screen, so their text is not justified there. */
-@media screen { .stats span { text-align: left; hyphens: manual; -webkit-hyphens: manual; } }
+.stats { background: var(--card); border-radius: 12px; padding: 12px 14px; margin: 10px 0;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 6px 16px; align-items: center; }
+.stats .icons { grid-row: 1 / 3; display: block; width: 100%; max-width: 320px; margin: 0; }
+.stats .stats-head { margin: 0; font-size: 15px; }
+.stats strong { font-size: 1.2rem; }
+.stats .key { list-style: none; margin: 0; padding: 0; font-size: 14px; color: var(--muted); display: flex; flex-direction: column; gap: 6px; }
+.stats .key li { display: flex; align-items: flex-start; gap: 7px; text-align: left; }
+.stats .key .dot { flex: none; margin: 3px 0 0; }
+.stats .stats-head { text-align: left; }
+.stats .key strong { font-size: 1rem; color: var(--text); }
+.dot.recover { background: #f0a13a; } .dot.permanent { background: #8e1b24; } .dot.none { background: #c9d3cf; }
+@media (max-width: 560px) { .stats { grid-template-columns: 1fr; } .stats .icons { grid-row: auto; max-width: none; } }
 .small { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
 a { color: var(--accent); }
 ul { padding-left: 1.2em; }
@@ -97,7 +103,6 @@ main ul, main ol, .refs li { text-align: justify; hyphens: auto; -webkit-hyphens
 .important h2 { color: #6b4e00; }
 .important p { margin: 0; color: #231f20; text-align: center; text-align-last: center; }
 
-.stats .icons { display: block; width: 100%; max-width: 260px; margin: 0 0 6px; }
 .symptoms { margin: 8px 0; }
 .symptoms img { display: block; width: 100%; max-width: 520px; background: #fff; border-radius: 10px; }
 /* Sources start closed; tap the heading to open them. */
