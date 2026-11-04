@@ -26,9 +26,13 @@ self.ModelViewerElement = { dracoDecoderLocation: new URL('../vendor/draco/', lo
   #risk { position: absolute; top: 120px; left: 40px; right: 40px; display: flex; flex-direction: column;
     gap: 22px; opacity: 0; }
   #risk div { background: #fff; border-radius: 14px; padding: 16px 22px; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
-  #risk img { width: 78%; display: block; margin: 0 auto 10px; }
-  #risk strong { display: block; font-size: 24px; color: #c8303a; }
-  #risk span { display: block; font-size: 19px; line-height: 1.35; margin-top: 4px; }
+  #risk img { width: 100%; display: block; margin: 0 auto 14px; }
+  #risk strong { display: block; font-size: 24px; color: #1b1d21; margin-bottom: 10px; }
+  #risk ul { list-style: none; margin: 0; padding: 0; }
+  #risk li { display: flex; align-items: flex-start; gap: 10px; margin-top: 8px; }
+  #risk li i { flex: none; width: 18px; height: 18px; border-radius: 50%; margin-top: 4px; }
+  #risk li i.recover { background: #f0a13a; } #risk li i.permanent { background: #8e1b24; } #risk li i.none { background: #c9d3cf; }
+  #risk span { display: block; font-size: 19px; line-height: 1.35; }
   #sub { position: absolute; left: 24px; right: 24px; top: 712px; text-align: center; }
   #sub span { display: inline; font-size: 26px; line-height: 1.5; font-weight: 600; color: #fff;
     background: rgba(20, 20, 20, .82); padding: 3px 10px; box-decoration-break: clone;
@@ -82,8 +86,8 @@ window.init = async (timelineUrl) => {
   T = await (await fetch(timelineUrl)).json();
   document.documentElement.lang = T.lang;
   document.getElementById('title').innerHTML = ruby(T.title);
-  document.getElementById('risk').innerHTML = T.risk.map((r, i) =>
-    `<div><img src="../images/risk-${i ? 1 : 7}-in-100.svg" alt=""><strong>${ruby(r[0])}</strong><span>${ruby(r[1])}</span></div>`).join('');
+  document.getElementById('risk').innerHTML = `<div><img src="../images/risk-100.svg" alt=""><strong>${ruby(T.risk.head)}</strong><ul>`
+    + T.risk.key.map(([c, t]) => `<li><i class="${c}"></i><span>${ruby(t)}</span></li>`).join('') + '</ul></div>';
   if (!mv.loaded) await new Promise(r => mv.addEventListener('load', r, { once: true }));
   await document.fonts.ready;
   return T.duration;

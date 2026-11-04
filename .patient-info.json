@@ -14,7 +14,10 @@
   "claims": [
     { "value": "7 in 100", "also": ["100人中約7人"], "cite": ["rico", "derbishi", "kang2025", "sarikov"],
       "note": "any nerve damage after taking out the whole tooth, teeth close to the nerve" },
-    { "value": "1 in 100", "cite": ["rico", "kang2019", "cervera"], "note": "nerve damage that does not go away" },
+    { "value": "6 in 100", "also": ["約6人"], "cite": ["rico", "kang2019", "kim2012", "cheung2010"],
+      "note": "of the 7 injured, those who get better (about 4 in 5 of injuries), mostly within 6 months" },
+    { "value": "1 in 100", "also": ["約1人"], "cite": ["rico", "kang2019", "cervera", "hillerup2008", "gulicher2001", "leung2019"],
+      "note": "nerve damage that does not go away; mostly mild numbness or tingling, rarely lasting pain" },
     { "value": "1 to 3 in 1,000", "cite": ["lee", "pichler", "petroni"], "note": "lasting tongue (lingual) nerve damage" }
   ],
   "spoken": [{ "glob": "content/3d-print-narration.md", "max_seconds": 45, "sections": "^English$" }],

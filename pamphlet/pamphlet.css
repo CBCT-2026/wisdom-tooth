@@ -71,7 +71,6 @@
   .names { grid-template-columns: 1fr; gap: 0.8mm; font-size: 8.5pt; line-height: 1.25; }
   .names .num { width: 11px; height: 11px; line-height: 11px; font-size: 6.5pt; margin-right: 3px; }
   .parts:has(.names) > h2 { font-size: 9.5pt; margin: 0 0 1mm; }
-  .pamphlet .stats .icons { max-width: none; margin: 0 0 1mm; }
   .pamphlet section { padding: 0.8mm 0; }
   .pamphlet h2 { break-after: avoid; }
   .pamphlet li, .pamphlet .stats { break-inside: avoid; }
@@ -80,10 +79,15 @@
   .pamphlet p { margin: 0 0 3px; }
   .pamphlet ul, .pamphlet ol { margin: 0; }
   .pamphlet .symptoms { margin: 0.5mm 0 1mm; break-inside: avoid; }
-  .pamphlet .stats { gap: 2mm; margin: 1mm 0; }
-  .pamphlet .stats div { padding: 1mm 2mm; }
-  .pamphlet .stats strong { font-size: 9.5pt; width: 23mm; margin: 0 auto; white-space: nowrap; }
-  .pamphlet .stats span { font-size: 7.6pt; line-height: 1.2; width: 23mm; margin: 0 auto; }
+  .pamphlet .stats { display: block; gap: 0; margin: 1mm 0; padding: 1.2mm 2mm; border-radius: 2mm; }
+  .pamphlet .stats .icons { max-width: none; margin: 0 0 1mm; }
+  .pamphlet .stats .stats-head { font-size: 7.8pt; margin: 0 0 0.6mm; }
+  .pamphlet .stats strong { font-size: 9.5pt; }
+  .pamphlet .stats .key { font-size: 7.3pt; line-height: 1.25; gap: 0.6mm; }
+  .pamphlet .stats .key strong { font-size: 8pt; }
+  .pamphlet .stats .key li { gap: 1.2mm; }
+  .pamphlet .stats .dot { width: 2.4mm; height: 2.4mm; margin: 0.6mm 0 0; }
+  .pamphlet .stats .icons { width: 80%; margin: 0 auto 0.8mm; }
   .pamphlet .xray, .pamphlet .areas { margin: 1mm 0; break-inside: avoid; }
   .pamphlet .areas img { width: 100%; margin: 0 auto; }
   .pamphlet .areas figcaption { font-size: 8pt; line-height: 1.3; }
@@ -113,11 +117,11 @@
   .sheet-head { margin: 0 0 2.5mm; }
   .pamphlet .important { margin: 0 0 2.5mm; }
   .visual { gap: 2.5mm; margin-bottom: 3mm; }
-  .visual .v-w img, .visual .v-c img { height: 70mm; }
-  .visual .v-b img, .visual .v-l img { height: 40mm; }
+  .visual .v-w img, .visual .v-c img { height: 60mm; }
+  .visual .v-b img, .visual .v-l img { height: 33mm; }
   html[lang="ja"] .pamphlet section { padding: 1mm 0; }
-  html[lang="ja"] .visual .v-w img, html[lang="ja"] .visual .v-c img { height: 70mm; }
-  html[lang="ja"] .visual .v-b img, html[lang="ja"] .visual .v-l img { height: 41mm; }
+  html[lang="ja"] .visual .v-w img, html[lang="ja"] .visual .v-c img { height: 60mm; }
+  html[lang="ja"] .visual .v-b img, html[lang="ja"] .visual .v-l img { height: 36mm; }
   .pamphlet .disclaimer { font-size: 4.6pt; line-height: 1.25; margin: 0.6mm 0 0; }
 }
 

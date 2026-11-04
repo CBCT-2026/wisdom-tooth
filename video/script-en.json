@@ -33,16 +33,23 @@
       ""
     ]
   },
-  "risk": [
-    [
-      "About 7 in 100",
-      "may get nerve damage after the whole tooth is taken out"
-    ],
-    [
-      "About 1 in 100",
-      "may have nerve damage that does not go away"
+  "risk": {
+    "head": "About 7 in 100 get some nerve damage",
+    "key": [
+      [
+        "recover",
+        "6 in 100 get better, often within 6 months"
+      ],
+      [
+        "permanent",
+        "1 in 100 has damage that does not go away. For most it is mild."
+      ],
+      [
+        "none",
+        "93 in 100 have no nerve damage"
+      ]
     ]
-  ],
+  },
   "paragraphs": [
     {
       "scene": "intro",
@@ -62,15 +69,15 @@
     {
       "scene": "roots",
       "sentences": [
-        "As the tooth comes out, the nerve can be pressed or cut.",
-        "The feeling often comes back, but sometimes it never does."
+        "As the tooth comes out, the nerve can be pressed or cut."
       ]
     },
     {
       "scene": "risk",
       "sentences": [
         "For a tooth like this, rates vary, but about 7 in 100 may get nerve damage.",
-        "1 in 100 may have damage that does not go away."
+        "Most get better within a few months.",
+        "About 1 in 100 may have damage that does not go away, and for most of them it is mild."
       ]
     },
     {
