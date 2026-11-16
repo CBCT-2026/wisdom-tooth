@@ -49,6 +49,9 @@ model-viewer:not(:defined) > :not(.problem) { display: none; }
 .stats .stats-head { text-align: left; }
 .stats .key strong { font-size: 1rem; color: var(--text); }
 .dot.recover { background: #f0a13a; } .dot.permanent { background: #8e1b24; } .dot.none { background: #c9d3cf; }
+/* Dark mode: a white backing keeps the dark red "1 in 100" icons easy to see (colours unchanged). */
+:root[data-theme="dark"] .stats .icons { background: #fff; padding: 6px; }
+:root[data-theme="dark"] .stats .key .dot { box-shadow: 0 0 0 2px #fff; }
 @media (max-width: 560px) { .stats { grid-template-columns: 1fr; } .stats .icons { grid-row: auto; max-width: none; } }
 .small { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
 a { color: var(--accent); }
@@ -80,7 +83,6 @@ model-viewer.labels-off .hotspot, model-viewer.zoomed .hotspot[data-far] { displ
 .cite a { text-decoration: none; }
 /* Bigger tap area for source numbers on screens (the printed sheet keeps its spacing). */
 @media screen { .cite a { display: inline-block; line-height: 1; padding: 4px 3px; margin: -4px -1px; } }
-.cite + .cite::before { content: ","; }
 .xray, .areas { margin: 12px 0; }
 .areas img { width: 100%; height: auto; border-radius: 0; display: block; background: #fff; }
 .areas figcaption { font-size: 14px; color: var(--muted); margin-top: 6px; }
