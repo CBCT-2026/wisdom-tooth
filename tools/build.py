@@ -11,17 +11,20 @@ ROOT = Path(__file__).resolve().parent.parent
 REFS = json.loads((ROOT / 'content/references.json').read_text())
 LABELS = {
     'en': {'refs': 'Sources', 'credit': {
-        'rodriguez': 'Picture: Rodriguez y Baena R, et al. J Clin Exp Dent. 2017, Figure 1. Licence: <a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a>. Not changed.',
-        'marquez': 'Pictures: Marquez Rocco V, et al. Clin Case Rep. 2026, Figures 1, 2 (top row) and 3. Licence: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Cropped, put together, and letters a to c added.'}},
+        'rodriguez': 'Picture: Rodriguez y Baena R, et al. J Clin Exp Dent. 2017, Figure 1. Licence: <a href="https://creativecommons.org/licenses/by/2.5/" target="_blank" rel="noopener">CC BY 2.5</a>. Not changed.',
+        'marquez': 'Pictures: Marquez Rocco V, et al. Clin Case Rep. 2026, Figures 1, 2 (top row) and 3. Licence: <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Cropped, put together, and letters a to c added.'}},
     'ja': {'refs': '参考にした論文', 'credit': {
-        'rodriguez': '写真：Rodriguez y Baena R, et al. J Clin Exp Dent. 2017, Figure 1. ライセンス：<a href="https://creativecommons.org/licenses/by/2.5/">CC BY 2.5</a>。元の画像のまま使用。',
-        'marquez': '画像：Marquez Rocco V, et al. Clin Case Rep. 2026, Figure 1, 2（上の列）, 3. ライセンス：<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。切り取って1つにまとめ、a〜cの文字を加えました。'}},
+        'rodriguez': '写真：Rodriguez y Baena R, et al. J Clin Exp Dent. 2017, Figure 1. ライセンス：<a href="https://creativecommons.org/licenses/by/2.5/" target="_blank" rel="noopener">CC BY 2.5</a>。元の画像のまま使用。',
+        'marquez': '画像：Marquez Rocco V, et al. Clin Case Rep. 2026, Figure 1, 2（上の列）, 3. ライセンス：<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>。切り取って1つにまとめ、a〜cの文字を加えました。'}},
 }
+
+# Outside links open in a new tab, so a participant who taps one stays on the study page.
+NEW_TAB = ' target="_blank" rel="noopener"'
 
 def link(ref):
     if 'doi' in ref:
-        return f'<a href="https://doi.org/{ref["doi"]}">doi.org/{ref["doi"]}</a>'
-    return f'<a href="{ref["url"]}">{ref["url"].split("://")[1].rstrip("/")}</a>'
+        return f'<a href="https://doi.org/{ref["doi"]}"{NEW_TAB}>doi.org/{ref["doi"]}</a>'
+    return f'<a href="{ref["url"]}"{NEW_TAB}>{ref["url"].split("://")[1].rstrip("/")}</a>'
 
 def short(text):
     """List up to three authors, then et al."""
@@ -38,13 +41,15 @@ def render(lang, img):
     # Furigana: {kanji|reading} becomes ruby (Japanese text, option C chosen by Luke on 29 October 2026).
     text = re.sub(r'\{([^{}|]+)\|([^{}]*)\}', r'<ruby>\1<rt>\2</rt></ruby>', text)
     order = []
-    def cite(m):
-        key = m.group(1)
+    def num(key):
         if key not in order:
             order.append(key)
         n = order.index(key) + 1
-        return f'<sup class="cite"><a href="#ref-{n}">{n}</a></sup>'
-    text = re.sub(r'\[\[(\w+)\]\]', cite, text)
+        return f'<a href="#ref-{n}">{n}</a>'
+    # Source numbers written next to each other share one superscript, with commas only between them.
+    def cite(m):
+        return '<sup class="cite">' + ','.join(num(k) for k in re.findall(r'\[\[(\w+)\]\]', m.group(0))) + '</sup>'
+    text = re.sub(r'(?:\[\[\w+\]\])+', cite, text)
     text = re.sub(r'\{\{credit:(\w+)\}\}', lambda m: f' <span class="credit">{LABELS[lang]["credit"][m.group(1)]}</span>', text)
     items = '\n'.join(
         f'    <li id="ref-{i}">{short(REFS[k]["text"])} {link(REFS[k])}</li>'
