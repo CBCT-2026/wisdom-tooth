@@ -13,24 +13,24 @@ try { sessionStorage.removeItem('theme'); } catch (e) {}
 <style>
   h1 span { display: block; font-size: 1.1rem; margin-top: 4px; }
   .lead { font-size: 18px; font-weight: 600; margin: 8px 0 0; }
-  .choice { margin-top: 28px; padding: 20px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); }
+  .choice { margin-top: 28px; padding: 20px; border: 1px solid var(--line); border-radius: 0; background: var(--card); }
   .choice h2 { margin: 0 0 14px; text-align: center; font-size: 22px; line-height: 1.35; }
   .choice h2 span { display: block; font-size: 18px; font-weight: 600; }
   .pick { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .top { display: flex; justify-content: flex-end; padding-top: 10px; }
-  .pick a, .pick .pick-off { display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 16px 8px; border-radius: 14px;
+  .pick a, .pick .pick-off { display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 16px 8px; border-radius: 0;
     background: var(--ar); color: var(--ar-text); text-decoration: none; font-weight: 600; font-size: 18px; }
   .pick .pick-off { background: var(--card); color: var(--muted); border: 1px dashed var(--line); }
   .pick a small, .pick .pick-off small { display: block; font-size: 14px; font-weight: 400; }
   .qr { margin: 28px 0 32px; text-align: center; }
   .qr button { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; color: var(--text); }
-  .qr img { display: block; width: 160px; height: 160px; margin: 0 auto 8px; padding: 8px; background: #fff; border-radius: 8px; }
+  .qr img { display: block; width: 160px; height: 160px; margin: 0 auto 8px; padding: 8px; background: #fff; border-radius: 0; }
   .qr span { text-decoration: underline; }
   #qr-big { width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: #fff; color: #000; }
   #qr-big[open] { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
   #qr-big img { width: min(88vw, 70vh); height: min(88vw, 70vh); }
   #qr-big p { margin: 0; font-size: min(18px, 4.2vw); white-space: nowrap; text-align: center; padding: 0 16px; }
-  #qr-big button { font: inherit; font-size: 18px; padding: 10px 22px; border-radius: 12px; border: 1px solid #231f20; background: #fff; color: #231f20; cursor: pointer; }
+  #qr-big button { font: inherit; font-size: 18px; padding: 10px 22px; border-radius: 0; border: 1px solid #231f20; background: #fff; color: #231f20; cursor: pointer; }
 </style>
 </head>
 <body>
